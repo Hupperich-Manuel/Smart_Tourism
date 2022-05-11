@@ -86,7 +86,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'CLIENT': {
-            "host":"mongodb+srv://mhupp:ManuelHupperich1997@cluster0.0u64h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+            "host":"mongodb+srv://mhupp:PASSWORD@cluster0.0u64h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
             "name":"mytestdb",
             "authMechanism":"SCRAM-SHA-1" #For Atlas Cloud
         },
