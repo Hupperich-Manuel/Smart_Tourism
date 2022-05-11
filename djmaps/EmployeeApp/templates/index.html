@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>MPG prediction usecase</title>
+
+</head>
+<body>
+     {{a}}
+    <h2>Check mileage of you Car Instantly</h2>
+
+    <h3>Please enter details:</h3>
+    <br>
+    <form method="post" action="departmentApi">
+ {% csrf_token %}
+ <div class="col-md-4 col-sm-4"><label for="fname">DepartmentId:</label> </div> <input name="DepartmentId" type="text" value={{DepartmentId}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="lname">DepartmentName:</label> </div> <input type="text" id="lname" name="DepartmentName" value={{temp.DepartmentName}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="fname">EmployeeId:</label> </div> <input type="text" id="fname" name="EmployeeId" value={{temp.EmployeeId}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="lname">EmployeeName:</label> </div> <input type="text" id="lname" name="EmployeeName" value={{temp.EmployeeName}}><br><br>
+ <div class="col-md-4 col-sm-4"><label for="fname">DateOfJoining:</label></div>  <input type="text" id="fname" name="DateOfJoining" value={{temp.DateOfJoining}}><br><br>
+ <br>
+ <input type="submit" value="Submit" ></div>
+ {{posts}}
+
+</form>
+<br>
+</body>
+</html>
