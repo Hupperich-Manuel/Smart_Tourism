@@ -46,8 +46,76 @@ Reached this point you will be able to push the changes to _GiHub_
 ```
 $git push origin <your selected branch/ The default one is 'main'>
 ```
-  
-  
+
+### For forked repos
+
+1. Click on the Fork button on the top right corner of the repository
+This will create a copy on your github profile from where you will be able to start making changes
+
+2. Clone the repository
+3. Either checkout to a new branch or use the default one _main_ | _master_
+4. Make the changes, add, commit and push
+
+This will create a **pull request** which will then be evaluated by the main contributors of the repository and then if everything if fine and correct it will be merged to the original repo.
+
+**Errors**:
+In case you are not able to push the changes add the following lines in the command line:
+```command
+$git config --global --edit
+```
+ and 
+```command
+[credential]
+  helper = osxkeychain
+  useHttpPath = true
+```
+
+**To see past versions of a specific file**
+```command
+$git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+```
+```command
+$git hist
+* fa3c141 2011-03-09 | Added HTML header (HEAD, master) [Alexander Shvets]
+* 8c32287 2011-03-09 | Added standard HTML page tags [Alexander Shvets]
+* 43628f7 2011-03-09 | Added h1 tag [Alexander Shvets]
+* 911e8c9 2011-03-09 | First Commit [Alexander Shvets]
+```
+```command
+$git checkout <hash>
+```
+```command
+cat hello.html
+```
+```command
+$git checkout 911e8c9
+Note: checking out '911e8c9'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at 911e8c9... First Commit
+```
+```command
+$ cat hello.html
+Hello, World!
+```
+Get back to your default branch
+```command
+$git checkout master
+```
+
+
+
+
+
+
   
   
   
