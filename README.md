@@ -85,7 +85,7 @@ $git hist
 $git checkout <hash>
 ```
 ```command
-cat hello.html
+$cat hello.html
 ```
 ```command
 $git checkout 911e8c9
@@ -103,7 +103,7 @@ do so (now or later) by using -b with the checkout command again. Example:
 HEAD is now at 911e8c9... First Commit
 ```
 ```command
-$ cat hello.html
+$cat hello.html
 Hello, World!
 ```
 Get back to your default branch
