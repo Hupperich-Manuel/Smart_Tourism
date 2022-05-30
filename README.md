@@ -2,6 +2,11 @@
 Recommendation System for Experiences in a city
 
 
+Command for requirements file
+```command
+pip3 freeze > requirements.txt
+```
+
 ## Guide for Contributing to this Repository
 <sub>Focus only on the Model repository at the moment since the _WebApp_ is focused soley on the development of the app, and it contains other programming languages than Python.</sub>
 
