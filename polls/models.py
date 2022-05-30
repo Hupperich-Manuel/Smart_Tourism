@@ -2,6 +2,8 @@ from time import time
 from django.db import models
 import datetime
 from django.utils import timezone
+from django.contrib.auth.models import AbstractUser
+
 
 class Question(models.Model):
     pub_date = models.DateTimeField('date published')
