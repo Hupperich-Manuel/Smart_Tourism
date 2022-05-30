@@ -16,9 +16,10 @@ SITE_ROOT = os.path.join(BASE_DIR, 'site')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
-    path('', RedirectView.as_view(url='polls/', permanent=True)),
     url(r'^site/(?P<path>.*)$', serve,
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
     ),
+    path('', RedirectView.as_view(url='polls/', permanent=True)),
+
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
