@@ -1,0 +1,105 @@
+html, body {
+    background-color: lightblue;
+    width: 100%;
+    height: 150%;
+    margin: 0;;
+    padding: 0;
+}
+
+  
+h2 {
+    color: navy;
+    margin-left: 20px;
+}
+
+.ok {
+    color: navy;
+    margin-left: 20px;
+}
+
+ol {
+    background: #7cb2e9;
+    background-size:2px;
+    padding: 20px;
+}
+
+ol li {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    background-size:2px;
+    color: darkblue;
+    margin: 5px;
+}
+
+#evaluation {
+    position:relative; 
+    left:80px; 
+    top:0px;
+}
+
+
+#map {
+    float:left;
+}
+
+footer {
+    position:fixed;
+    left:10px;
+    bottom:10px;
+    height:30px;
+    width:100%;
+}
+
+#rate {
+    position:fixed;
+    bottom: 400px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 10;
+}
+
+.rating input[type="radio"]:not(:nth-of-type(0)) {
+    /* hide visually */    
+    border: 10;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: 10px;
+    overflow: hidden;
+    padding: 5;
+    position: absolute;
+    width: 10px;
+}
+.rating [type="radio"]:not(:nth-of-type(0)) + label {
+    display: none;
+}
+
+label[for]:hover {
+    cursor: pointer;
+}
+
+.rating .stars label:before {
+    content: "★";
+}
+
+.stars label {
+    color: lightgray;
+}
+
+.stars label:hover {
+    text-shadow: 0 0 1px #000;
+}
+
+.rating [type="radio"]:nth-of-type(1):checked ~ .stars label:nth-of-type(-n+1),
+.rating [type="radio"]:nth-of-type(2):checked ~ .stars label:nth-of-type(-n+2),
+.rating [type="radio"]:nth-of-type(3):checked ~ .stars label:nth-of-type(-n+3),
+.rating [type="radio"]:nth-of-type(4):checked ~ .stars label:nth-of-type(-n+4),
+.rating [type="radio"]:nth-of-type(5):checked ~ .stars label:nth-of-type(-n+5) {
+    color: orange;
+}
+
+.rating [type="radio"]:nth-of-type(1):focus ~ .stars label:nth-of-type(1),
+.rating [type="radio"]:nth-of-type(2):focus ~ .stars label:nth-of-type(2),
+.rating [type="radio"]:nth-of-type(3):focus ~ .stars label:nth-of-type(3),
+.rating [type="radio"]:nth-of-type(4):focus ~ .stars label:nth-of-type(4),
+.rating [type="radio"]:nth-of-type(5):focus ~ .stars label:nth-of-type(5) {
+    color: darkorange;
+}

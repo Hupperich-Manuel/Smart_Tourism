@@ -1,0 +1,259 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
+    <h2> Here are the results of the votings</h2>
+    <fieldset>
+    <ol>
+    {% for experience in q1 %}
+        <li>{{ experience }}</li>
+    {% endfor %}
+    </ol>
+    </fieldset>
+    <title>Interactive maps for Django web apps</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+  <body>
+   <h1 class='ok'>This is your selected route:</h1>
+   <div id='map' width="50%" style='height:400px; width:500px'></div>
+   <h5 id="evaluation" ><h2>Reached this point, we would like to rate how accurate our recommendation was and if you missed crucial information:</h5>
+    <div>Rate from 1 to 5, where 1 is <i>Really Bad</i> and 5 is <i>Extremely Good</i>:</div>
+    <form action = "{% url 'polls:rating' %}" method="post">
+    {% csrf_token %}
+            <label><b>{{ q1.0 }}</b></label>
+        <fieldset class="rating">
+            <legend>rating</legend>
+        
+            <input id="demo-1" type="radio" name="demo1" value="1"> 
+            <label for="demo-1">1 star</label>
+            <input id="demo-2" type="radio" name="demo2" value="2">
+            <label for="demo-2">2 stars</label>
+            <input id="demo-3" type="radio" name="demo3" value="3">
+            <label for="demo-3">3 stars</label>
+            <input id="demo-4" type="radio" name="demo4" value="4">
+            <label for="demo-4">4 stars</label>
+            <input id="demo-5" type="radio" name="demo5" value="5">
+            <label for="demo-5">5 stars</label>
+            
+            <div class="stars">
+                <label for="demo-1" aria-label="1 star" title="1 star"></label>
+                <label for="demo-2" aria-label="2 stars" title="2 stars"></label>
+                <label for="demo-3" aria-label="3 stars" title="3 stars"></label>
+                <label for="demo-4" aria-label="4 stars" title="4 stars"></label>
+                <label for="demo-5" aria-label="5 stars" title="5 stars"></label>   
+            </div>
+            
+        </fieldset>
+        {% csrf_token %}
+
+            <label><b>{{ q1.1 }}</b></label>
+        <fieldset class="rating">
+            <legend>rating</legend>
+        
+            <input id="demo-11" type="radio" name="demo11" value="1"> 
+            <label for="demo-11">1 star</label>
+            <input id="demo-12" type="radio" name="demo12" value="2">
+            <label for="demo-12">2 stars</label>
+            <input id="demo-13" type="radio" name="demo13" value="3">
+            <label for="demo-13">3 stars</label>
+            <input id="demo-14" type="radio" name="demo14" value="4">
+            <label for="demo-14">4 stars</label>
+            <input id="demo-15" type="radio" name="demo15" value="5">
+            <label for="demo-15">5 stars</label>
+            
+            <div class="stars">
+                <label for="demo-11" aria-label="1 star" title="1 star"></label>
+                <label for="demo-12" aria-label="2 stars" title="2 stars"></label>
+                <label for="demo-13" aria-label="3 stars" title="3 stars"></label>
+                <label for="demo-14" aria-label="4 stars" title="4 stars"></label>
+                <label for="demo-15" aria-label="5 stars" title="5 stars"></label>   
+            </div>
+            
+        </fieldset>
+
+        {% csrf_token %}
+            <label><b>{{ q1.2 }}</b></label>
+        <fieldset class="rating">
+            <legend>rating</legend>
+        
+            <input id="demo-21" type="radio" name="demo21" value="1"> 
+            <label for="demo-21">1 star</label>
+            <input id="demo-22" type="radio" name="demo22" value="2">
+            <label for="demo-22">2 stars</label>
+            <input id="demo-23" type="radio" name="demo23" value="3">
+            <label for="demo-23">3 stars</label>
+            <input id="demo-24" type="radio" name="demo24" value="4">
+            <label for="demo-24">4 stars</label>
+            <input id="demo-25" type="radio" name="demo25" value="5">
+            <label for="demo-25">5 stars</label>
+            
+            <div class="stars">
+                <label for="demo-21" aria-label="1 star" title="1 star"></label>
+                <label for="demo-22" aria-label="2 stars" title="2 stars"></label>
+                <label for="demo-23" aria-label="3 stars" title="3 stars"></label>
+                <label for="demo-24" aria-label="4 stars" title="4 stars"></label>
+                <label for="demo-25" aria-label="5 stars" title="5 stars"></label>   
+            </div>
+            
+        </fieldset>
+        {% csrf_token %}
+        <legend><h4>Write your Email for submission:</h4></legend>
+            <input type="text" name="email" id="email" value="{{ email }}">
+
+        <input type="submit" value="Rate">
+    </form>
+        <script>
+        (function(){
+            var rating = document.querySelector('.rating');
+            var handle = document.getElementById('toggle-rating');
+            handle.onchange = function(event) {
+                rating.classList.toggle('rating', handle.checked);
+            };
+        }());
+        </script>
+    
+</div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWh1cHAiLCJhIjoiY2wyN3YzMTRzMDFiZzNrbzhoZXZtcG4yYiJ9.q9cjSjkeABVIX-TIVHeHYA'
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-3.7033387,40.4167278], // starting position
+            zoom: 11.5
+        });
+        // set the bounds of the map
+        {% comment %} const bounds = [
+        [-123.069003, 45.395273],
+        [-122.303707, 45.612333]
+        ];
+        map.setMaxBounds(bounds); {% endcomment %}
+        
+        // an arbitrary start will always be the same
+        // only the end or destination will change
+        const start = {{ coordinates_start|safe }};
+        
+        // this is where the code for the next step will go
+        // create a function to make a directions request
+        async function getRoute(end) {
+            // make a directions request using cycling profile
+            // an arbitrary start will always be the same
+            // only the end or destination will change
+            const query = await fetch(
+            `https://api.mapbox.com/directions/v5/mapbox/walking/${start[0]},${start[1]};${start[2]},${start[3]};${start[4]},${start[5]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`,
+            { method: 'GET' }
+            );
+            const json = await query.json();
+            const data = json.routes[0];
+            const route = data.geometry.coordinates;
+            const geojson = {
+            type: 'Feature',
+            properties: {},
+            geometry: {
+                type: 'LineString',
+                coordinates: route
+            }
+            };
+            // if the route already exists on the map, we'll reset it using setData
+            if (map.getSource('route')) {
+            map.getSource('route').setData(geojson);
+            }
+            // otherwise, we'll make a new request
+            else {
+            map.addLayer({
+                id: 'route',
+                type: 'line',
+                source: {
+                type: 'geojson',
+                data: geojson
+                },
+                layout: {
+                'line-join': 'round',
+                'line-cap': 'round'
+                },
+                paint: {
+                'line-color': '#3887be',
+                'line-width': 4,
+                'line-opacity': 0.75
+                }
+            });
+            }
+            // add turn instructions here at the end
+        }
+        
+        map.on('load', () => {
+            // make an initial directions request that
+            // starts and ends at the same location
+            map.loadImage('tag.png', (error, image) => {
+                if (error) throw error;
+                // add image to the active style and make it SDF-enabled
+                map.addImage('your-image-id', image, { sdf: true });
+            });
+
+            getRoute(start);
+        
+            // Add starting point to the map
+            map.addLayer({
+            id: 'point',
+            type: 'circle',
+            source: {
+                type: 'geojson',
+                data: {
+                type: 'FeatureCollection',
+                features: [
+                    {
+                    type: 'Feature',
+                    layout:{
+                        'icon-image':'your-image-id',
+                        'icon-size':.5
+                    },
+                    properties: {},
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [start[0], start[1]]
+                    }
+                    },
+                    {
+                    type: 'Feature',
+                    layout:{
+                        'icon-image':'your-image-id',
+                        'icon-size':.5
+                    },
+                    properties: {},
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [start[2], start[3]]
+                    }
+                    },
+                    {
+                    type: 'Feature',
+                    layout:{
+                        'icon-image':'your-image-id',
+                        'icon-size':.5
+                    },
+                    properties: {},
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [start[4], start[5]]
+                    }
+                }
+                ]
+                }
+            },
+            paint: {
+                'circle-radius': 7,
+                'circle-color': '#3887be'
+            }
+            });
+        });
+    </script>
+  </body>
+<footer>
+  <div id="bottom">Hope you liked the resuls</div>
+  <a id="bottom" href="{% url 'polls:index' %}">Vote again?</a>
+</footer>
+</html>

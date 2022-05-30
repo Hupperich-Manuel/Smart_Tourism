@@ -1,0 +1,5 @@
+<html>
+<h2>Thank you for your time and effort <i>{{ name|safe }}</i> !</h2>
+<dir>Your satisfaction with our service was <i>{{ feedback|safe }}</i> with a evaluation of {{ punctuation|safe }} out of 5</dir>
+<a href="{% url 'polls:index' %}">Go to Menu</a>
+</html>
