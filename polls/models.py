@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 
 
+
 class Question(models.Model):
     pub_date = models.DateTimeField('date published')
     name = models.CharField('Building_name',max_length=200)
