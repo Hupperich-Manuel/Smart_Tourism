@@ -1,42 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
 <html>
-<h2>Please fill in the survey:</h1>
-<fieldset>
-<form action = "{% url 'polls:modelling' %}" method="post">
-{% csrf_token %}
-<legend><h4>Write your Email:</h4></legend>
-    <input type="text" name="answer4" id="answer4" value="{{ answer4 }}">
+    
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #7abecc !important;
+        }
+    </style>
+</head>
+<body id="a">
+    {%  include 'registration/navbar.html' %}
+    <fieldset>
+    <form action = "{% url 'polls:modelling' %}" method="post">
+    
+    {% csrf_token %}
+    <legend><h4>Do you like places that service alcohol?</h4></legend>
+    {% for answer1, choice1 in liste2 %}
+        <input type="radio" name="answer1" id="answer1" value="{{answer1 }}">
+        <label>{{ choice1 }}</label><br>
+    {% endfor %}
 
-{% csrf_token %}
-<legend><h4>Write your Name:</h4></legend>
-    <input type="text" name="answer0" id="answer0" value="{{ answer0 }}">
 
-{% csrf_token %}
-<legend><h4>Write your Surname:</h4></legend>
-    <input type="text" name="answer01" id="answer01" value="{{ answer01 }}">
+    {% csrf_token %}
+    <legend><h4>Do you enjoy trend places?</h4></legend>
+    {% for answer2, choice2 in liste3 %}
+        <input type="radio" name="answer2" id="answer2" value="{{ answer2 }}">
+        <label>{{ choice2 }}</label><br>
+    {% endfor %}
 
-{% csrf_token %}
-<legend><h4>Do you like places that service alcohol?</h4></legend>
-{% for answer1, choice1 in liste2 %}
-    <input type="radio" name="answer1" id="answer1" value="{{answer1 }}">
-    <label>{{ choice1 }}</label><br>
-{% endfor %}
+    {% csrf_token %}
+    <legend><h4>Do you enjoy crowded places?</h4></legend>
+    {% for answer3, choice3 in liste %}
+        <input type="radio" name="answer3" id="answer3" value="{{ answer3 }}">
+        <label>{{ choice3 }}</label><br>
+    {% endfor %}
 
-
-{% csrf_token %}
-<legend><h4>Do you enjoy trend places?</h4></legend>
-{% for answer2, choice2 in liste3 %}
-    <input type="radio" name="answer2" id="answer2" value="{{ answer2 }}">
-    <label>{{ choice2 }}</label><br>
-{% endfor %}
-
-{% csrf_token %}
-<legend><h4>Do you enjoy crowded places?</h4></legend>
-{% for answer3, choice3 in liste %}
-    <input type="radio" name="answer3" id="answer3" value="{{ answer3 }}">
-    <label for="choice3">{{ choice3 }}</label><br>
-{% endfor %}
-
-</fieldset>
-<input type="submit" value="Vote">
-</form>
+    </fieldset>
+    <input type="submit" value="Vote">
+    </form>
+    <script>
+        if ( window.history.replaceState ) {
+          window.history.replaceState( null, null, window.location.href );
+        }
+        </script>
+    
+</body>
 </html>

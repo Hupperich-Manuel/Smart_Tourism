@@ -7,5 +7,5 @@ urlpatterns = [
     path('map', views.default_map, name="map"),
     path('<str:place1>/<str:lon1>/<str:lat1>/<str:place2>/<str:lon2>/<str:lat2>/<str:place3>/<str:lon3>/<str:lat3>/results/', views.ResultsView, name='results'),
     path('modelling/', views.modelling, name='modelling'),
-    path('rating/', views.rating, name='rating'),
+    path('<str:building1>/<str:building2>/<str:building3>/rating/', views.rating, name='rating'),
 ]

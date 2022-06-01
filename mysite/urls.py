@@ -16,10 +16,12 @@ SITE_ROOT = os.path.join(BASE_DIR, 'site')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
+    path('home/', include('django.contrib.auth.urls')),
+    path('home/', include('home.urls')),
     url(r'^site/(?P<path>.*)$', serve,
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
     ),
-    path('', RedirectView.as_view(url='polls/', permanent=True)),
+    path('', RedirectView.as_view(url='home/', permanent=False)),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

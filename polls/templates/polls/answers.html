@@ -1,5 +1,25 @@
+{% load static %}
 <html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #7abecc !important;
+        }
+    </style>
+
+    </head>
 <h2>Thank you for your time and effort <i>{{ name|safe }}</i> !</h2>
 <dir>Your satisfaction with our service was <i>{{ feedback|safe }}</i> with a evaluation of {{ punctuation|safe }} out of 5</dir>
 <a href="{% url 'polls:index' %}">Go to Menu</a>
+<script>
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
 </html>
