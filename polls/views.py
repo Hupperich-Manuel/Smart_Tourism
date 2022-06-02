@@ -7,7 +7,7 @@ from django.views import generic
 from .models import Question, Customer, User
 from django.http import HttpResponseRedirect
 from django.utils import timezone
-import sqlite3
+import psycopg2
 import numpy as np
 from django.contrib.auth.decorators import login_required
 
@@ -89,13 +89,20 @@ def modelling(request):
 
     if (answer1 != None)&(answer2 != None)&(answer3 != None):
 
-        conn = sqlite3.connect('db.sqlite3')
-        cursor = conn.cursor()
-        conn.commit()
+        conn = psycopg2.connect(user='postgres',
+                                password='shandy123',
+                                host="127.0.0.1",
+                                port="5432",
+                                database="capstone")
+        cursor = conn.cursor()      
+        #conn.commit()
 
         print('\nColumns in Customer table')
-        data = cursor.execute('''SELECT building, longitud, latitud, question_text1, question_text2, question_text3 FROM polls_question''')
+        cursor.execute('''SELECT building, longitud, latitud, question_text1, question_text2, question_text3 FROM polls_question''')
+        data = cursor.fetchall()
 
+
+        print(data)
         places = {}
         
         for index, column in enumerate(data):

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from distutils.debug import DEBUG
 from pathlib import Path
 import os
 
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #SECRET_KEY = 'SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = bool(os.environ.get('DJANGO_DEBUG', True) )
+#DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -85,13 +86,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'OPTIONS':{
-            'timeout':20,
-        }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'capstone',
+        'USER': 'postgres',
+        'PASSWORD':'shandy123',
+        'HOST':'127.0.0.1',
+        'DATABASE_PORT':'5432'
     }
 }
+
+#shandy123
+#port 5432
 
 # Heroku: Update database configuration from $DATABASE_URL.
 # import dj_database_url
