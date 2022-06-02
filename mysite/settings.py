@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from distutils.debug import DEBUG
 from pathlib import Path
+import dj_database_url
 import os
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'SECRET_KEY')
@@ -29,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', ]
 
 
 # Application definition
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
