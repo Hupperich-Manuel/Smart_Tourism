@@ -14,7 +14,7 @@ from distutils.debug import DEBUG
 from pathlib import Path
 import os
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'ManuelHupperich4997-thefirstdeployment$f*#(l=+)#=%hkrk994e7u!bj(rot&!yjvl@5u@$!&!3p@b#')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -83,6 +83,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+from dotenv import load_dotenv
+load_dotenv('.env')
 
 DATABASES = {
     'default': {
