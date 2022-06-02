@@ -83,8 +83,6 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-from dotenv import load_dotenv
-load_dotenv('.env')
 
 DATABASES = {
     'default': {
