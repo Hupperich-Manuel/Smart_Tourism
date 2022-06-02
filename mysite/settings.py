@@ -92,10 +92,11 @@ DATABASES = {
         'NAME': 'capstone',
         'USER': 'postgres',
         'PASSWORD':'shandy123',
-        'HOST':'127.0.0.1',
+        'HOST':'',
         'DATABASE_PORT':'5432'
     }
 }
+#127.0.0.1
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
