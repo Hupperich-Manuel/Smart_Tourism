@@ -89,11 +89,11 @@ def modelling(request):
 
     if (answer1 != None)&(answer2 != None)&(answer3 != None):
 
-        conn = psycopg2.connect(user='postgres',
-                                password='shandy123',
-                                host="127.0.0.1",
+        conn = psycopg2.connect(user='ecxcznqqewkgel',
+                                password='f5666c3d29bb4f435caf7b7b2ab936db75ba8949ed7ad4a212eb479f04ecab25',
+                                host="ec2-34-227-120-79.compute-1.amazonaws.com",
                                 port="5432",
-                                database="capstone")
+                                database="dav3cfrln85a50")
         cursor = conn.cursor()      
         #conn.commit()
 
