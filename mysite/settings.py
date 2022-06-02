@@ -86,17 +86,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'capstone',
-        'USER': 'postgres',
-        'PASSWORD':'shandy123',
-        'HOST':'',
-        'DATABASE_PORT':'5432'
-    }
-}
-#127.0.0.1
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'capstone',
+#         'USER': 'postgres',
+#         'PASSWORD':'shandy123',
+#         'HOST':'',
+#         'DATABASE_PORT':'5432'
+#     }
+# }
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
