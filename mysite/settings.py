@@ -88,20 +88,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dav3cfrln85a50',
-        'USER': 'ecxcznqqewkgel',
-        'PASSWORD':'f5666c3d29bb4f435caf7b7b2ab936db75ba8949ed7ad4a212eb479f04ecab25',
-        'HOST':'ec2-34-227-120-79.compute-1.amazonaws.com',
-        'DATABASE_PORT':'5432'
+        'ENGINE': 'ENGINE',
+        'NAME': 'NAME',
+        'USER': 'USER',
+        'PASSWORD':'PASSWORD',
+        'HOST':'HOST',
+        'DATABASE_PORT':'DATABASE_PORT'
     }
 }
 
-# db_from_env = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'].update(db_from_env)
 
-#shandy123
-#port 5432
 
 # Heroku: Update database configuration from $DATABASE_URL.
 # import dj_database_url
