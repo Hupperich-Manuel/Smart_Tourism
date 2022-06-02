@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', ]
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','young-depths-38007.herokuapp.com']
 
 
 # Application definition
@@ -97,6 +97,9 @@ DATABASES = {
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
 #shandy123
 #port 5432
 
@@ -145,7 +148,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/"),
 )
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 MEDIA_ROOT = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
