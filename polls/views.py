@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect
 from django.utils import timezone
 import psycopg2
 import numpy as np
+import os
 from django.contrib.auth.decorators import login_required
 
 
@@ -44,7 +45,7 @@ def ResultsView(request, place1,lon1, lat1, place2,lon2, lat2,  place3, lon3, la
 
     mapbox_access_token = 'mapbox_access_token'
     return render(request, 'polls/map.html', 
-                { 'mapbox_access_token': mapbox_access_token ,
+                { 'mapbox_access_token': 'pk.eyJ1IjoibWh1cHAiLCJhIjoiY2wyN3YzMTRzMDFiZzNrbzhoZXZtcG4yYiJ9.q9cjSjkeABVIX-TIVHeHYA' ,
                     "q1": result,
                     "coordinates_start":coordinates_start
                     })
@@ -90,7 +91,7 @@ def modelling(request):
     if (answer1 != None)&(answer2 != None)&(answer3 != None):
 
         conn = psycopg2.connect(user='ecxcznqqewkgel',
-                                password='f5666c3d29bb4f435caf7b7b2ab936db75ba8949ed7ad4a212eb479f04ecab25',
+                                password=os.environ['POSTSQL_PASSWORD'],
                                 host="ec2-34-227-120-79.compute-1.amazonaws.com",
                                 port="5432",
                                 database="dav3cfrln85a50")
