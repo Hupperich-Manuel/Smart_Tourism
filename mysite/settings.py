@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from distutils.debug import DEBUG
 from pathlib import Path
+import dj_database_url
 import os
 
 
@@ -28,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
