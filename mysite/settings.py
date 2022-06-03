@@ -15,6 +15,8 @@ from pathlib import Path
 import dj_database_url
 import os
 
+import warnings
+warnings.filterwarnings("ignore", message="No directory at", module="whitenoise.base" )
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'SECRET_KEY')
 
