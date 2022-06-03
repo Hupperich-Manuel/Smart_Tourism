@@ -244,7 +244,7 @@ def rating(request, building1, building2, building3):
     name = Customer.objects.filter(username_id=username).values_list('name', flat=True)
     
     print(building3)
-    for build, val in zip([building1, building2, building3], [place1,place2,place3]):
+    for build, val in zip([building1, building2, building3], [place1[3:],place2,place3]):
         
         rate = Customer.objects.get(building_id=build, username_id=username)
         
