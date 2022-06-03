@@ -67,7 +67,7 @@ def IndexView(request):
                                                 "liste17": zip_list17,
                                                 "liste18": zip_list18,
                                                 "liste19": zip_list19,
-                                                "liste20": zip_list20,
+                                                "liste20": zip_list20
                                                 })
 
 @login_required(login_url='login')
