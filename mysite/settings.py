@@ -16,7 +16,7 @@ import dj_database_url
 import os
 
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -93,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dav3cfrln85a50',
         'USER': 'ecxcznqqewkgel',
-        'PASSWORD':os.environ['POSTSQL_PASSWORD'],
+        'PASSWORD': os.environ.get('POSTSQL_PASSWORD'),
         'HOST':'ec2-34-227-120-79.compute-1.amazonaws.com',
         'DATABASE_PORT':'5432'
     }
