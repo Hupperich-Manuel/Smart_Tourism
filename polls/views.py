@@ -48,7 +48,27 @@ def IndexView(request):
     zip_list19 = zip(q1, q2)
     zip_list20 = zip(q1, q2)
 
-    return render(request, 'polls/index.html', {"liste": zip_list, "liste2": zip_list2, "liste3": zip_list3})
+    return render(request, 'polls/index.html', {"liste": zip_list, 
+                                                "liste2": zip_list2, 
+                                                "liste3": zip_list3,
+                                                "liste4": zip_list4,
+                                                "liste5": zip_list5,
+                                                "liste6": zip_list6,
+                                                "liste7": zip_list7,
+                                                "liste8": zip_list8,
+                                                "liste9": zip_list9,
+                                                "liste10": zip_list10,
+                                                "liste11": zip_list11,
+                                                "liste12": zip_list12,
+                                                "liste13": zip_list13,
+                                                "liste14": zip_list14,
+                                                "liste15": zip_list15,
+                                                "liste16": zip_list16,
+                                                "liste17": zip_list17,
+                                                "liste18": zip_list18,
+                                                "liste19": zip_list19,
+                                                "liste20": zip_list20,
+                                                })
 
 @login_required(login_url='login')
 def ResultsView(request, place1,lon1, lat1, place2,lon2, lat2,  place3, lon3, lat3):
@@ -88,6 +108,23 @@ def modelling(request):
         answer1=request.POST['answer1']
         answer2 = request.POST['answer2']
         answer3 = request.POST['answer3']
+        answer4=request.POST['answer4']
+        answer5 = request.POST['answer5']
+        answer6 = request.POST['answer6']
+        answer7=request.POST['answer7']
+        answer8 = request.POST['answer8']
+        answer9 = request.POST['answer9']
+        answer10=request.POST['answer10']
+        answer11 = request.POST['answer11']
+        answer12 = request.POST['answer12']
+        answer13=request.POST['answer13']
+        answer14 = request.POST['answer14']
+        answer15 = request.POST['answer15']
+        answer16 = request.POST['answer16']
+        answer17 = request.POST['answer17']
+        answer18 = request.POST['answer18']
+        answer19 = request.POST['answer19']
+        answer20 = request.POST['answer20']
 
         print(answer3)
 
@@ -97,11 +134,44 @@ def modelling(request):
         zip_list = zip(q1, q2)
         zip_list2 = zip(q1, q2)
         zip_list3 = zip(q1, q2)
-        return render(request, 'polls/index.html',{
-            "liste": zip_list, 
-            "liste2": zip_list2, 
-            "liste3": zip_list3,
-            'error_message':'You did not select a choice'})
+        zip_list4 = zip(q1, q2)
+        zip_list5 = zip(q1, q2)
+        zip_list6 = zip(q1, q2)
+        zip_list7 = zip(q1, q2)
+        zip_list8 = zip(q1, q2)
+        zip_list9 = zip(q1, q2)
+        zip_list10 = zip(q1, q2)
+        zip_list11 = zip(q1, q2)
+        zip_list12 = zip(q1, q2)
+        zip_list13 = zip(q1, q2)
+        zip_list14 = zip(q1, q2)
+        zip_list15 = zip(q1, q2)
+        zip_list16 = zip(q1, q2)
+        zip_list17 = zip(q1, q2)
+        zip_list18 = zip(q1, q2)
+        zip_list19 = zip(q1, q2)
+        zip_list20 = zip(q1, q2)
+        return render(request, 'polls/index.html',{"liste": zip_list, 
+                                                "liste2": zip_list2, 
+                                                "liste3": zip_list3,
+                                                "liste4": zip_list4,
+                                                "liste5": zip_list5,
+                                                "liste6": zip_list6,
+                                                "liste7": zip_list7,
+                                                "liste8": zip_list8,
+                                                "liste9": zip_list9,
+                                                "liste10": zip_list10,
+                                                "liste11": zip_list11,
+                                                "liste12": zip_list12,
+                                                "liste13": zip_list13,
+                                                "liste14": zip_list14,
+                                                "liste15": zip_list15,
+                                                "liste16": zip_list16,
+                                                "liste17": zip_list17,
+                                                "liste18": zip_list18,
+                                                "liste19": zip_list19,
+                                                "liste20": zip_list20,
+                                                'error_message':'You did not select a choice'})
 
 
     if (answer1 != None)&(answer2 != None)&(answer3 != None):
