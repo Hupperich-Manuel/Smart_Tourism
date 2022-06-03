@@ -133,7 +133,7 @@
     
 </div>
     <script>
-        mapboxgl.accessToken = S3Connection(os.environ['MAPBOX_ACCESS_TOKEN'], os.environ['MAPBOX_ACCESS_TOKEN'])
+        mapboxgl.accessToken = os.environ['MAPBOX_ACCESS_TOKEN']
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
