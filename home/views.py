@@ -21,9 +21,45 @@ def registerPage(request):
         zip_list = zip(q1, q2)
         zip_list2 = zip(q1, q2)
         zip_list3 = zip(q1, q2)
+        zip_list4 = zip(q1, q2)
+        zip_list5 = zip(q1, q2)
+        zip_list6 = zip(q1, q2)
+        zip_list7 = zip(q1, q2)
+        zip_list8 = zip(q1, q2)
+        zip_list9 = zip(q1, q2)
+        zip_list10 = zip(q1, q2)
+        zip_list11 = zip(q1, q2)
+        zip_list12 = zip(q1, q2)
+        zip_list13 = zip(q1, q2)
+        zip_list14 = zip(q1, q2)
+        zip_list15 = zip(q1, q2)
+        zip_list16 = zip(q1, q2)
+        zip_list17 = zip(q1, q2)
+        zip_list18 = zip(q1, q2)
+        zip_list19 = zip(q1, q2)
+        zip_list20 = zip(q1, q2)
 
-        return render(request, 'polls/index.html', {"liste": zip_list, "liste2": zip_list2, "liste3": zip_list3})
-
+        return render(request, 'polls/index.html', {"liste": zip_list, 
+                                                "liste2": zip_list2, 
+                                                "liste3": zip_list3,
+                                                "liste4": zip_list4,
+                                                "liste5": zip_list5,
+                                                "liste6": zip_list6,
+                                                "liste7": zip_list7,
+                                                "liste8": zip_list8,
+                                                "liste9": zip_list9,
+                                                "liste10": zip_list10,
+                                                "liste11": zip_list11,
+                                                "liste12": zip_list12,
+                                                "liste13": zip_list13,
+                                                "liste14": zip_list14,
+                                                "liste15": zip_list15,
+                                                "liste16": zip_list16,
+                                                "liste17": zip_list17,
+                                                "liste18": zip_list18,
+                                                "liste19": zip_list19,
+                                                "liste20": zip_list20
+                                                })
     else:
         form = CreateUserForm()
 
@@ -48,8 +84,45 @@ def login_user(request):
         zip_list = zip(q1, q2)
         zip_list2 = zip(q1, q2)
         zip_list3 = zip(q1, q2)
+        zip_list4 = zip(q1, q2)
+        zip_list5 = zip(q1, q2)
+        zip_list6 = zip(q1, q2)
+        zip_list7 = zip(q1, q2)
+        zip_list8 = zip(q1, q2)
+        zip_list9 = zip(q1, q2)
+        zip_list10 = zip(q1, q2)
+        zip_list11 = zip(q1, q2)
+        zip_list12 = zip(q1, q2)
+        zip_list13 = zip(q1, q2)
+        zip_list14 = zip(q1, q2)
+        zip_list15 = zip(q1, q2)
+        zip_list16 = zip(q1, q2)
+        zip_list17 = zip(q1, q2)
+        zip_list18 = zip(q1, q2)
+        zip_list19 = zip(q1, q2)
+        zip_list20 = zip(q1, q2)
 
-        return render(request, 'polls/index.html', {"liste": zip_list, "liste2": zip_list2, "liste3": zip_list3})
+        return render(request, 'polls/index.html', {"liste": zip_list, 
+                                                "liste2": zip_list2, 
+                                                "liste3": zip_list3,
+                                                "liste4": zip_list4,
+                                                "liste5": zip_list5,
+                                                "liste6": zip_list6,
+                                                "liste7": zip_list7,
+                                                "liste8": zip_list8,
+                                                "liste9": zip_list9,
+                                                "liste10": zip_list10,
+                                                "liste11": zip_list11,
+                                                "liste12": zip_list12,
+                                                "liste13": zip_list13,
+                                                "liste14": zip_list14,
+                                                "liste15": zip_list15,
+                                                "liste16": zip_list16,
+                                                "liste17": zip_list17,
+                                                "liste18": zip_list18,
+                                                "liste19": zip_list19,
+                                                "liste20": zip_list20
+                                                })
 
 
     else:
@@ -65,8 +138,45 @@ def login_user(request):
                 zip_list = zip(q1, q2)
                 zip_list2 = zip(q1, q2)
                 zip_list3 = zip(q1, q2)
+                zip_list4 = zip(q1, q2)
+                zip_list5 = zip(q1, q2)
+                zip_list6 = zip(q1, q2)
+                zip_list7 = zip(q1, q2)
+                zip_list8 = zip(q1, q2)
+                zip_list9 = zip(q1, q2)
+                zip_list10 = zip(q1, q2)
+                zip_list11 = zip(q1, q2)
+                zip_list12 = zip(q1, q2)
+                zip_list13 = zip(q1, q2)
+                zip_list14 = zip(q1, q2)
+                zip_list15 = zip(q1, q2)
+                zip_list16 = zip(q1, q2)
+                zip_list17 = zip(q1, q2)
+                zip_list18 = zip(q1, q2)
+                zip_list19 = zip(q1, q2)
+                zip_list20 = zip(q1, q2)
 
-                return render(request, 'polls/index.html', {"liste": zip_list, "liste2": zip_list2, "liste3": zip_list3})
+                return render(request, 'polls/index.html', {"liste": zip_list, 
+                                                "liste2": zip_list2, 
+                                                "liste3": zip_list3,
+                                                "liste4": zip_list4,
+                                                "liste5": zip_list5,
+                                                "liste6": zip_list6,
+                                                "liste7": zip_list7,
+                                                "liste8": zip_list8,
+                                                "liste9": zip_list9,
+                                                "liste10": zip_list10,
+                                                "liste11": zip_list11,
+                                                "liste12": zip_list12,
+                                                "liste13": zip_list13,
+                                                "liste14": zip_list14,
+                                                "liste15": zip_list15,
+                                                "liste16": zip_list16,
+                                                "liste17": zip_list17,
+                                                "liste18": zip_list18,
+                                                "liste19": zip_list19,
+                                                "liste20": zip_list20
+                                                })
 
             else:
                 messages.success(request, ("There was a Error login in, Try again"))
