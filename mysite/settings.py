@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = False
 #DEBUG = False
 
-ALLOWED_HOSTS = ['young-depths-38007.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
