@@ -137,10 +137,12 @@ def modelling(request):
                                     building_id = Question.objects.get(building=selected_experience[index])
                                     )
                 select_place.append(selected_choice)
+
   
 
         Customer.objects.bulk_create(select_place)
 
+        print(select_place)
 
 
         
