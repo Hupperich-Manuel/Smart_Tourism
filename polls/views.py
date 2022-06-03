@@ -106,6 +106,8 @@ def modelling(request):
         places = {}
         
         for index, column in enumerate(data):
+
+            print(column)
             
             places[index] = [column[0], column[1],column[2], np.dot(list(column[3:]), [int(answer1), int(answer2), int(answer3)])]
         
