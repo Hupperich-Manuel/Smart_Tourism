@@ -387,11 +387,13 @@ def rating(request, building1, building2, building3, building4, building5):
     print(building3)
     for build, val in zip([building1, building2, building3, building4, building5], [place1,place2,place3, place4, place5]):
         
-        rate = Customer.objects.get(building_id=build, username_id=username, pub_date=timezone.now().minute-timedelta(minutes=10))
+        #rate = Customer.objects.get(building_id=build, username_id=username, pub_date=timezone.now().minute-timedelta(minutes=10))
+        rate = Customer.objects.filter(building_id=build, username_id=username)
         
+        #for index, rt in enumerate()
         print(f"rate: {rate}")
 
-        rate.valuation = val
+        rate[-1].valuation = val
 
         rate.save()
         #break
