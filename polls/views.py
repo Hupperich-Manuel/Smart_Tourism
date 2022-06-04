@@ -71,13 +71,13 @@ def IndexView(request):
                                                 })
 
 @login_required(login_url='login')
-def ResultsView(request, place1,lon1, lat1, place2,lon2, lat2,  place3, lon3, lat3):
+def ResultsView(request, place1,lon1, lat1, place2,lon2, lat2,  place3, lon3, lat3, place4, lon4, lat4, place5, lon5, lat5):
     
 
 
-    result = [place1, place2, place3]
+    result = [place1, place2, place3, place4, place5]
 
-    coordinates_start = [lon1, lat1, lon2, lat2,lon3, lat3]
+    coordinates_start = [lon1, lat1, lon2, lat2,lon3, lat3,lon4, lat4,lon5, lat5]
 
     mapbox_access_token = 'mapbox_access_token'
     return render(request, 'polls/map.html', 
@@ -174,7 +174,7 @@ def modelling(request):
                                                 'error_message':'You did not select a choice'})
 
 
-    if (answer1 != None)&(answer2 != None)&(answer3 != None):
+    if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None):
 
         conn = psycopg2.connect(user='ecxcznqqewkgel',
                                 password=os.environ['POSTSQL_PASSWORD'],
@@ -191,14 +191,17 @@ def modelling(request):
 
         print(data)
         places = {}
+        dot_product_answer = [int(answer1), int(answer2), int(answer3), int(answer4), int(answer5), int(answer6), int(answer7),
+                              int(answer8), int(answer9), int(answer10), int(answer11), int(answer12), int(answer13), int(answer14),
+                              int(answer15), int(answer16), int(answer17), int(answer18), int(answer19), int(answer20)]
         
         for index, column in enumerate(data):
 
             print(column)
             
-            places[index] = [column[0], column[1],column[2], np.dot(list(column[3:]), [int(answer1), int(answer2), int(answer3)])]
+            places[index] = [column[0], column[1],column[2], np.dot(list(column[3:]), dot_product_answer)]
         
-        places = dict(sorted(places.items(), key=lambda x: x[1][3], reverse=True)[:3])
+        places = dict(sorted(places.items(), key=lambda x: x[1][3], reverse=True)[:5])
 
 
         selected_experience = []
@@ -241,6 +244,23 @@ def modelling(request):
         zip_list = zip(q1, q2)
         zip_list2 = zip(q1, q2)
         zip_list3 = zip(q1, q2)
+        zip_list4 = zip(q1, q2)
+        zip_list5 = zip(q1, q2)
+        zip_list6 = zip(q1, q2)
+        zip_list7 = zip(q1, q2)
+        zip_list8 = zip(q1, q2)
+        zip_list9 = zip(q1, q2)
+        zip_list10 = zip(q1, q2)
+        zip_list11 = zip(q1, q2)
+        zip_list12 = zip(q1, q2)
+        zip_list13 = zip(q1, q2)
+        zip_list14 = zip(q1, q2)
+        zip_list15 = zip(q1, q2)
+        zip_list16 = zip(q1, q2)
+        zip_list17 = zip(q1, q2)
+        zip_list18 = zip(q1, q2)
+        zip_list19 = zip(q1, q2)
+        zip_list20 = zip(q1, q2)
         return HttpResponseRedirect(reverse('polls:index'))
 
 
@@ -252,7 +272,7 @@ def modelling(request):
 
 
 @login_required(login_url='login')
-def rating(request, building1, building2, building3):
+def rating(request, building1, building2, building3, building4, building5):
 
 
     try:
@@ -260,6 +280,8 @@ def rating(request, building1, building2, building3):
         place1 = int(request.POST.get(f'demo', 0))
         place2 = int(request.POST.get(f'demo1', 0))
         place3 = int(request.POST.get(f'demo2', 0))
+        place4 = int(request.POST.get(f'demo3', 0))
+        place5 = int(request.POST.get(f'demo4', 0))
 
 
         # if place1 == []:
@@ -281,11 +303,44 @@ def rating(request, building1, building2, building3):
         zip_list = zip(q1, q2)
         zip_list2 = zip(q1, q2)
         zip_list3 = zip(q1, q2)
-        return render(request, 'polls/index.html',{
-            "liste": zip_list, 
-            "liste2": zip_list2, 
-            "liste3": zip_list3,
-            'error_message':'You did not select a choice'})
+        zip_list4 = zip(q1, q2)
+        zip_list5 = zip(q1, q2)
+        zip_list6 = zip(q1, q2)
+        zip_list7 = zip(q1, q2)
+        zip_list8 = zip(q1, q2)
+        zip_list9 = zip(q1, q2)
+        zip_list10 = zip(q1, q2)
+        zip_list11 = zip(q1, q2)
+        zip_list12 = zip(q1, q2)
+        zip_list13 = zip(q1, q2)
+        zip_list14 = zip(q1, q2)
+        zip_list15 = zip(q1, q2)
+        zip_list16 = zip(q1, q2)
+        zip_list17 = zip(q1, q2)
+        zip_list18 = zip(q1, q2)
+        zip_list19 = zip(q1, q2)
+        zip_list20 = zip(q1, q2)
+        return render(request, 'polls/index.html',{"liste": zip_list, 
+                                                "liste2": zip_list2, 
+                                                "liste3": zip_list3,
+                                                "liste4": zip_list4,
+                                                "liste5": zip_list5,
+                                                "liste6": zip_list6,
+                                                "liste7": zip_list7,
+                                                "liste8": zip_list8,
+                                                "liste9": zip_list9,
+                                                "liste10": zip_list10,
+                                                "liste11": zip_list11,
+                                                "liste12": zip_list12,
+                                                "liste13": zip_list13,
+                                                "liste14": zip_list14,
+                                                "liste15": zip_list15,
+                                                "liste16": zip_list16,
+                                                "liste17": zip_list17,
+                                                "liste18": zip_list18,
+                                                "liste19": zip_list19,
+                                                "liste20": zip_list20,
+                                                'error_message':'You did not select a choice'})
 
     #conn = sqlite3.connect('db.sqlite3', timeout=40)
     #cursor = conn.cursor()
@@ -324,13 +379,13 @@ def rating(request, building1, building2, building3):
 
     print(place3)
 
-    evaluation = round(((place1+place2+place3)/3),3)
+    evaluation = round(((place1+place2+place3+place4+place5)/5),3)
 
 
     name = Customer.objects.filter(username_id=username).values_list('name', flat=True)
     
     print(building3)
-    for build, val in zip([building1, building2, building3], [place1,place2,place3]):
+    for build, val in zip([building1, building2, building3, building4, building5], [place1,place2,place3, place4, place5]):
         
         rate = Customer.objects.get(building_id=build, username_id=username, pub_date=timezone.now().minute-timedelta(minutes=10))
         
