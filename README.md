@@ -1,6 +1,10 @@
 # Smart_Tourism
 Recommendation System for Experiences in a city
 
+command to interact with psql
+```command
+heroku pg:psql postgresql-tetrahedral-81276 --app young-depths-38007
+```
 
 Command for requirements file
 ```command

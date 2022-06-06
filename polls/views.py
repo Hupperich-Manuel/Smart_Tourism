@@ -176,11 +176,11 @@ def modelling(request):
 
     if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None):
 
-        conn = psycopg2.connect(user='ecxcznqqewkgel',
+        conn = psycopg2.connect(user='lhmbwwvwzdowlh',
                                 password=os.environ['POSTSQL_PASSWORD'],
-                                host="ec2-34-227-120-79.compute-1.amazonaws.com",
+                                host="ec2-52-44-13-158.compute-1.amazonaws.com",
                                 port="5432",
-                                database="dav3cfrln85a50")
+                                database="d3uubo8qgsm2jg")
 
         # conn = psycopg2.connect(user='postgres',
         #                         password='shandy123',
