@@ -26,7 +26,7 @@
         <div id='map' width="50%" style='height:400px; width:500px; padding:10px'></div>
         <h5 id="evaluation"><h4 style = "position:relative; left:80px; top:2px; color: navy; max-width: 1400px;">Reached this point, we would like to rate how accurate our recommendation was and if you missed crucial information:</h5>
             <div style = "position:relative; left:80px; top:2px" >Rate from 1 to 5, where 1 is <i>Really Bad</i> and 5 is <i>Extremely Good</i>:</div>
-            <form action = "{% url 'polls:rating' q1.0 q1.1 q1.2%}" method="post">
+            <form action = "{% url 'polls:rating' q1.0 q1.1 q1.2 q1.3 q1.4%}" method="post">
             {% csrf_token %}
             <label style = "position:relative; left:80px; top:2px" ><b>{{ q1.0 }}</b>:</label>
     <fieldset class="rating" style = "position:relative; left:80px; top:3px">
@@ -318,7 +318,31 @@
                         type: 'Point',
                         coordinates: [start[4], start[5]]
                     }
-                }
+                    },
+                    {
+                        type: 'Feature',
+                        layout:{
+                            'icon-image':'your-image-id',
+                            'icon-size':.5
+                        },
+                        properties: {},
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [start[6], start[7]]
+                    }
+                    },
+                    {
+                        type: 'Feature',
+                        layout:{
+                            'icon-image':'your-image-id',
+                            'icon-size':.5
+                        },
+                        properties: {},
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [start[8], start[9]]
+                    }
+                    }
                 ]
                 }
             },

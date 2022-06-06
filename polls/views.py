@@ -181,11 +181,17 @@ def modelling(request):
                                 host="ec2-34-227-120-79.compute-1.amazonaws.com",
                                 port="5432",
                                 database="dav3cfrln85a50")
+
+        # conn = psycopg2.connect(user='postgres',
+        #                         password='shandy123',
+        #                         host="127.0.0.1",
+        #                         port="5432",
+        #                         database="new")
         cursor = conn.cursor()      
         #conn.commit()
 
         print('\nColumns in Customer table')
-        cursor.execute('''SELECT building, longitud, latitud, question_text1, question_text2, question_text3 FROM polls_question''')
+        cursor.execute('''SELECT * FROM polls_question''')
         data = cursor.fetchall()
 
 
@@ -223,6 +229,23 @@ def modelling(request):
                                     question_text1=answer1, 
                                     question_text2 = answer2,
                                     question_text3 = answer3,
+                                    question_text4 = answer4,
+                                    question_text5 = answer5,
+                                    question_text6 = answer6,
+                                    question_text7 = answer7,
+                                    question_text8 = answer8,
+                                    question_text9 = answer9,
+                                    question_text10 = answer10,
+                                    question_text11 = answer11,
+                                    question_text12 = answer12,
+                                    question_text13 = answer13,
+                                    question_text14 = answer14,
+                                    question_text15 = answer15,
+                                    question_text16 = answer16,
+                                    question_text17 = answer17,
+                                    question_text18 = answer18,
+                                    question_text19 = answer19,
+                                    question_text20 = answer20,
                                     building_id = Question.objects.get(building=selected_experience[index])
                                     )
                 select_place.append(selected_choice)
@@ -388,12 +411,12 @@ def rating(request, building1, building2, building3, building4, building5):
     for build, val in zip([building1, building2, building3, building4, building5], [place1,place2,place3, place4, place5]):
         
         #rate = Customer.objects.get(building_id=build, username_id=username, pub_date=timezone.now().minute-timedelta(minutes=10))
-        rate = Customer.objects.filter(building_id=build, username_id=username)
+        rate = Customer.objects.filter(building_id=build, username_id=username).last()
         
         #for index, rt in enumerate()
         print(f"rate: {rate}")
 
-        rate[-1].valuation = val
+        rate.valuation = val
 
         rate.save()
         #break

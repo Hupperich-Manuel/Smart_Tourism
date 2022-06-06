@@ -70,8 +70,6 @@ class Customer(models.Model):
     question_text18 = models.IntegerField('Do you enjoy crowded places?15')
     question_text19 = models.IntegerField('Do you enjoy crowded places?16')
     question_text20 = models.IntegerField('Do you enjoy crowded places?17')
-
     building = models.ForeignKey(Question,unique=False, to_field='building', on_delete=models.CASCADE, default=None)
     valuation = models.FloatField("Validation",default=0)
-    def __str__(self):
-        return self.name
+
