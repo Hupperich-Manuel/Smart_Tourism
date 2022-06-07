@@ -11,6 +11,10 @@ import psycopg2
 import numpy as np
 import os
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.shortcuts import render, redirect
+
+
 
 
 
@@ -174,7 +178,7 @@ def modelling(request):
                                                 'error_message':'You did not select a choice'})
 
 
-    if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None):
+    if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None)&(answer9 != None)&(answer10 != None)&(answer11 != None)&(answer12 != None)&(answer13 != None)&(answer14 != None)&(answer15 != None)&(answer16 != None)&(answer17 != None)&(answer18 != None)&(answer19 != None)&(answer20 != None):
 
         conn = psycopg2.connect(user='lhmbwwvwzdowlh',
                                 password='612b019afb4141573c0975be3c49699c457cae4ec77d2bb5565cec32605b42f0',
@@ -255,12 +259,12 @@ def modelling(request):
         Customer.objects.bulk_create(select_place)
 
         print(select_place)
-
-
-        
-
         return HttpResponseRedirect(reverse('polls:results', args=(selected_experience)))
+
+
     else:
+
+        messages.success(request, ("There was a Error submitting your responses (You must answer all questions), Try again"))
 
         q1 = [1, 0]
         q2 = ["Yes", "No"]
@@ -305,6 +309,8 @@ def rating(request, building1, building2, building3, building4, building5):
         place3 = int(request.POST.get(f'demo2', 0))
         place4 = int(request.POST.get(f'demo3', 0))
         place5 = int(request.POST.get(f'demo4', 0))
+    
+    opinion = request.POST.get('comments','')
 
 
         # if place1 == []:
@@ -321,6 +327,9 @@ def rating(request, building1, building2, building3, building4, building5):
 
         username = request.user
     except (KeyError, Customer.DoesNotExist):
+
+        messages.success(request, ("There was a Error submitting your responses (You must answer all questions), Try again"))
+
         q1 = [1, 0]
         q2 = ["Yes", "No"]
         zip_list = zip(q1, q2)
