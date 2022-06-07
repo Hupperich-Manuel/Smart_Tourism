@@ -73,5 +73,5 @@ class Customer(models.Model):
     question_text20 = models.IntegerField('Do you travel with your pet(s) or like to go to animal-friendly places (i.e. dog parks)?')
     building = models.ForeignKey(Question,unique=False, to_field='building', on_delete=models.CASCADE, default=None)
     valuation = models.FloatField("Validation",default=0)
-    opinion = models.CharField('Opinion', max_length=1000)
+    opinion = models.CharField('Opinion', max_length=1000, default=None)
 
