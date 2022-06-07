@@ -180,11 +180,11 @@ def modelling(request):
 
     if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None)&(answer9 != None)&(answer10 != None)&(answer11 != None)&(answer12 != None)&(answer13 != None)&(answer14 != None)&(answer15 != None)&(answer16 != None)&(answer17 != None)&(answer18 != None)&(answer19 != None)&(answer20 != None):
 
-        conn = psycopg2.connect(user='lhmbwwvwzdowlh',
-                                password='612b019afb4141573c0975be3c49699c457cae4ec77d2bb5565cec32605b42f0',
-                                host="ec2-52-44-13-158.compute-1.amazonaws.com",
+        conn = psycopg2.connect(user='dnuybwkfkkkzhs',
+                                password='7979237cf631382d56e08fb6f234c872130464098a262b6f36786d45b14aad92',
+                                host="ec2-52-206-182-219.compute-1.amazonaws.com",
                                 port="5432",
-                                database="d3uubo8qgsm2jg")
+                                database="ddtuntsd4kduid")
 
         # conn = psycopg2.connect(user='postgres',
         #                         password='shandy123',

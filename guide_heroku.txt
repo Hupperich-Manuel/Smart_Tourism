@@ -1,0 +1,19 @@
+If you are adding a new table:
+
+Delete the database and create a new one. Remember to change the password host name etc.
+Then:
+
+git add .
+
+git commit -m "changes in migrations"
+
+git push heroku main
+
+heroku run python manage.py migrate (the tables from polls app wont migrate)
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+Hopwfully heroku does also change
+
