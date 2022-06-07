@@ -209,7 +209,7 @@ def modelling(request):
 
             print(column)
             
-            places[index] = [column[0], column[1],column[2], np.dot(list(column[3:]), dot_product_answer)]
+            places[index] = [column[0], column[1],column[2], np.dot(list(column[3:-1]), dot_product_answer)]
         
         places = dict(sorted(places.items(), key=lambda x: x[1][3], reverse=True)[:5])
 
