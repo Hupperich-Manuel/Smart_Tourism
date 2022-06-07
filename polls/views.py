@@ -310,7 +310,7 @@ def rating(request, building1, building2, building3, building4, building5):
         place4 = int(request.POST.get(f'demo3', 0))
         place5 = int(request.POST.get(f'demo4', 0))
     
-        opinions = request.POST.get('comments','')
+        opinions = request.POST.get('comments',None)
 
 
         # if place1 == []:
