@@ -159,7 +159,7 @@
                         names.push($(this).attr('name'));
                     }
                 });
-                for(var i = 0, cnt = names.length; i < cnt; i++) {
+                for(var i = 0, cnt = 16; i < cnt; i++) {
                     if(!$('input[name="' + names[i] + '"]').is(':checked')) {
                         allChecked = false;
                     }
