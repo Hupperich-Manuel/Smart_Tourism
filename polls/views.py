@@ -232,9 +232,10 @@ def modelling(request):
 
 
         select_place = []
+        selected_experience_withoutdot_product = []
         for index, building in enumerate(selected_experience):
 
-             if index%4 == 0:
+            if index%4 == 0:
 
                 selected_choice = Customer(username_id=User.objects.get(username=request.user),
                                     email= request.user.email,
@@ -266,13 +267,15 @@ def modelling(request):
                                     opinion = "No Opinion"
                                     )
                 select_place.append(selected_choice)
+            if index%3 != 0:
+                selected_experience_withoutdot_product.append(selected_experience[index])
 
   
 
         Customer.objects.bulk_create(select_place)
 
         print(select_place)
-        return HttpResponseRedirect(reverse('polls:results', args=(selected_experience)))
+        return HttpResponseRedirect(reverse('polls:results', args=(selected_experience_withoutdot_product)))
 
 
     else:
