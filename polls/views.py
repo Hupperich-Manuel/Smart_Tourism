@@ -189,11 +189,11 @@ def modelling(request):
 
     if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None)&(answer9 != None)&(answer10 != None)&(answer11 != None)&(answer12 != None)&(answer13 != None)&(answer14 != None)&(answer15 != None)&(answer16 != None)&(answer17 != None)&(answer18 != None)&(answer19 != None)&(answer20 != None):
 
-        conn = psycopg2.connect(user='dnuybwkfkkkzhs',
-                                password='7979237cf631382d56e08fb6f234c872130464098a262b6f36786d45b14aad92',
-                                host="ec2-52-206-182-219.compute-1.amazonaws.com",
+        conn = psycopg2.connect(user='uwbnvdnpudegod',
+                                password='116f8862754a54e0218cb35ff53b321bf6fa28f5419c243a6f3da66602318819',
+                                host="ec2-54-165-178-178.compute-1.amazonaws.com",
                                 port="5432",
-                                database="ddtuntsd4kduid")
+                                database="d9o9greop9leue")
 
         # conn = psycopg2.connect(user='postgres',
         #                         password='shandy123',
@@ -228,6 +228,7 @@ def modelling(request):
             selected_experience.append(str(Question.objects.get(pk=places[key][0])))
             selected_experience.append(str(places[key][1]))
             selected_experience.append(str(places[key][2]))
+            selected_experience.append(str(places[key][3]))
 
         select_place = []
         for index, building in enumerate(selected_experience):
@@ -260,6 +261,7 @@ def modelling(request):
                                     question_text19 = answer19,
                                     question_text20 = answer20,
                                     building_id = Question.objects.get(building=selected_experience[index]),
+                                    dot_product = building[3],
                                     opinion = "No Opinion"
                                     )
                 select_place.append(selected_choice)

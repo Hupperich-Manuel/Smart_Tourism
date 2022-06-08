@@ -1,6 +1,12 @@
 # Smart_Tourism
 Recommendation System for Experiences in a city
 
+Download a backup of the data
+```command
+heroku pg:backups:capture
+heroku pg:backups:download
+```
+
 command to interact with psql
 ```command
 heroku pg:psql postgresql-tetrahedral-81276 --app young-depths-38007
