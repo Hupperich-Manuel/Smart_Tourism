@@ -18,12 +18,10 @@
     <h2> Here are the results of the votings</h2>
     <fieldset>
     <ol>
-    {% for description, experience in descript_places %}
+    {% for experience in descript_places %}
         <li style = "position:relative; left:20px; top:2px">
-            <p>{{ experience }}:</p> 
-        </li>
-        <li style= "position:relative; left:40px; top:2px; font-size: 10">
-            <p>{{ description }}</p>
+            <p>{{ experience.1 }}:</p> 
+            <p style= "position:relative; left:40px; top:2px; font-size: 10">{{ experience.0 }}</p>
         </li>
     {% endfor %}
     </ol>
