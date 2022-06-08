@@ -19,7 +19,7 @@
 <body id="a">
     {%  include 'registration/navbar.html' %}
     <fieldset>
-    <form id="myFormId" action = "{% url 'polls:modelling' %}" method="post">
+    <form action = "{% url 'polls:modelling' %}" method="post">
     
     {% csrf_token %}
     <legend ><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you prefer popular places with a lot of foot traffic over quiet places?</h4></legend>
@@ -152,14 +152,8 @@
 
         $(function() {
             $('input:radio').change(function(){
-                var names = [];
                 var allChecked = true;
-                $('input:radio').each(function(){
-                    if(names.indexOf($(this).attr('name')) === -1) {
-                        names.push($(this).attr('name'));
-                    }
-                });
-                for(var i = 1, cnt = 17; i < cnt; i++) {
+                for(let i = 1, cnt = 17; i < cnt; i++) {
                     if(!$('input[name="answer' + [i] + '"]').is(':checked')) {
                         allChecked = false;
                     }
