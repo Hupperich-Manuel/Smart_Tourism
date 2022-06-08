@@ -16,134 +16,134 @@
         }
     </style>
 </head>
-<body id="a" style="margin: 10px; padding: 10px; text-align: center;">
+<body id="a">
     {%  include 'registration/navbar.html' %}
     <fieldset>
     <form id="myFormId" action = "{% url 'polls:modelling' %}" method="post">
     
     {% csrf_token %}
-    <legend ><h4 style='left-margin:2px'>Do you prefer popular places with a lot of foot traffic over quiet places?</h4></legend>
+    <legend ><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you prefer popular places with a lot of foot traffic over quiet places?</h4></legend>
     {% for answer1, choice1 in liste2 %}
-        <input type="radio" name="answer1" id="answer1" value="{{answer1 }}" style='left-margin:2px'>
+        <input type="radio" name="answer1" id="answer1" value="{{answer1 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice1 }}</label><br>
     {% endfor %}
 
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Do you like to explore popular places?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you like to explore popular places?</h4></legend>
     {% for answer2, choice2 in liste3 %}
-        <input type="radio" name="answer2" id="answer2" value="{{ answer2 }}" style='left-margin:2px'>
+        <input type="radio" name="answer2" id="answer2" value="{{ answer2 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice2 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Are you willing to spend money on pricey experiences?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you willing to spend money on pricey experiences?</h4></legend>
     {% for answer3, choice3 in liste %}
-        <input type="radio" name="answer3" id="answer3" value="{{ answer3 }}" style='left-margin:2px'>
+        <input type="radio" name="answer3" id="answer3" value="{{ answer3 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice3 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Do you like to explore nature and green spaces when in a new city?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you like to explore nature and green spaces when in a new city?</h4></legend>
     {% for answer4, choice4 in liste4 %}
-        <input type="radio" name="answer4" id="answer4" value="{{ answer4 }}" style='left-margin:2px'>
+        <input type="radio" name="answer4" id="answer4" value="{{ answer4 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice4 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Is it important to you to go to scenic places with great photo opportunities?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Is it important to you to go to scenic places with great photo opportunities?</h4></legend>
     {% for answer5, choice5 in liste5 %}
-        <input type="radio" name="answer5" id="answer5" value="{{ answer5 }}" style='left-margin:2px'>
+        <input type="radio" name="answer5" id="answer5" value="{{ answer5 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice5 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Do you travel with your pet(s) or like to go to animal-friendly places (i.e. dog parks)?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you travel with your pet(s) or like to go to animal-friendly places (i.e. dog parks)?</h4></legend>
     {% for answer6, choice6 in liste6 %}
-        <input type="radio" name="answer6" id="answer6" value="{{ answer6 }}" style='left-margin:2px'>
+        <input type="radio" name="answer6" id="answer6" value="{{ answer6 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice6 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Are you into literature and books?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you into literature and books?</h4></legend>
     {% for answer7, choice7 in liste7 %}
-        <input type="radio" name="answer7" id="answer7" value="{{ answer7 }}" style='left-margin:2px'>
+        <input type="radio" name="answer7" id="answer7" value="{{ answer7 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice7 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Do you like laid-back and casual spots?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you like laid-back and casual spots?</h4></legend>
     {% for answer8, choice8 in liste8 %}
-        <input type="radio" name="answer8" id="answer8" value="{{ answer8 }}" style='left-margin:2px'>
+        <input type="radio" name="answer8" id="answer8" value="{{ answer8 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice8 }}</label><br>
     {% endfor %}
 
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Do you need publicly available Wifi options during your visit?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you need publicly available Wifi options during your visit?</h4></legend>
     {% for answer9, choice9 in liste9 %}
-        <input type="radio" name="answer9" id="answer9" value="{{ answer9 }}" style='left-margin:2px'>
+        <input type="radio" name="answer9" id="answer9" value="{{ answer9 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice9 }}</label><br>
     {% endfor %}
 
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Are you interested in history and historic places?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you interested in history and historic places?</h4></legend>
     {% for answer10, choice10 in liste10 %}
-        <input type="radio" name="answer10" id="answer10" value="{{ answer10 }}" style='left-margin:2px'>
+        <input type="radio" name="answer10" id="answer10" value="{{ answer10 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice10 }}</label><br>
     {% endfor %}
 
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Are you a person that likes to visit museums (art, history, curiosities, etc.)?'</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you a person that likes to visit museums (art, history, curiosities, etc.)?'</h4></legend>
     {% for answer11, choice11 in liste11 %}
-        <input type="radio" name="answer11" id="answer11" value="{{ answer11 }}" style='left-margin:2px'>
+        <input type="radio" name="answer11" id="answer11" value="{{ answer11 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice11 }}</label><br>
     {% endfor %}
 
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Do you enjoy street performances?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you enjoy street performances?</h4></legend>
     {% for answer12, choice12 in liste12 %}
-        <input type="radio" name="answer12" id="answer12" value="{{ answer12 }}" style='left-margin:2px'>
+        <input type="radio" name="answer12" id="answer12" value="{{ answer12 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice12 }}</label><br>
     {% endfor %}
 
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Are you looking for authentic local experiences?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you looking for authentic local experiences?</h4></legend>
     {% for answer13, choice13 in liste13 %}
-        <input type="radio" name="answer13" id="answer13" value="{{ answer13 }}" style='left-margin:2px'>
+        <input type="radio" name="answer13" id="answer13" value="{{ answer13 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice13 }}</label><br>
     {% endfor %}
 
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Are you a sporty person and looking for sports opportunities while travelling?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you a sporty person and looking for sports opportunities while travelling?</h4></legend>
     {% for answer14, choice14 in liste14 %}
-        <input type="radio" name="answer14" id="answer14" value="{{ answer14 }}" style='left-margin:2px'>
+        <input type="radio" name="answer14" id="answer14" value="{{ answer14 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice14 }}</label><br>
     {% endfor %}
 
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Do you usually travel with your family and look for family-friendly places</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you usually travel with your family and look for family-friendly places</h4></legend>
     {% for answer15, choice15 in liste15 %}
-        <input type="radio" name="answer15" id="answer15" value="{{ answer15 }}" style='left-margin:2px'>
+        <input type="radio" name="answer15" id="answer15" value="{{ answer15 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice15 }}</label><br>
     {% endfor %}
 
 
     {% csrf_token %}
-    <legend><h4 style='left-margin:2px'>Are you travelling with a romantic partner and want to find a special place to take them to?</h4></legend>
+    <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you travelling with a romantic partner and want to find a special place to take them to?</h4></legend>
     {% for answer16, choice16 in liste16 %}
-        <input type="radio" name="answer16" id="answer16" value="{{ answer16 }}" style='left-margin:2px'>
+        <input type="radio" name="answer16" id="answer16" value="{{ answer16 }}" style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice16 }}</label><br>
     {% endfor %} 
 
     </fieldset>
-    <input type="submit" value="Submit" id="submit" disabled="disabled">
+    <input type="submit" value="Submit" id="submit" disabled>
     </form>
     <script>
         if ( window.history.replaceState ) {
@@ -159,7 +159,7 @@
                         names.push($(this).attr('name'));
                     }
                 });
-                for(var i = 0, cnt = 17; i < cnt; i++) {
+                for(var i = 1, cnt = 17; i < cnt; i++) {
                     if(!$('input[name="answer' + [i] + '"]').is(':checked')) {
                         allChecked = false;
                     }
