@@ -260,7 +260,7 @@ def modelling(request):
                                     question_text19 = answer19,
                                     question_text20 = answer20,
                                     building_id = Question.objects.get(building=selected_experience[index]),
-                                    opinions = "No Opinion"
+                                    opinion = "No Opinion"
                                     )
                 select_place.append(selected_choice)
 
