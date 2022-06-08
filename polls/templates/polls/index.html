@@ -58,21 +58,21 @@
     {% endfor %}
 
     {% csrf_token %}
-    <legend><h4>Do you like to explore nature and green spaces when in a new city?</h4></legend>
+    <legend><h4>Do you travel with your pet(s) or like to go to animal-friendly places (i.e. dog parks)?</h4></legend>
     {% for answer6, choice6 in liste6 %}
         <input type="radio" name="answer6" id="answer6" value="{{ answer6 }}">
         <label>{{ choice6 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
-    <legend><h4>Is it important to you to go to scenic places with great photo opportunities?</h4></legend>
+    <legend><h4>Are you into literature and books?</h4></legend>
     {% for answer7, choice7 in liste7 %}
         <input type="radio" name="answer7" id="answer7" value="{{ answer7 }}">
         <label>{{ choice7 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
-    <legend><h4>Do you travel with your pet(s) or like to go to animal-friendly places (i.e. dog parks)?</h4></legend>
+    <legend><h4>Do you like laid-back and casual spots?</h4></legend>
     {% for answer8, choice8 in liste8 %}
         <input type="radio" name="answer8" id="answer8" value="{{ answer8 }}">
         <label>{{ choice8 }}</label><br>
@@ -80,7 +80,7 @@
 
 
     {% csrf_token %}
-    <legend><h4>Are you into literature and books?</h4></legend>
+    <legend><h4>Do you need publicly available Wifi options during your visit?</h4></legend>
     {% for answer9, choice9 in liste9 %}
         <input type="radio" name="answer9" id="answer9" value="{{ answer9 }}">
         <label>{{ choice9 }}</label><br>
@@ -88,7 +88,7 @@
 
 
     {% csrf_token %}
-    <legend><h4>Do you like laid-back and casual spots?</h4></legend>
+    <legend><h4>Are you interested in history and historic places?</h4></legend>
     {% for answer10, choice10 in liste10 %}
         <input type="radio" name="answer10" id="answer10" value="{{ answer10 }}">
         <label>{{ choice10 }}</label><br>
@@ -96,7 +96,7 @@
 
 
     {% csrf_token %}
-    <legend><h4>Do you need publicly available Wifi options during your visit?</h4></legend>
+    <legend><h4>Are you a person that likes to visit museums (art, history, curiosities, etc.)?'</h4></legend>
     {% for answer11, choice11 in liste11 %}
         <input type="radio" name="answer11" id="answer11" value="{{ answer11 }}">
         <label>{{ choice11 }}</label><br>
@@ -104,7 +104,7 @@
 
 
     {% csrf_token %}
-    <legend><h4>Are you interested in history and historic places?</h4></legend>
+    <legend><h4>Do you enjoy street performances?</h4></legend>
     {% for answer12, choice12 in liste12 %}
         <input type="radio" name="answer12" id="answer12" value="{{ answer12 }}">
         <label>{{ choice12 }}</label><br>
@@ -112,7 +112,7 @@
 
 
     {% csrf_token %}
-    <legend><h4>Are you a person that likes to visit museums (art, history, curiosities, etc.)?</h4></legend>
+    <legend><h4>Are you looking for authentic local experiences?</h4></legend>
     {% for answer13, choice13 in liste13 %}
         <input type="radio" name="answer13" id="answer13" value="{{ answer13 }}">
         <label>{{ choice13 }}</label><br>
@@ -120,7 +120,7 @@
 
 
     {% csrf_token %}
-    <legend><h4>Do you enjoy street performances?</h4></legend>
+    <legend><h4>Are you a sporty person and looking for sports opportunities while travelling?</h4></legend>
     {% for answer14, choice14 in liste14 %}
         <input type="radio" name="answer14" id="answer14" value="{{ answer14 }}">
         <label>{{ choice14 }}</label><br>
@@ -128,7 +128,7 @@
 
 
     {% csrf_token %}
-    <legend><h4>Are you looking for authentic local experiences?</h4></legend>
+    <legend><h4>Do you usually travel with your family and look for family-friendly places</h4></legend>
     {% for answer15, choice15 in liste15 %}
         <input type="radio" name="answer15" id="answer15" value="{{ answer15 }}">
         <label>{{ choice15 }}</label><br>
@@ -136,27 +136,11 @@
 
 
     {% csrf_token %}
-    <legend><h4>Are you a sporty person and looking for sports opportunities while travelling?</h4></legend>
+    <legend><h4>Are you travelling with a romantic partner and want to find a special place to take them to?</h4></legend>
     {% for answer16, choice16 in liste16 %}
         <input type="radio" name="answer16" id="answer16" value="{{ answer16 }}">
         <label>{{ choice16 }}</label><br>
-    {% endfor %}
-
-
-    {% csrf_token %}
-    <legend><h4>Do you usually travel with your family and look for family-friendly places?</h4></legend>
-    {% for answer17, choice17 in liste17 %}
-        <input type="radio" name="answer17" id="answer17" value="{{ answer17 }}">
-        <label>{{ choice17 }}</label><br>
-    {% endfor %}
-
-
-    {% csrf_token %}
-    <legend><h4>Are you travelling with a romantic partner and want to find a special place to take them to?</h4></legend>
-    {% for answer18, choice18 in liste18 %}
-        <input type="radio" name="answer18" id="answer18" value="{{ answer18 }}">
-        <label>{{ choice18 }}</label><br>
-    {% endfor %}    
+    {% endfor %} 
 
     </fieldset>
     <input type="submit" value="Vote" id="register" disabled="disabled">
