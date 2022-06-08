@@ -24,7 +24,7 @@
     {% csrf_token %}
     <legend ><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you prefer popular places with a lot of foot traffic over quiet places?</h4></legend>
     {% for answer1, choice1 in liste2 %}
-        <input type="radio" name="answer1" id="answer1" value="{{answer1 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer1" id="answer1" value="{{answer1 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice1 }}</label><br>
     {% endfor %}
 
@@ -32,49 +32,49 @@
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you like to explore popular places?</h4></legend>
     {% for answer2, choice2 in liste3 %}
-        <input type="radio" name="answer2" id="answer2" value="{{ answer2 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer2" id="answer2" value="{{ answer2 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice2 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you willing to spend money on pricey experiences?</h4></legend>
     {% for answer3, choice3 in liste %}
-        <input type="radio" name="answer3" id="answer3" value="{{ answer3 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer3" id="answer3" value="{{ answer3 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice3 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you like to explore nature and green spaces when in a new city?</h4></legend>
     {% for answer4, choice4 in liste4 %}
-        <input type="radio" name="answer4" id="answer4" value="{{ answer4 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer4" id="answer4" value="{{ answer4 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice4 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Is it important to you to go to scenic places with great photo opportunities?</h4></legend>
     {% for answer5, choice5 in liste5 %}
-        <input type="radio" name="answer5" id="answer5" value="{{ answer5 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer5" id="answer5" value="{{ answer5 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice5 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you travel with your pet(s) or like to go to animal-friendly places (i.e. dog parks)?</h4></legend>
     {% for answer6, choice6 in liste6 %}
-        <input type="radio" name="answer6" id="answer6" value="{{ answer6 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer6" id="answer6" value="{{ answer6 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice6 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you into literature and books?</h4></legend>
     {% for answer7, choice7 in liste7 %}
-        <input type="radio" name="answer7" id="answer7" value="{{ answer7 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer7" id="answer7" value="{{ answer7 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice7 }}</label><br>
     {% endfor %}
 
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you like laid-back and casual spots?</h4></legend>
     {% for answer8, choice8 in liste8 %}
-        <input type="radio" name="answer8" id="answer8" value="{{ answer8 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer8" id="answer8" value="{{ answer8 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice8 }}</label><br>
     {% endfor %}
 
@@ -82,7 +82,7 @@
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you need publicly available Wifi options during your visit?</h4></legend>
     {% for answer9, choice9 in liste9 %}
-        <input type="radio" name="answer9" id="answer9" value="{{ answer9 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer9" id="answer9" value="{{ answer9 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice9 }}</label><br>
     {% endfor %}
 
@@ -90,7 +90,7 @@
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you interested in history and historic places?</h4></legend>
     {% for answer10, choice10 in liste10 %}
-        <input type="radio" name="answer10" id="answer10" value="{{ answer10 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer10" id="answer10" value="{{ answer10 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice10 }}</label><br>
     {% endfor %}
 
@@ -98,7 +98,7 @@
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you a person that likes to visit museums (art, history, curiosities, etc.)?'</h4></legend>
     {% for answer11, choice11 in liste11 %}
-        <input type="radio" name="answer11" id="answer11" value="{{ answer11 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer11" id="answer11" value="{{ answer11 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice11 }}</label><br>
     {% endfor %}
 
@@ -106,7 +106,7 @@
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you enjoy street performances?</h4></legend>
     {% for answer12, choice12 in liste12 %}
-        <input type="radio" name="answer12" id="answer12" value="{{ answer12 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer12" id="answer12" value="{{ answer12 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice12 }}</label><br>
     {% endfor %}
 
@@ -114,7 +114,7 @@
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you looking for authentic local experiences?</h4></legend>
     {% for answer13, choice13 in liste13 %}
-        <input type="radio" name="answer13" id="answer13" value="{{ answer13 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer13" id="answer13" value="{{ answer13 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice13 }}</label><br>
     {% endfor %}
 
@@ -122,7 +122,7 @@
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you a sporty person and looking for sports opportunities while travelling?</h4></legend>
     {% for answer14, choice14 in liste14 %}
-        <input type="radio" name="answer14" id="answer14" value="{{ answer14 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer14" id="answer14" value="{{ answer14 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice14 }}</label><br>
     {% endfor %}
 
@@ -130,7 +130,7 @@
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you usually travel with your family and look for family-friendly places</h4></legend>
     {% for answer15, choice15 in liste15 %}
-        <input type="radio" name="answer15" id="answer15" value="{{ answer15 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer15" id="answer15" value="{{ answer15 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice15 }}</label><br>
     {% endfor %}
 
@@ -138,7 +138,7 @@
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you travelling with a romantic partner and want to find a special place to take them to?</h4></legend>
     {% for answer16, choice16 in liste16 %}
-        <input type="radio" name="answer16" id="answer16" value="{{ answer16 }}" style="margin: 2px; padding: 2px; text-align: left;">
+        <input type="radio" name="answer16" id="answer16" value="{{ answer16 }}" onclick="Check(this)" required style="margin: 2px; padding: 2px; text-align: left;">
         <label>{{ choice16 }}</label><br>
     {% endfor %} 
 
@@ -150,19 +150,22 @@
           window.history.replaceState( null, null, window.location.href );
         }
 
-        $(function() {
-            $('input:radio').change(function(){
-                var allChecked = true;
-                for(let i = 1, cnt = 2; i < cnt; i++) {
-                    if(!$('input[name="answer' + [i] + '"]').is(':checked')) {
-                        allChecked = false;
-                    }
-                }
-                if(allChecked) {
-                    $('#submit').removeAttr('disabled');
-                }
-            })
-        });
+        function Check(el) {
+            var button = document.getElementById("submit");
+          
+            var nbr_checked_radios = document.querySelectorAll('input[type=radio]:checked').length;
+          
+            /*
+            var nbr_of_checked_no = document.querySelectorAll('input[type=radio][value="0"]:checked').length;
+               'nbr_of_checked_no>0' : mean if at least one of the 'no' options checked
+               'nbr_checked_radios==0' : mean if no radio button is checked 
+            */
+            if (nbr_checked_radios>1) {
+              button.disabled = false;
+            } else {
+              button.disabled = true;
+            }
+          }
         </script>
     
 </body>
