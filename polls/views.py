@@ -83,12 +83,21 @@ def ResultsView(request, place1,lon1, lat1, place2,lon2, lat2,  place3, lon3, la
 
     coordinates_start = [lon1, lat1, lon2, lat2,lon3, lat3,lon4, lat4,lon5, lat5]
 
+    descriptions = []
+    for place in result:
+        descrip = Question.objects.get(building = place)
+        descriptions.append(descrip)
+    
+    descript_places = zip(descriptions, result)
+
     mapbox_access_token = 'mapbox_access_token'
     return render(request, 'polls/map.html', 
                 { 'mapbox_access_token': 'pk.eyJ1IjoibWh1cHAiLCJhIjoiY2wyN3YzMTRzMDFiZzNrbzhoZXZtcG4yYiJ9.q9cjSjkeABVIX-TIVHeHYA' ,
                     "q1": result,
-                    "coordinates_start":coordinates_start
+                    "coordinates_start":coordinates_start,
+                    "descript_places":descript_places
                     })
+    
 
 @login_required(login_url='login')
 def default_map(request):
