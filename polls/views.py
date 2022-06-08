@@ -86,7 +86,7 @@ def ResultsView(request, place1,lon1, lat1, place2,lon2, lat2,  place3, lon3, la
     descriptions = []
     for place in result:
         descrip = Question.objects.get(building = place)
-        descriptions.append(descrip)
+        descriptions.append(descrip.description)
     
     descript_places = zip(descriptions, result)
 
