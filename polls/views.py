@@ -68,10 +68,10 @@ def IndexView(request):
                                                 "liste14": zip_list14,
                                                 "liste15": zip_list15,
                                                 "liste16": zip_list16,
-                                                "liste17": zip_list17,
-                                                "liste18": zip_list18,
-                                                "liste19": zip_list19,
-                                                "liste20": zip_list20
+                                                # "liste17": zip_list17,
+                                                # "liste18": zip_list18,
+                                                # "liste19": zip_list19,
+                                                # "liste20": zip_list20
                                                 })
 
 @login_required(login_url='login')
@@ -134,10 +134,10 @@ def modelling(request):
         answer14 = request.POST['answer14']
         answer15 = request.POST['answer15']
         answer16 = request.POST['answer16']
-        answer17 = request.POST['answer17']
-        answer18 = request.POST['answer18']
-        answer19 = request.POST['answer19']
-        answer20 = request.POST['answer20']
+        # answer17 = request.POST['answer17']
+        # answer18 = request.POST['answer18']
+        # answer19 = request.POST['answer19']
+        # answer20 = request.POST['answer20']
 
         print(answer3)
 
@@ -180,14 +180,14 @@ def modelling(request):
                                                 "liste14": zip_list14,
                                                 "liste15": zip_list15,
                                                 "liste16": zip_list16,
-                                                "liste17": zip_list17,
-                                                "liste18": zip_list18,
-                                                "liste19": zip_list19,
-                                                "liste20": zip_list20,
+                                                # "liste17": zip_list17,
+                                                # "liste18": zip_list18,
+                                                # "liste19": zip_list19,
+                                                # "liste20": zip_list20,
                                                 'error_message':'You did not select a choice'})
 
 
-    if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None)&(answer9 != None)&(answer10 != None)&(answer11 != None)&(answer12 != None)&(answer13 != None)&(answer14 != None)&(answer15 != None)&(answer16 != None)&(answer17 != None)&(answer18 != None)&(answer19 != None)&(answer20 != None):
+    if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None)&(answer9 != None)&(answer10 != None)&(answer11 != None)&(answer12 != None)&(answer13 != None)&(answer14 != None)&(answer15 != None)&(answer16 != None):
 
         conn = psycopg2.connect(user='uwbnvdnpudegod',
                                 password='116f8862754a54e0218cb35ff53b321bf6fa28f5419c243a6f3da66602318819',
@@ -212,7 +212,7 @@ def modelling(request):
         places = {}
         dot_product_answer = [int(answer1), int(answer2), int(answer3), int(answer4), int(answer5), int(answer6), int(answer7),
                               int(answer8), int(answer9), int(answer10), int(answer11), int(answer12), int(answer13), int(answer14),
-                              int(answer15), int(answer16), int(answer17), int(answer18), int(answer19), int(answer20)]
+                              int(answer15), int(answer16)]
         
         for index, column in enumerate(data):
 
@@ -258,10 +258,10 @@ def modelling(request):
                                     question_text14 = answer14,
                                     question_text15 = answer15,
                                     question_text16 = answer16,
-                                    question_text17 = answer17,
-                                    question_text18 = answer18,
-                                    question_text19 = answer19,
-                                    question_text20 = answer20,
+                                    # question_text17 = answer17,
+                                    # question_text18 = answer18,
+                                    # question_text19 = answer19,
+                                    # question_text20 = answer20,
                                     building_id = Question.objects.get(building=selected_experience[index]),
                                     dot_product = selected_experience[index+3],
                                     opinion = "No Opinion"
@@ -300,10 +300,10 @@ def modelling(request):
         zip_list14 = zip(q1, q2)
         zip_list15 = zip(q1, q2)
         zip_list16 = zip(q1, q2)
-        zip_list17 = zip(q1, q2)
-        zip_list18 = zip(q1, q2)
-        zip_list19 = zip(q1, q2)
-        zip_list20 = zip(q1, q2)
+        # zip_list17 = zip(q1, q2)
+        # zip_list18 = zip(q1, q2)
+        # zip_list19 = zip(q1, q2)
+        # zip_list20 = zip(q1, q2)
         return HttpResponseRedirect(reverse('polls:index'))
 
 
@@ -384,10 +384,10 @@ def rating(request, building1, building2, building3, building4, building5):
                                                 "liste14": zip_list14,
                                                 "liste15": zip_list15,
                                                 "liste16": zip_list16,
-                                                "liste17": zip_list17,
-                                                "liste18": zip_list18,
-                                                "liste19": zip_list19,
-                                                "liste20": zip_list20,
+                                                # "liste17": zip_list17,
+                                                # "liste18": zip_list18,
+                                                # "liste19": zip_list19,
+                                                # "liste20": zip_list20,
                                                 'error_message':'You did not select a choice'})
 
     #conn = sqlite3.connect('db.sqlite3', timeout=40)
