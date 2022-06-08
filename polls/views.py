@@ -227,8 +227,8 @@ def modelling(request):
         for key in places.keys():
             selected_experience.append(str(Question.objects.get(pk=places[key][0])))
             selected_experience.append(str(places[key][1]))
-            selected_experience.append(str(places[key][2]))
             selected_experience.append(str(places[key][3]))
+
 
         select_place = []
         for index, building in enumerate(selected_experience):
@@ -261,7 +261,7 @@ def modelling(request):
                                     question_text19 = answer19,
                                     question_text20 = answer20,
                                     building_id = Question.objects.get(building=selected_experience[index]),
-                                    dot_product = building[3],
+                                    dot_product = selected_experience[index+2],
                                     opinion = "No Opinion"
                                     )
                 select_place.append(selected_choice)
