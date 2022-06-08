@@ -20,10 +20,10 @@
     <ol>
     {% for description, experience in descript_places %}
         <li style = "position:relative; left:20px; top:2px">
-            <p>{{ experience.1 }}:</p> 
+            <p>{{ experience }}:</p> 
         </li>
-        <li style= "position:relative; left:40px; top:2px">
-            <p>{{ description.0 }}</p>
+        <li style= "position:relative; left:40px; top:2px; font-size: 10">
+            <p>{{ description }}</p>
         </li>
     {% endfor %}
     </ol>
