@@ -34,13 +34,13 @@
     {% endfor %}
     </ol>
     </fieldset>
-        <div id='map' width="100%" style='height:500px; width:500px; padding:10px; left:30px'></div>
+        <div id='map' width="100%" style='height:520px; width:500px; padding:10px; left:30px'></div>
         <h5 id="evaluation"><h4 style = "position:relative; left:80px; top:2px; color: navy; max-width: 1400px;">Reached this point, we would like to rate <u><b>how accurate</b></u> our <u><b>recommendation</b></u> and also the <u><b>order of preference</b></u> was and if you missed crucial information:</h5>
             <div style = "position:relative; left:80px; top:2px" >Rate from 1 to 5, where 1 is <i>Really Bad</i> and 5 is <i>Extremely Good</i>:</div>
             <form action = "{% url 'polls:rating' q1.0 q1.1 q1.2 q1.3 q1.4%}" method="post">
             {% csrf_token %}
             <label style = "position:relative; left:80px; top:2px; margin-top:20px;" ><b>{{ q1.0 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:15px;">
         
         <input id="demo-1" type="radio" name="demo" value="1"> 
         <label for="demo-1">1 star</label>

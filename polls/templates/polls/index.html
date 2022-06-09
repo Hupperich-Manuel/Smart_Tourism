@@ -12,8 +12,9 @@
         html {
             margin: 0;
             padding: 0;
-            height: 140% !important;
+            height: 140%;
             background: #7abecc !important;
+            left:30px;
         }
     </style>
 </head>
@@ -21,10 +22,10 @@
     {%  include 'registration/navbar.html' %}
       
     <fieldset>
-    <form action = "{% url 'polls:modelling' %}" method="post" class="rating-form-2">
+    <form action = "{% url 'polls:modelling' %}" method="post" class="rating-form-2" style='margin:40px'>
     
     {% csrf_token %}
-    <legend ><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you prefer popular places with a lot of foot traffic over quiet places?</h4></legend>
+    <legend ><h4 style="margin: 2px; padding: 2px;">Do you prefer popular places with a lot of foot traffic over quiet places?</h4></legend>
     {% for answer1, choice1 in liste2 %}
         {% if answer1 %}
         <label for="happy2">
@@ -279,7 +280,7 @@
         <label>
             <input type="radio" name="answer16" class="happy" id="happy2" value="{{ answer16 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice3 }}</label>
+        {{ choice16 }}</label>
     {% else %}
         <label>
             <input type="radio" name="answer16" class="sad" id="sad2" value="{{ answer16 }}" onclick="Check(this)" required>
