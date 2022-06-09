@@ -267,6 +267,7 @@ def modelling(request):
                                     opinion = "No Opinion"
                                     )
                 select_place.append(selected_choice)
+                
             if (index%3 != 0)|(index==0):
                 selected_experience_withoutdot_product.append(selected_experience[index])
 
