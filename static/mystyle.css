@@ -94,7 +94,7 @@ label[for]:hover {
 }
 
 .stars label {
-    color: lightgray !important;
+    color: rgb(153, 152, 152) !important;
 }
 
 .stars label:hover {

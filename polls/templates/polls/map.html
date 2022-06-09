@@ -5,11 +5,19 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/index_style.css' %}">
 
     <link rel="stylesheet" href="{% static 'mystyle.css' %}">
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
-
+    <style>
+        body,
+        html {
+            height: 120%%;
+            margin: auto;
+            width:100%;
+        }
+    </style>
 </head>
     <body>
 
@@ -21,18 +29,18 @@
     {% for experience in descript_places %}
         <li style = "position:relative; left:20px; top:2px">
             <p>{{experience.1}}:</p> 
-            <p style= "position:relative; left:40px; top:2px; font-size: 5">{{experience.0}}</p>
+            <p style= "position:relative; left:40px; top:2px; font-size: 17px; color:rgb(65, 65, 65)">{{experience.0}}</p>
         </li>
     {% endfor %}
     </ol>
     </fieldset>
-        <div id='map' width="50%" style='height:400px; width:500px; padding:10px'></div>
-        <h5 id="evaluation"><h4 style = "position:relative; left:80px; top:2px; color: navy; max-width: 1400px;">Reached this point, we would like to rate how accurate our recommendation was and if you missed crucial information:</h5>
+        <div id='map' width="100%" style='height:500px; width:500px; padding:10px; left:30px'></div>
+        <h5 id="evaluation"><h4 style = "position:relative; left:80px; top:2px; color: navy; max-width: 1400px;">Reached this point, we would like to rate <u><b>how accurate</b></u> our <u><b>recommendation</b></u> and also the <u><b>order of preference</b></u> was and if you missed crucial information:</h5>
             <div style = "position:relative; left:80px; top:2px" >Rate from 1 to 5, where 1 is <i>Really Bad</i> and 5 is <i>Extremely Good</i>:</div>
             <form action = "{% url 'polls:rating' q1.0 q1.1 q1.2 q1.3 q1.4%}" method="post">
             {% csrf_token %}
-            <label style = "position:relative; left:80px; top:2px" ><b>{{ q1.0 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px">
+            <label style = "position:relative; left:80px; top:2px; margin-top:20px;" ><b>{{ q1.0 }}</b>:</label>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; width:6%; margin-top:-5px;">
         
         <input id="demo-1" type="radio" name="demo" value="1"> 
         <label for="demo-1">1 star</label>
@@ -63,8 +71,8 @@
     
     {% csrf_token %}
 
-        <label style = "position:relative; left:80px; top:2px"><b>{{ q1.1 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px">
+        <label style = "position:relative; left:80px; top:2px; margin-top:10px;"><b>{{ q1.1 }}</b>:</label>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; width:6%; margin-top:-5px;">
     
         <input id="demo-11" type="radio" name="demo1" value="1"> 
         <label for="demo-11">1 star</label>
@@ -94,8 +102,8 @@
     </script>
 
     {% csrf_token %}
-        <label style = "position:relative; left:80px; top:3px"><b>{{ q1.2 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px">
+        <label style = "position:relative; left:80px; top:3px; margin-top:10px;"><b>{{ q1.2 }}</b>:</label>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; width:6%; margin-top:-5px;">
     
         <input id="demo-21" type="radio" name="demo2" value="1"> 
         <label for="demo-21">1 star</label>
@@ -126,8 +134,8 @@
 
     {% csrf_token %}
 
-        <label style = "position:relative; left:80px; top:2px"><b>{{ q1.3 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px">
+        <label style = "position:relative; left:80px; top:2px; margin-top:10px;"><b>{{ q1.3 }}</b>:</label>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; width:6%; margin-top:-5px;">
     
         <input id="demo-31" type="radio" name="demo3" value="1"> 
         <label for="demo-31">1 star</label>
@@ -158,8 +166,8 @@
 
     {% csrf_token %}
 
-        <label style = "position:relative; left:80px; top:2px"><b>{{ q1.4 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px">
+        <label style = "position:relative; left:80px; top:2px; margin-top:10px;"><b>{{ q1.4 }}</b>:</label>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; width:6%; margin-top:-5px;">
     
         <input id="demo-41" type="radio" name="demo4" value="1"> 
         <label for="demo-41">1 star</label>
@@ -189,23 +197,23 @@
     </script>
 
     {% csrf_token %}
-    <legend><h4 style = "position:relative; left:80px; top:2px" >Leave a comment:</h4></legend>
-    <div style = "position:relative; left:80px; top:2px">
-        <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:.6em;">Write a comment!...
-        </textarea>
-        </div>
+    <legend><h4 style = "position:relative; left:50px; top:2px" >Leave a comment:</h4></legend>
+    <div style = "position:relative; left:50px; top:2px">
+        <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:.6em; font-size: 18px;"></textarea>
+    </div>
 
-    <input type="submit" value="Rate" style = "position:relative; left:80px; top:2px">
+    <input id="submit" type="submit" value="Rate" style = "position:relative; left:80px; top:2px;margin-top:10px;">
     </form>
     
 </div>
     <script>
+
         mapboxgl.accessToken = "{{mapbox_access_token}}"
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [-3.7033387,40.4167278], // starting position
-            zoom: 11.5
+            zoom: 12
         });
         // set the bounds of the map
         {% comment %} const bounds = [
@@ -244,6 +252,7 @@
             map.getSource('route').setData(geojson);
             }
             // otherwise, we'll make a new request
+            /*
             else {
             map.addLayer({
                 id: 'route',
@@ -263,6 +272,7 @@
                 }
             });
             }
+            */
             // add turn instructions here at the end
         }
         
@@ -351,14 +361,17 @@
             },
             paint: {
                 'circle-radius': 7,
-                'circle-color': '#3887be'
+                'circle-color': 'rgb(255, 0, 0)'
             }
             });
         });
+
+        </script>
     </script>
   </body>
-<footer>
-  <div id="bottom">Hope you liked the resuls</div>
-  <a id="bottom" href="{% url 'polls:index' %}">Vote again?</a>
-</footer>
-</html>
+  <footer style="position:relative; left:40px; top:100px">
+    <div id="bottom">Hope you liked the resuls
+    <p><a id="bottom" href="{% url 'polls:index' %}" style="color:#000080">Vote again?</a></p>
+  </div>
+  </footer>
+  </html>
