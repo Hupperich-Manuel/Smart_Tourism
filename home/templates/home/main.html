@@ -8,14 +8,34 @@
 
 	<link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static '/css/index_style.css' %}">
-
+	<style>
+		body {
+			background-image: url("/static/images/coverpage.png") !important;
+		}
+	</style>
 </head>
 <body>
-
 	{%  include 'registration/navbar.html' %}
-	<img src="{% static 'images/Dashboard_page.png' %}" class = "div_main" height="120" width="350">>
-
-
+	<h4 style="text-align:center; margin-top:2em"><b>Welcome to TravelBuddy</b></h4>
+	<div><b>
+		<p style='text-align:center; margin-top:2em'>Hola</p>
+		
+		<p style='position:relative; margin-left:43em; margin-right:40em; margin-top:1em;'>For our capstone project we are developing a smart tourism web app that recommends the best one day tour based on your interests! </p>
+		
+		<p style='position:relative; margin-left:43em; margin-right:40em; margin-top:1em;'>We need your help to gather data (big data!) to improve our ML model. 
+		</p>
+	</b>
+	<ol style='position:relative; margin-left:43em; margin-right:40em; margin-top:4em;'>
+		<b>
+		<li> Sign up</li>
+		<li> Login</li>
+		<li> Answer all the questions</li>
+		<li> Check out the places recommended</li>
+		<li> Rate each place based how much you enjoyed your visit</li>
+		<li> Submit your results!</li>
+		</b>
+	</ol>
+	</div>
 	
 </body>
 
