@@ -90,18 +90,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 #from boto.s3.connection import S3Connection
-POSTSQL_NAME = os.getenv('POSTSQL_NAME')
-POSTSQL_USER = os.getenv('POSTSQL_USER')
-POSTSQL_PASSWORD = os.getenv('POSTSQL_PASSWORD')
-DJANGO_ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS')
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'POSTSQL_NAME',
-        'USER': 'POSTSQL_USER',
-        'PASSWORD': 'POSTSQL_PASSWORD',
-        'HOST':'DJANGO_ALLOWED_HOSTS',
+        'NAME': 'd14o2kdcr9slju',
+        'USER': 'evbrjgadnpctqo',
+        'PASSWORD': 'e81c13f69f19ce7bf43688367e629af876e399cf9546538ee594f6c90e0acef0',
+        'HOST':'ec2-52-86-115-245.compute-1.amazonaws.com',
         'DATABASE_PORT':'5432'
     }
 }
