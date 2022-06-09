@@ -267,9 +267,9 @@ def modelling(request):
                                     opinion = "No Opinion"
                                     )
                 select_place.append(selected_choice)
-                
-            if (index%3 != 0)|(index==0):
-                selected_experience_withoutdot_product.append(selected_experience[index])
+
+            if index not in [3, 7, 11, 15, 19, 23]:
+                selected_experience_withoutdot_product.append(building)
 
   
 
