@@ -40,7 +40,7 @@
             <form action = "{% url 'polls:rating' q1.0 q1.1 q1.2 q1.3 q1.4%}" method="post">
             {% csrf_token %}
             <label style = "position:relative; left:80px; top:2px; margin-top:20px;" ><b>{{ q1.0 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px; width:6%; margin-top:-5px;">
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
         
         <input id="demo-1" type="radio" name="demo" value="1"> 
         <label for="demo-1">1 star</label>
@@ -72,7 +72,7 @@
     {% csrf_token %}
 
         <label style = "position:relative; left:80px; top:2px; margin-top:10px;"><b>{{ q1.1 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px; width:6%; margin-top:-5px;">
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
     
         <input id="demo-11" type="radio" name="demo1" value="1"> 
         <label for="demo-11">1 star</label>
@@ -103,7 +103,7 @@
 
     {% csrf_token %}
         <label style = "position:relative; left:80px; top:3px; margin-top:10px;"><b>{{ q1.2 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px; width:6%; margin-top:-5px;">
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
     
         <input id="demo-21" type="radio" name="demo2" value="1"> 
         <label for="demo-21">1 star</label>
@@ -135,7 +135,7 @@
     {% csrf_token %}
 
         <label style = "position:relative; left:80px; top:2px; margin-top:10px;"><b>{{ q1.3 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px; width:6%; margin-top:-5px;">
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px;margin-top:-5px;">
     
         <input id="demo-31" type="radio" name="demo3" value="1"> 
         <label for="demo-31">1 star</label>
@@ -167,7 +167,7 @@
     {% csrf_token %}
 
         <label style = "position:relative; left:80px; top:2px; margin-top:10px;"><b>{{ q1.4 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px; width:6%; margin-top:-5px;">
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
     
         <input id="demo-41" type="radio" name="demo4" value="1"> 
         <label for="demo-41">1 star</label>
@@ -213,7 +213,7 @@
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [-3.7033387,40.4167278], // starting position
-            zoom: 12
+            zoom: 11
         });
         // set the bounds of the map
         {% comment %} const bounds = [
@@ -369,9 +369,9 @@
         </script>
     </script>
   </body>
-  <footer style="position:relative; left:40px; top:100px">
-    <div id="bottom">Hope you liked the resuls
-    <p><a id="bottom" href="{% url 'polls:index' %}" style="color:#000080">Vote again?</a></p>
-  </div>
-  </footer>
-  </html>
+<footer style="position:relative; left:40px; top:100px">
+  <div id="bottom">Hope you liked the resuls
+  <p><a id="bottom" href="{% url 'polls:index' %}" style="color:#000080">Vote again?</a></p>
+</div>
+</footer>
+</html>
