@@ -10,24 +10,105 @@
     <link rel="stylesheet" href="{% static 'mystyle.css' %}">
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link
+    href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+    rel="stylesheet"
+    />
     <style>
-        body,
-        html {
-            height: 120%%;
-            margin: auto;
-            width:100%;
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+        @prim: #53e3a6;
+        
+        body, html {
+            height: 100% !important;
+            margin: auto animation: transitionIn 0.75s !important;
+            width:100% animation: transitionIn 0.75s !important;
+            animation: transitionIn 0.75s animation: transitionIn 0.75s !important;
         }
+        @keyframes transitionIn {
+			from {
+			  opacity:0 animation: transitionIn 0.75s;
+			  transform: translateY(-10px) animation: transitionIn 0.75s;
+			}
+			to {
+			  opacity:1 animation: transitionIn 0.75s;
+			  transform: translateY(0) animation: transitionIn 0.75s;
+			}
+			
+		  }
+          .wrapper{
+            animation: transitionIn 0.75s !important;
+            background: #50a3a2 !important;
+          background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%) !important;
+          background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%) !important;
+          background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%) !important;
+          background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%) !important;
+            
+            position: absolute animation: transitionIn 0.75s !important;
+            top: 50% !important;
+            left: 0;
+            width: 100% !important;
+            height: 350% !important;
+            margin-top: 0px !important;
+            overflow: hidden !important;
+            
+            &.form-success{
+              .container{
+                h1{
+                  transform: translateY(85px) !important;
+                }
+              }
+            }
+          }
+          
+          .container{
+            max-width: 600px !important;
+            margin: 0 auto !important;
+            padding: 80px 0 !important;
+            height: 400px !important;
+            
+            h1{
+              font-size: 40px;
+              transition-duration: 1s;
+              transition-timing-function: ease-in-put;
+              font-weight: 200;
+            }
+          }
+          
+
+            p{
+                animation: 1s ease-out 0s 1 move-in-steps !important;
+
+            }
+            .move-me {
+                display: inline-block;
+                padding: 20px;
+                color: white;
+                position: relative;
+                margin: 0 0 10px 0;
+              }
+            .move-me-1 {
+                animation: 1s ease-out 0s 1 move-in-steps;
+              }
+              @keyframes move-in-steps {
+                0% {
+                    transform: translateX(-100%);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+              }
     </style>
 </head>
     <body>
 
     {%  include 'registration/navbar.html' %}
-
-    <h2> Here are the results of the votings</h2>
+    <div class="wrapper">
+    <div class="container">
     <fieldset>
-    <ol>
+    <ol class='move-me'>
     {% for experience in descript_places %}
-        <li style = "position:relative; left:20px; top:2px">
+        <li style = "position:relative; left:20px; top:2px" class='move-me-1'>
             <p>{{experience.1}}:</p> 
             <p style= "position:relative; left:40px; top:2px; font-size: 17px; color:rgb(65, 65, 65)">{{experience.0}}</p>
         </li>
@@ -215,6 +296,8 @@
             center: [-3.7033387,40.4167278], // starting position
             zoom: 11
         });
+
+        
         // set the bounds of the map
         {% comment %} const bounds = [
         [-123.069003, 45.395273],
@@ -252,7 +335,7 @@
             map.getSource('route').setData(geojson);
             }
             // otherwise, we'll make a new request
-            /*
+            /* This is he code for the route between nodes
             else {
             map.addLayer({
                 id: 'route',
@@ -368,10 +451,12 @@
 
         </script>
     </script>
-  </body>
-<footer style="position:relative; left:40px; top:100px">
-  <div id="bottom">Hope you liked the resuls
-  <p><a id="bottom" href="{% url 'polls:index' %}" style="color:#000080">Vote again?</a></p>
 </div>
-</footer>
+<footer style="position:relative !important; left:40px !important; top:500px !important">
+    <div id="bottom">Hope you liked the resuls
+    <p><a id="bottom" href="{% url 'polls:index' %}" style="color:#000080">Vote again?</a></p>
+  </div>
+  </div>
+  </footer>
+  </body>
 </html>
