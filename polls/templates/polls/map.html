@@ -21,9 +21,9 @@
         
         body, html {
             height: 100% !important;
-            margin: auto animation: transitionIn 0.75s !important;
-            width:100% animation: transitionIn 0.75s !important;
-            animation: transitionIn 0.75s animation: transitionIn 0.75s !important;
+            margin: auto;
+            width:100% ;
+            animation: transitionIn 0.75s !important;
         }
         @keyframes transitionIn {
 			from {
@@ -49,7 +49,7 @@
             left: 0;
             width: 100% !important;
             height: 350% !important;
-            margin-top: 0px !important;
+            margin-top: -5px !important;
             overflow: hidden !important;
             
             &.form-success{
@@ -62,7 +62,7 @@
           }
           
           .container{
-            max-width: 600px !important;
+            max-width: 1500px !important;
             margin: 0 auto !important;
             padding: 80px 0 !important;
             height: 400px !important;
@@ -76,20 +76,68 @@
           }
           
 
-            p{
-                animation: 1s ease-out 0s 1 move-in-steps !important;
-
-            }
             .move-me {
                 display: inline-block;
                 padding: 20px;
                 color: white;
                 position: relative;
                 margin: 0 0 10px 0;
+                background:transparent;
               }
-            .move-me-1 {
+            .move-me li:nth-child(1){
+                animation: 5s ease-out 0s 1 move-in-steps;
+              }
+              .move-me li:nth-child(2){
+                animation: 4s ease-out 0s 1 move-in-steps;
+              }
+              .move-me li:nth-child(3){
+                animation: 3s ease-out 0s 1 move-in-steps;
+              }
+              .move-me li:nth-child(4){
+                animation: 2s ease-out 0s 1 move-in-steps;
+              }
+              .move-me li:nth-child(5){
                 animation: 1s ease-out 0s 1 move-in-steps;
               }
+
+              .stars label {
+                color: rgb(153, 152, 152) !important;
+            }
+            
+            .stars label:nth-child(1) {
+                color: rgb(153, 152, 152) !important;
+                animation: 1s ease-out 0s 1 move-in-steps-top !important;
+            }
+            .stars label:nth-child(2) {
+                color: rgb(153, 152, 152) !important;
+                animation: 1.2s ease-out 0s 1 move-in-steps-top !important;
+            }
+            .stars label:nth-child(3) {
+                color: rgb(153, 152, 152) !important;
+                animation: 1.4s ease-out 0s 1 move-in-steps-top !important;
+            }
+            .stars label:nth-child(4) {
+                color: rgb(153, 152, 152) !important;
+                animation: 1.6s ease-out 0s 1 move-in-steps-top !important;
+            }
+            .stars label:nth-child(5) {
+                color: rgb(153, 152, 152) !important;
+                animation: 1.8s ease-out 0s 1 move-in-steps-top !important;
+            }
+            
+            .stars label:hover {
+                text-shadow: 0 0 2px #000 !important;
+            }
+
+              @keyframes move-in-steps-top {
+                0% {
+                    transform: translateY(-300%);
+                }
+                100% {
+                    transform: translateY(0);
+               }
+            }
+
               @keyframes move-in-steps {
                 0% {
                     transform: translateX(-100%);
@@ -98,11 +146,39 @@
                     transform: translateX(0);
                 }
               }
+              .move-me li:nth-child(1) {
+                color: white;
+                font-size:40px;
+                font-weight: bold;
+            }
+            .move-me li:nth-child(2) {
+                color: white;
+                font-size:35px;
+                font-weight: bold;
+            }
+            .move-me li:nth-child(3) {
+                color: white;
+                font-size:30px;
+                font-weight: bold;
+            }
+            .move-me li:nth-child(4) {
+                color: white;
+                font-size:25px;
+                font-weight: bold;
+            }
+            .move-me li:nth-child(5) {
+                color: white;
+                font-size:20px;
+                font-weight: bold;
+            }
+
+
+
     </style>
 </head>
     <body>
-
     {%  include 'registration/navbar.html' %}
+
     <div class="wrapper">
     <div class="container">
     <fieldset>
@@ -120,8 +196,8 @@
             <div style = "position:relative; left:80px; top:2px" >Rate from 1 to 5, where 1 is <i>Really Bad</i> and 5 is <i>Extremely Good</i>:</div>
             <form action = "{% url 'polls:rating' q1.0 q1.1 q1.2 q1.3 q1.4%}" method="post">
             {% csrf_token %}
-            <label style = "position:relative; left:80px; top:2px; margin-top:20px;" ><b>{{ q1.0 }}</b>:</label>
-    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:15px;">
+            <label style = "position:relative; left:80px; top:2px; margin-top:40px;"><b>{{ q1.0 }}</b>:</label>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
         
         <input id="demo-1" type="radio" name="demo" value="1"> 
         <label for="demo-1">1 star</label>
@@ -152,7 +228,7 @@
     
     {% csrf_token %}
 
-        <label style = "position:relative; left:80px; top:2px; margin-top:10px;"><b>{{ q1.1 }}</b>:</label>
+        <label style = "position:relative; left:80px; top:3px; margin-top:10px;"><b>{{ q1.1 }}</b>:</label>
     <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
     
         <input id="demo-11" type="radio" name="demo1" value="1"> 

@@ -16,7 +16,20 @@
 			width: 100%;
 			height:100%;
 			background-position: center 50px;
+			animation: transitionIn 0.75s;
 		}
+
+		@keyframes transitionIn {
+			from {
+			  opacity:0;
+			  transform: translateY(-10px);
+			}
+			to {
+			  opacity:1;
+			  transform: translateY(0);
+			}
+			
+		  }
 	</style>
 </head>
 <body>
@@ -25,9 +38,9 @@
 	<div><b>
 		<p style='text-align:center; margin-top:2em'>Hola</p>
 		
-		<p style='position:relative; margin-left:38em; margin-right:35em; margin-top:1em;'>For our capstone project we are developing a smart tourism web app that recommends the best one day tour based on your interests! </p>
+		<p style='position:relative; margin-left:40em; margin-right:37em; margin-top:1em;'>For our capstone project we are developing a smart tourism web app that recommends the best one day tour based on your interests! </p>
 		
-		<p style='position:relative; margin-left:38em; margin-right:35em; margin-top:1em;'>We need your help to gather data (big data!) to improve our ML model. 
+		<p style='position:relative; margin-left:40em; margin-right:37em; margin-top:1em;'>We need your help to gather data (big data!) to improve our ML model. 
 		</p>
 	</b>
 	<ol style='position:relative; margin-left:40em; margin-right:37em; margin-top:4em;'>

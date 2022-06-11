@@ -421,43 +421,47 @@ def rating(request, building1, building2, building3, building4, building5):
     #           "liste2": zip_list2, 
     #           "liste3": zip_list3,
     #           'error_message':'Not registered email'})
+    if (place1 != None)&(place2 != None)&(place3 != None)&(place4 != None)&(place4 != None)&(opinions != None):
+        print(place1)
 
-    print(place1)
+        print(place2)
 
-    print(place2)
+        print(place3)
 
-    print(place3)
-
-    evaluation = round(((place1+place2+place3+place4+place5)/5),3)
+        evaluation = round(((place1+place2+place3+place4+place5)/5),3)
 
 
-    name = Customer.objects.filter(username_id=username).values_list('name', flat=True)
+        name = Customer.objects.filter(username_id=username).values_list('name', flat=True)
+        
+        print(building3)
+        for build, val in zip([building1, building2, building3, building4, building5], [place1,place2,place3, place4, place5]):
+            
+            #rate = Customer.objects.get(building_id=build, username_id=username, pub_date=timezone.now().minute-timedelta(minutes=10))
+            rate = Customer.objects.filter(building_id=build, username_id=username).last()
+            
+            #for index, rt in enumerate()
+            print(f"rate: {rate}")
+
+            rate.valuation = val
+            rate.opinion = opinions
+
+            rate.save()
+            #break
+
+        feedback = "Neutral"
+
+        if evaluation<=3:
+            feedback = "Poor"
+
+        elif 3<evaluation<4.5:
+            feedback = "Normal"
+
+        else:
+            feedback = "Very Good"
+
+
+        return render(request, 'polls/answers.html', {"feedback":feedback, "punctuation":evaluation, "name":name[0]})
     
-    print(building3)
-    for build, val in zip([building1, building2, building3, building4, building5], [place1,place2,place3, place4, place5]):
-        
-        #rate = Customer.objects.get(building_id=build, username_id=username, pub_date=timezone.now().minute-timedelta(minutes=10))
-        rate = Customer.objects.filter(building_id=build, username_id=username).last()
-        
-        #for index, rt in enumerate()
-        print(f"rate: {rate}")
-
-        rate.valuation = val
-        rate.opinion = opinions
-
-        rate.save()
-        #break
-
-    feedback = "Neutral"
-
-    if evaluation<=3:
-        feedback = "Poor"
-
-    elif 3<evaluation<4.5:
-        feedback = "Normal"
-
     else:
-        feedback = "Very Good"
-
-
-    return render(request, 'polls/answers.html', {"feedback":feedback, "punctuation":evaluation, "name":name[0]})
+        answer_submitted = f"You already submitted your answer, thanks ;)"
+        return render(request, 'polls/answers.html', {'answer_submitted':answer_submitted})
