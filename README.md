@@ -6,6 +6,11 @@ Download a backup of the data
 heroku pg:backups:capture
 heroku pg:backups:download
 ```
+After doing this you can move your _dump_ file to your local Postgre database with the following command.
+
+```command
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d new latest.dump
+```
 
 command to interact with psql
 ```command
