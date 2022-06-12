@@ -27,10 +27,60 @@
           color: white;
           font-weight: 300;
           margin: auto animation: transitionIn 0.75s !important;
-            width:100% animation: transitionIn 0.75s !important;
-            animation: transitionIn 0.75s !important;
+          width:100% animation: transitionIn 0.75s !important;
+          animation: transitionIn 0.75s !important;
+          text-align: center !important;
           
 
+        }
+        
+        input[type="submit"] {
+          border: 1px solid #0A3D5B;
+          background-color: transparent;
+          color: #0A3D5B;
+          padding: 20px 60px;
+          font-size: 15px;
+          font-weight: 100;
+          background: transparent;
+          cursor: pointer;
+          display: inline-block;
+          margin-right: 75px;
+          margin-bottom: 0px;
+          border-radius: 10px;
+          text-transform: capitalize !important;
+      }
+      
+      input:focus {
+          outline: none;
+      }
+      
+      /* slide hover left -1 css */
+      
+      input.slide-hover-left-1 {
+          background-image: linear-gradient(0, #0A3D5B, #0A3D5B);
+          background-size: 0;
+          transition: .8s;
+          background-repeat: no-repeat;
+          text-align: center !important;
+      }
+      
+      input.slide-hover-left-1:hover {
+          background-size: 100%;
+          color: #fff;
+          text-align: center !important;
+      }
+      
+        
+        @keyframes moveInBottom {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+        
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
         }
         @keyframes transitionIn {
 			from {
@@ -51,7 +101,7 @@
         background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
           
           position: absolute;
-          top: 32%;
+          top: 24.5%;
           left: 0;
           width: 100%;
           height: 350%;
@@ -249,6 +299,216 @@
           0%   { transform: translateY(0); }
           100% { transform: translateY(-700px) rotate(600deg); }
         }
+
+        @keyframes move-in-steps {
+          0% {
+              transform: translateX(-100%);
+          }
+          100% {
+              transform: translateX(0);
+          }
+        }
+        @keyframes move-in-steps-dif {
+          0% {
+              transform: translateX(200%);
+          }
+          100% {
+              transform: translateX(0);
+          }
+        }
+        .move-me {
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me h4:nth-child(1){
+          animation: 1s ease-out 0s 1 move-in-steps !important;
+        }
+        .move-me-1 h4:nth-child(1){
+          animation: 1.5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-2 h4:nth-child(1){
+          animation: 2s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-3 h4:nth-child(1){
+          animation: 2.5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-4 h4:nth-child(1){
+          animation: 3s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-5 h4:nth-child(1){
+          animation: 3.5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-6 h4:nth-child(1){
+          animation: 4s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-7 h4:nth-child(1){
+          animation: 4.5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-8 h4:nth-child(1){
+          animation: 5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-9 h4:nth-child(1){
+          animation: 5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-10 h4:nth-child(1){
+          animation: 5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-11 h4:nth-child(1){
+          animation: 5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-12 h4:nth-child(1){
+          animation: 5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-13 h4:nth-child(1){
+          animation: 5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-14 h4:nth-child(1){
+          animation: 5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        .move-me-15 h4:nth-child(1){
+          animation: 5s ease-out 0s 1 move-in-steps !important;
+          top-margin:20px;
+          display: inline-block;
+          padding: 20px;
+          color: white;
+          position: relative;
+          margin: 0 0 10px 0;
+          background:transparent;
+        }
+        @keyframes hvr-pop {
+          50% {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+          }
+        }
+        
+        .hvr-pop {
+          display: inline-block;
+          vertical-align: middle;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        .hvr-pop:hover, .hvr-pop:focus, .hvr-pop:active {
+          -webkit-animation-name: hvr-pop;
+          animation-name: hvr-pop;
+          -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+          -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+          -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+        }
+        input[class="happy"]:hover + svg,
+input[class="happy"]:checked + svg,
+input[class="happy"]:focus + svg {
+  fill: rgb(4, 82, 34) !important;
+}
     </style>
 </head>
 <body id="a">
@@ -257,275 +517,289 @@
         <div class="container">
     <fieldset>
     <form action = "{% url 'polls:modelling' %}" method="post" class="rating-form-2" style='margin:40px'>
-    
+    <div class="move-me">
     {% csrf_token %}
     <legend ><h4 style="margin: 2px; padding: 2px;">Do you prefer popular places with a lot of foot traffic over quiet places?</h4></legend>
     {% for answer1, choice1 in liste2 %}
         {% if answer1 %}
-        <label for="happy2">
+        <label for="happy2" href="#" class="hvr-pop">
             <input type="radio" name="answer1" class="happy" id="happy2" value="{{ answer1 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice1 }}</label>
+        </label>
         {% else %}
-            <label for="sad2">
+            <label for="sad2" href="#" class="hvr-pop">
                 <input type="radio" name="answer1" class="sad" id="sad2" value="{{ answer1 }}" onclick="Check(this)" required>
                 <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-            {{ choice1 }}</label>
+            </label>
         {% endif %}
     {% endfor %}
-
-
+            </div>
+            <div class="move-me-1">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you like to explore popular places?</h4></legend>
     {% for answer2, choice2 in liste3 %}
     {% if answer2 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer2" class="happy" id="happy2" value="{{ answer2 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice2 }}</label>
+        </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer2" class="sad" id="sad2" value="{{ answer2 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice2 }}</label>
+        </label>
     {% endif %}
     {% endfor %}
-
+  </div>
+  <div class="move-me-2">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you willing to spend money on pricey experiences?</h4></legend>
     {% for answer3, choice3 in liste %}
     {% if answer3 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer3" class="happy" id="happy2" value="{{ answer3 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice3 }}</label>
+        </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer3" class="sad" id="sad2" value="{{ answer3 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice3 }}</label>
+        </label>
     {% endif %}
     {% endfor %}
-
+  </div>
+  <div class="move-me-3">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you like to explore nature and green spaces when in a new city?</h4></legend>
     {% for answer4, choice4 in liste4 %}
     {% if answer4 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer4" class="happy" id="happy2" value="{{ answer4 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice4 }}</label>
+        </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer4" class="sad" id="sad2" value="{{ answer4 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice4 }}</label>
+        </label>
     {% endif %}
     {% endfor %}
-
+  </div>
+  <div class="move-me-4">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Is it important to you to go to scenic places with great photo opportunities?</h4></legend>
     {% for answer5, choice5 in liste5 %}
     {% if answer5 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer5" class="happy" id="happy2" value="{{ answer5 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice5 }}</label>
+        </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer5" class="sad" id="sad2" value="{{ answer5 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice5 }}</label>
+      </label>
     {% endif %}
     {% endfor %}
-
+  </div>
+  <div class="move-me-5">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you travel with your pet(s) or like to go to animal-friendly places (i.e. dog parks)?</h4></legend>
     {% for answer6, choice6 in liste6 %}
     {% if answer6 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer6" class="happy" id="happy2" value="{{ answer6 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice6 }}</label>
+        </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer6" class="sad" id="sad2" value="{{ answer6 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice6 }}</label>
+       </label>
 {% endif %}
     {% endfor %}
-
+  </div>
+  <div class="move-me-6">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you into literature and books?</h4></legend>
     {% for answer7, choice7 in liste7 %}
     {% if answer7 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer7" class="happy" id="happy2" value="{{ answer7 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice7 }}</label>
+        </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer7" class="sad" id="sad2" value="{{ answer7 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice7 }}</label>
+        </label>
     {% endif %}
     {% endfor %}
-
+  </div>
+  <div class="move-me-7">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you like laid-back and casual spots?</h4></legend>
     {% for answer8, choice8 in liste8 %}
     {% if answer8 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer8" class="happy" id="happy2" value="{{ answer8 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice8 }}</label>
+       </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer8" class="sad" id="sad2" value="{{ answer8 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice8 }}</label>
+    </label>
     {% endif %}
     {% endfor %}
-
-
+  </div>
+  <div class="move-me-8">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you need publicly available Wifi options during your visit?</h4></legend>
     {% for answer9, choice9 in liste9 %}
     {% if answer9 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer9" class="happy" id="happy2" value="{{ answer9 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice9 }}</label>
+        </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer9" class="sad" id="sad2" value="{{ answer9 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice9 }}</label>
+        </label>
     {% endif %}
     {% endfor %}
-
-
+  </div>
+  <div class="move-me-9">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you interested in history and historic places?</h4></legend>
     {% for answer10, choice10 in liste10 %}
     {% if answer10 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer10" class="happy" id="happy2" value="{{ answer10 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice10 }}</label>
+       </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer10" class="sad" id="sad2" value="{{ answer10 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice10 }}</label>
+      </label>
     {% endif %}
     {% endfor %}
-
+  </div>
+  <div class="move-me-10">
 
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you a person that likes to visit museums (art, history, curiosities, etc.)?'</h4></legend>
     {% for answer11, choice11 in liste11 %}
     {% if answer11 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer11" class="happy" id="happy2" value="{{ answer11 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice11 }}</label>
+        </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer11" class="sad" id="sad2" value="{{ answer11 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice11 }}</label>
+       </label>
     {% endif %}
     {% endfor %}
-
+  </div>
+  <div class="move-me-11">
 
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you enjoy street performances?</h4></legend>
     {% for answer12, choice12 in liste12 %}
     {% if answer12 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer12" class="happy" id="happy2" value="{{ answer12 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice12 }}</label>
+        </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer12" class="sad" id="sad2" value="{{ answer12 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice12 }}</label>
+        </label>
     {% endif %}
     {% endfor %}
 
-
+  </div>
+  <div class="move-me-12">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you looking for authentic local experiences?</h4></legend>
     {% for answer13, choice13 in liste13 %}
     {% if answer13 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer13" class="happy" id="happy2" value="{{ answer13 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice13 }}</label>
+       </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer13" class="sad" id="sad2" value="{{ answer13 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice13 }}</label>
+       </label>
     {% endif %}
     {% endfor %}
-
+  </div>
+  <div class="move-me-13">
 
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you a sporty person and looking for sports opportunities while travelling?</h4></legend>
     {% for answer14, choice14 in liste14 %}
     {% if answer14 %}
-    <label>
+    <label href="#" class="hvr-pop">
         <input type="radio" name="answer14" class="happy" id="happy2" value="{{ answer14 }}" onclick="Check(this)" required>
         <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-    {{ choice14 }}</label>
+    </label>
 {% else %}
-    <label>
+    <label href="#" class="hvr-pop">
         <input type="radio" name="answer14" class="sad" id="sad2" value="{{ answer14 }}" onclick="Check(this)" required>
         <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-    {{ choice14 }}</label>
+    </label>
 {% endif %}
     {% endfor %}
 
-
+  </div>
+  <div class="move-me-14">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Do you usually travel with your family and look for family-friendly places</h4></legend>
     {% for answer15, choice15 in liste15 %}
     {% if answer15 %}
-    <label>
+    <label href="#" class="hvr-pop">
         <input type="radio" name="answer15" class="happy" id="happy2" value="{{ answer15 }}" onclick="Check(this)" required>
         <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-    {{ choice15 }}</label>
+    </label>
 {% else %}
-    <label>
+    <label href="#" class="hvr-pop">
         <input type="radio" name="answer15" class="sad" id="sad2" value="{{ answer15 }}" onclick="Check(this)" required>
         <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-    {{ choice15 }}</label>
+   </label>
 {% endif %}
     {% endfor %}
 
-
+  </div>
+  <div class="move-me-15">
     {% csrf_token %}
     <legend><h4 style="margin: 2px; padding: 2px; text-align: left;">Are you travelling with a romantic partner and want to find a special place to take them to?</h4></legend>
     {% for answer16, choice16 in liste16 %}
     {% if answer16 %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer16" class="happy" id="happy2" value="{{ answer16 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
-        {{ choice16 }}</label>
+       </label>
     {% else %}
-        <label>
+        <label href="#" class="hvr-pop">
             <input type="radio" name="answer16" class="sad" id="sad2" value="{{ answer16 }}" onclick="Check(this)" required>
             <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-        {{ choice16 }}</label>
+        </label>
     {% endif %}
     {% endfor %} 
-
+  </div>
+  <div style="text-align:center;font-weight: bold;">
     </fieldset>
-    <input type="submit" value="Submit" id="submit" disabled>
-    </form>
+    <input class="slide-hover-left-1" type="submit" value="SUBMIT" id="submit" disabled>
+  </div>
+  </form>
     </div>
 </div>
     <script>
@@ -554,4 +828,3 @@
     
 </body>
 </html>
-

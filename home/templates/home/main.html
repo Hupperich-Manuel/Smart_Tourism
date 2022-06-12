@@ -30,13 +30,59 @@
 			}
 			
 		  }
+		  a:focus {
+			outline: none;
+		}
+		
+		/* slide hover left -1 css */
+		
+		a.slide-hover-left-1 {
+			border: 1px solid #0A3D5B;
+			background-color: transparent;
+			color: #0A3D5B;
+			padding: 5px 10px;
+			font-size: 10px;
+			font-weight: 100;
+			background: transparent;
+			cursor: pointer;
+			display: inline-block;
+			margin-right: 75px;
+			margin-bottom: 20px;
+			margin-top:10px;
+			border-radius: 10px;
+			text-transform: capitalize !important;
+			background-image: linear-gradient(0, #0A3D5B, #0A3D5B);
+			background-size: 0;
+			transition: .8s;
+			background-repeat: no-repeat;
+			text-align: center !important;
+		}
+		
+		a.slide-hover-left-1:hover {
+			background-size: 100%;
+			color: #fff;
+			text-align: center !important;
+		}
+		
+		  
+		  @keyframes moveInBottom {
+			  0% {
+				  opacity: 0;
+				  transform: translateY(30px);
+			  }
+		  
+			  100% {
+				  opacity: 1;
+				  transform: translateY(0px);
+			  }
+		  }
 	</style>
 </head>
 <body>
 	{%  include 'registration/navbar.html' %}
-	<h4 style="text-align:center; margin-top:2em"><b>Welcome to TravelBuddy</b></h4>
-	<div><b>
-		<p style='text-align:center; margin-top:2em'>Hola</p>
+	<h1 style="text-align:center; margin-top:2em"><b>Welcome to TravelBuddy</b></h1>
+	<div ><b>
+		<p style='text-align:center; margin-top:2em;font-size:20px;'>Hola</p>
 		
 		<p style='position:relative; margin-left:40em; margin-right:37em; margin-top:1em;'>For our capstone project we are developing a smart tourism web app that recommends the best one day tour based on your interests! </p>
 		
@@ -45,8 +91,8 @@
 	</b>
 	<ol style='position:relative; margin-left:40em; margin-right:37em; margin-top:4em;'>
 		<b>
-		<li> Sign up</li>
-		<li> Login</li>
+		<li> Sign up</li><a href="{% url 'register' %}"  class="slide-hover-left-1">Sign up</a>
+		<li> Login</li><a href="{% url 'login' %}"  class="slide-hover-left-1">Login</a>
 		<li> Answer all the questions</li>
 		<li> Check out the places recommended</li>
 		<li> Rate each place based how much you enjoyed your visit</li>

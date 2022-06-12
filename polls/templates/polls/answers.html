@@ -2,27 +2,92 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
-    <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background: #7abecc !important;
-        }
-    </style>
+
+	<link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/index_style.css' %}">
+        <style>
+            body {
+                background-image: url("/static/images/coverpage.png") !important;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100%;
+                height:100%;
+                background-position: center 50px;
+                animation: transitionIn 0.75s;
+                text-align:center; 
+            }
+    
+            @keyframes transitionIn {
+                from {
+                  opacity:0;
+                  transform: translateY(-10px);
+                }
+                to {
+                  opacity:1;
+                  transform: translateY(0);
+                }
+                
+              }
+
+              
+            
+            a:focus {
+                outline: none;
+            }
+            
+            /* slide hover left -1 css */
+            
+            a.slide-hover-left-1 {
+                border: 1px solid #0A3D5B;
+                background-color: transparent;
+                color: #0A3D5B;
+                padding: 20px 60px;
+                font-size: 15px;
+                font-weight: 100;
+                background: transparent;
+                cursor: pointer;
+                display: inline-block;
+                margin-right: 75px;
+                margin-bottom: 0px;
+                border-radius: 10px;
+                text-transform: capitalize !important;
+                background-image: linear-gradient(0, #0A3D5B, #0A3D5B);
+                background-size: 0;
+                transition: .8s;
+                background-repeat: no-repeat;
+                text-align: center !important;
+            }
+            
+            a.slide-hover-left-1:hover {
+                background-size: 100%;
+                color: #fff;
+                text-align: center !important;
+            }
+            
+              
+              @keyframes moveInBottom {
+                  0% {
+                      opacity: 0;
+                      transform: translateY(30px);
+                  }
+              
+                  100% {
+                      opacity: 1;
+                      transform: translateY(0px);
+                  }
+              }
+        </style>
 
     </head>
     <body>
         {%  include 'registration/navbar.html' %}
         {% if feedback %}
-            <h2>Thank you for your time and effort <i>{{ name|safe }}</i> !</h2>
-            <dir>Your satisfaction with our service was <i>{{ feedback|safe }}</i> with a evaluation of {{ punctuation|safe }} out of 5</dir>
+            <h1 style='text-align:center; margin-top:2em'><b>Thank you for you <i>{{ name|safe }}</i> for trying TravelBuddy</b></h1>
+            <h3 style='text-align:center; margin-top:2em;margin-left:0em;nmargin-right:40em;'>Your satisfaction with our service is <i>{{ feedback|safe }}</i> with a evaluation of {{ punctuation|safe }} out of 5</h3>
         {% else %}
-        <h2>{{answer_submitted}}</h2>
+        <h2 style='text-align:center; margin-top:2em'>{{answer_submitted}}</h2>
         {% endif %}
-    <a href="{% url 'main' %}">Go to Menu</a>
+    <a href="{% url 'main' %}" style='text-align:center; margin-top:10em!important' class="slide-hover-left-1"><b>Go to Menu<b></a>
     <script>
         if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
