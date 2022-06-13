@@ -416,12 +416,162 @@
     <script>
 
         mapboxgl.accessToken = "{{mapbox_access_token}}"
+        const start = {{ coordinates_start|safe }};
+        const locations = {
+            'features': [
+              {
+                'type': 'Feature',
+                'properties': {
+                  'title': 'Lincoln Park',
+                  'description':
+                    'A northside park that is home to the Lincoln Park Zoo'
+                },
+                'geometry': {
+                  'coordinates':[start[0], start[1]],
+                  'type': 'Point'
+                }
+              },
+              {
+                'type': 'Feature',
+                'properties': {
+                  'title': 'Burnham Park',
+                  'description': "A lakefront park on Chicago's south side"
+                },
+                'geometry': {
+                  'coordinates': [start[2], start[3]],
+                  'type': 'Point'
+                }
+              },
+              {
+                'type': 'Feature',
+                'properties': {
+                  'title': 'Grant Park',
+                  'description':
+                    "A downtown park that is the site of many of Chicago's favorite festivals and events"
+                },
+                'geometry': {
+                  'coordinates': [start[4], start[5]],
+                  'type': 'Point',
+                }
+              },
+              {
+                'type': 'Feature',
+                'properties': {
+                  'title': 'Humboldt Park',
+                  'description': "A large park on Chicago's northwest side"
+                },
+                'geometry': {
+                  'coordinates': [start[6], start[7]],
+                  'type': 'Point'
+                }
+              },
+              {
+                'type': 'Feature',
+                'properties': {
+                  'title': 'Douglas Park',
+                  'description':
+                    "A large park near in Chicago's North Lawndale neighborhood"
+                },
+                'geometry': {
+                  'coordinates': [start[8], start[9]],
+                  'type': 'Point'
+                }
+              }
+            ],
+            'type': 'FeatureCollection'
+          };
+    
+          
+
+
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
+            style: 'mapbox://styles/mapbox/light-v10',
             center: [-3.7033387,40.4167278], // starting position
-            zoom: 11
+            zoom: 11.3
         });
+
+        map.on('load', () => {
+            map.addSource('streets', {
+              type: 'geojson',
+              data: './parks-outline.geojson',
+              generateId: true
+            });
+            map.addLayer(
+              {
+                id: 'highlighted-park',
+                type: 'fill',
+                source: 'streets',
+                paint: {
+                  'fill-color': [
+                    'case',
+                    ['boolean', ['feature-state', 'highlight'], true],
+                    'RGBA(117, 198, 132, 1.00)',
+                    'RGBA(117, 198, 132, 0)'
+                  ]
+                }
+              },
+              'water-shadow'
+            );
+    
+            const onSourceData = (event) => {
+              if (event.isSourceLoaded) return;
+              map.off('sourcedata', onSourceData);
+              for (const location of locations.features) {
+                const popup = new mapboxgl.Popup().setHTML(
+                  `<h3>${location.properties.title}</h3><p>${location.properties.description}</p>`
+                );
+    
+                const marker = new mapboxgl.Marker()
+                  .setLngLat(location.geometry.coordinates)
+                  .setPopup(popup)
+                  .addTo(map);
+    
+                let parks = [];
+    
+                marker.getElement().addEventListener('click', () => {
+                  map.flyTo({
+                    pitch: 45,
+                    center: location.geometry.coordinates,
+                    zoom: 16.3
+                  });
+                  parks = map.queryRenderedFeatures(
+                    map.project(location.geometry.coordinates),
+                    {
+                      layers: ['highlighted-park']
+                    }
+                  );
+                  map.setFeatureState(
+                    {
+                      id: parks[0].id,
+                      source: 'streets'
+                    },
+                    {
+                      highlight: false
+                    }
+                  );
+                });
+    
+                popup.on('close', () => {
+                  map.flyTo({
+                    pitch: 0,
+                    center: [-3.7033387,40.4167278],
+                    zoom: 11.3
+                  });
+                  map.setFeatureState(
+                    {
+                      id: parks[0].id,
+                      source: 'streets'
+                    },
+                    {
+                      highlight: false
+                    }
+                  );
+                });
+              }
+            };
+            map.on('sourcedata', onSourceData);
+          });
 
         
         // set the bounds of the map
@@ -433,7 +583,7 @@
         
         // an arbitrary start will always be the same
         // only the end or destination will change
-        const start = {{ coordinates_start|safe }};
+        {% comment %} const start = {{ coordinates_start|safe }};
         
         // this is where the code for the next step will go
         // create a function to make a directions request
@@ -573,7 +723,9 @@
                 'circle-color': 'rgb(255, 0, 0)'
             }
             });
-        });
+        }); {% endcomment %}
+
+        
 
         </script>
     </script>
