@@ -26,8 +26,8 @@
           font-family: 'Source Sans Pro', sans-serif;
           color: white;
           font-weight: 300;
-          margin: auto animation: transitionIn 0.75s !important;
-          width:100% animation: transitionIn 0.75s !important;
+          margin: auto;
+          width:100% ;
           animation: transitionIn 0.75s !important;
           text-align: center !important;
           
@@ -340,7 +340,7 @@
         .move-me-2 h4:nth-child(1){
           animation: 2s ease-out 0s 1 move-in-steps !important;
           top-margin:20px;
-          display: inline-block;
+          display: inline-block !important;
           padding: 20px;
           color: white;
           position: relative;
@@ -509,6 +509,11 @@ input[class="happy"]:checked + svg,
 input[class="happy"]:focus + svg {
   fill: rgb(4, 82, 34) !important;
 }
+
+.error{
+  color: #D8000C;
+  background-color: #FFBABA;
+}
     </style>
 </head>
 <body id="a">
@@ -516,21 +521,21 @@ input[class="happy"]:focus + svg {
       <div class="wrapper">
         <div class="container">
     <fieldset>
-    <form action = "{% url 'polls:modelling' %}" method="post" class="rating-form-2" style='margin:40px'>
+    <form action = "{% url 'polls:modelling' %}" method="post" class="rating-form-2" style='margin:40px' name="myForm">
     <div class="move-me">
     {% csrf_token %}
     <legend ><h4 style="margin: 2px; padding: 2px;">Do you prefer popular places with a lot of foot traffic over quiet places?</h4></legend>
     {% for answer1, choice1 in liste2 %}
         {% if answer1 %}
         <label for="happy2" href="#" class="hvr-pop">
-            <input type="radio" name="answer1" class="happy" id="happy2" value="{{ answer1 }}" onclick="Check(this)" required>
+            <input type="radio" name="answer1" class="happy" id="happy2" value="{{ answer1 }}" onclick="Check(this)" required onsubmit="return validateForm()"/>
             <svg viewBox="0 0 24 24"><path d="M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z" /></svg>
         </label>
         {% else %}
-            <label for="sad2" href="#" class="hvr-pop">
-                <input type="radio" name="answer1" class="sad" id="sad2" value="{{ answer1 }}" onclick="Check(this)" required>
-                <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
-            </label>
+        <label for="sad2" href="#" class="hvr-pop">
+            <input type="radio" name="answer1" class="sad" id="sad2" value="{{ answer1 }}" onclick="Check(this)" required onsubmit="return validateForm()"/>
+            <svg viewBox="0 0 24 24"><path d="M19,15V3H23V15H19M15,3A2,2 0 0,1 17,5V15C17,15.55 16.78,16.05 16.41,16.41L9.83,23L8.77,21.94C8.5,21.67 8.33,21.3 8.33,20.88L8.36,20.57L9.31,16H3C1.89,16 1,15.1 1,14V12C1,11.74 1.05,11.5 1.14,11.27L4.16,4.22C4.46,3.5 5.17,3 6,3H15M15,5H5.97L3,12V14H11.78L10.65,19.32L15,14.97V5Z" /></svg>
+        </label>
         {% endif %}
     {% endfor %}
             </div>
@@ -797,7 +802,8 @@ input[class="happy"]:focus + svg {
   </div>
   <div style="text-align:center;font-weight: bold;">
     </fieldset>
-    <input class="slide-hover-left-1" type="submit" value="SUBMIT" id="submit" disabled>
+    <input class="slide-hover-left-1" type="submit" value="SUBMIT" id="submit" oninvalid="this.setCustomValidity('Please Enter valid email')"
+    oninput="setCustomValidity('')">
   </div>
   </form>
     </div>
@@ -808,7 +814,7 @@ input[class="happy"]:focus + svg {
           window.history.replaceState( null, null, window.location.href );
         }
 
-        function Check(el) {
+        {% comment %} function Check(el) {
             var button = document.getElementById("submit");
           
             var nbr_checked_radios = document.querySelectorAll('input[type=radio]:checked').length;
@@ -823,7 +829,19 @@ input[class="happy"]:focus + svg {
             } else {
               button.disabled = true;
             }
-          }
+          } {% endcomment %}
+          function validateForm()                                 
+         { 
+             var name = document.forms["myForm"];         
+             if (name.value == ""){ 
+                 document.getElementById('answer1').innerHTML="Please dont forget to answer every question ;)";  
+                 name.focus(); 
+                 return false; 
+             }else{
+                 document.getElementById('answer1').innerHTML=""; 
+
+             }
+         }
         </script>
     
 </body>
