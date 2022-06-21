@@ -125,7 +125,7 @@
 							{{form.password2}}
 						</div>
 
-						<input type = "checkbox" id="checkbox" style="width:20px; height:20px;" name='input'>Signing up signifies that you agree to the Terms of Service and our Pivacy Policy
+						<input type = "checkbox" id="checkbox" style="width:20px; height:20px;" name='input' onclick='validateForm()'>Signing up signifies that you agree to the Terms of Service and our Pivacy Policy
 
 
 				   		<div class="d-flex justify-content-center mt-3 login_container">
@@ -157,7 +157,6 @@
 		form_fields[4].placeholder='Email..';
 		form_fields[5].placeholder='Enter password...';
 		form_fields[6].placeholder='Re-enter Password...';
-		from_fields[7].placeholder='Accept Conditions';
 
 
 		for (var field in form_fields){	
