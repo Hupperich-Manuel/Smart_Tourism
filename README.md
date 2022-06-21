@@ -3,7 +3,14 @@ Recommendation System for Experiences in a city
 
 To insert csv in posgresql heroku
 ```command
-DATABASE=> \COPY users TO '~/user_export.csv' WITH (FORMAT csv, DELIMITER ' ',  HEADER true, encoding "UTF-8");
+DATABASE=> \copy polls_question from places_tab.csv with(format csv, delimiter '      ',  header true, encoding 'UTF-8');
+```
+
+Manage migrations
+```command
+heroku run python manage.py makemigrations
+heroku run python manage.py migrate
+heroku run python manage.py showmigrations
 ```
 
 Download a backup of the data
@@ -19,7 +26,7 @@ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d new
 
 command to interact with psql
 ```command
-heroku pg:psql postgresql-tetrahedral-81276 --app young-depths-38007
+heroku pg:psql postgresql-fluffy-09392 --app t-buddy-placerecommender
 ```
 
 Command for requirements file
