@@ -1,10 +1,15 @@
 # Smart_Tourism
 Recommendation System for Experiences in a city
 
+To insert csv in posgresql heroku
+```command
+DATABASE=> \COPY users TO '~/user_export.csv' WITH (FORMAT csv, DELIMITER ' ',  HEADER true, encoding "UTF-8");
+```
+
 Download a backup of the data
 ```command
-heroku pg:backups:capture
-heroku pg:backups:download
+heroku pg:backups:capture --app <appname>
+heroku pg:backups:download --app <appname>
 ```
 After doing this you can move your _dump_ file to your local Postgre database with the following command.
 
