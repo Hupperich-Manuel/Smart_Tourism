@@ -127,12 +127,13 @@
 
 						<div class="input-group mb-2">
 							<div class="input-group-append">
-								<span class="input-group-text"><input type = "checkbox" class="fas fa-key"> Signing up signifies that you agree to the Terms of Service and our Pivacy Policy</span>
+								<span class="input-group-text"><input type = "checkbox" class="fas fa-key" style="width:2px; height:2px;">Signing up signifies that you agree to the Terms of Service and our Pivacy Policy</span>
 							</div>
 						</div>
 
 				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn login_btn" type="submit" value="Register Account">
+				 			<input class="btn login_btn" type="submit" value="Register Account" oninvalid="this.setCustomValidity('Please Enter valid email')"
+							 oninput="setCustomValidity('')">
 				   		</div>
 					</form>
 				</div>
