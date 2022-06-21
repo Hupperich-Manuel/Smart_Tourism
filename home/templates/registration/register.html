@@ -132,7 +132,8 @@
 						</div>
 
 				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn login_btn" type="submit" value="Register Account">
+				 			<input class="btn login_btn" type="submit" value="Register Account" oninvalid="this.setCustomValidity('Please Enter valid email')"
+							 oninput="setCustomValidity('')">
 				   		</div>
 					</form>
 				</div>
@@ -168,7 +169,7 @@
 
 		function validateForm()                                 
 { 
-    var name = document.forms["myForm1"];         
+    var name = document.getElementById("checkbox");         
     if (name.value == ""){ 
         document.getElementById('checkbox').innerHTML="Accept condition";  
         name.focus(); 
