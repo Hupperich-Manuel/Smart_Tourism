@@ -127,13 +127,12 @@
 
 						<div class="input-group mb-2">
 							<div class="input-group-append">
-								<span class="input-group-text"><input type = "checkbox" class="fas fa-key" style="width:2px; height:2px;">Signing up signifies that you agree to the Terms of Service and our Pivacy Policy</span>
+								<span class="input-group-text"><input type = "checkbox" class="fas fa-key" style="width:5px; height:5px;">Signing up signifies that you agree to the Terms of Service and our Pivacy Policy</span>
 							</div>
 						</div>
 
 				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn login_btn" type="submit" value="Register Account" oninvalid="this.setCustomValidity('Please Enter valid email')"
-							 oninput="setCustomValidity('')">
+				 			<input class="btn login_btn" type="submit" value="Register Account">
 				   		</div>
 					</form>
 				</div>
@@ -160,6 +159,7 @@
 		form_fields[4].placeholder='Email..';
 		form_fields[5].placeholder='Enter password...';
 		form_fields[6].placeholder='Re-enter Password...';
+		from_fields[7].placeholder='Accept Conditions';
 
 
 		for (var field in form_fields){	
