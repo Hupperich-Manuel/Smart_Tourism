@@ -84,9 +84,13 @@ def ResultsView(request, place1,lon1, lat1, place2,lon2, lat2,  place3, lon3, la
     coordinates_start = [lon1, lat1, lon2, lat2,lon3, lat3,lon4, lat4,lon5, lat5]
 
     descriptions = []
+    links = []
     for place in result:
         descrip = Question.objects.get(building = place)
         descriptions.append(descrip.description)
+        links.append(descrip.link)
+
+
     
     descript_places = zip(descriptions, result)
 
@@ -95,7 +99,10 @@ def ResultsView(request, place1,lon1, lat1, place2,lon2, lat2,  place3, lon3, la
                 { 'mapbox_access_token': 'pk.eyJ1IjoibWh1cHAiLCJhIjoiY2wyN3YzMTRzMDFiZzNrbzhoZXZtcG4yYiJ9.q9cjSjkeABVIX-TIVHeHYA' ,
                     "q1": result,
                     "coordinates_start":coordinates_start,
-                    "descript_places":descript_places
+                    "descript_places":descript_places,
+                    "descriptions":descriptions,
+                    "links":links
+
                     })
     
 
@@ -195,11 +202,6 @@ def modelling(request):
                                 port="5432",
                                 database="d14o2kdcr9slju")
 
-        # conn = psycopg2.connect(user='postgres',
-        #                         password='shandy123',
-        #                         host="127.0.0.1",
-        #                         port="5432",
-        #                         database="new")
         cursor = conn.cursor()      
         #conn.commit()
 
@@ -216,9 +218,9 @@ def modelling(request):
         
         for index, column in enumerate(data):
 
-            print(column)
+            print(index)
             
-            places[index] = [column[0], column[1],column[2], np.dot(list(column[3:-1]), dot_product_answer)]
+            places[index] = [column[0], column[1],column[2], np.dot(list(column[3:-2]), dot_product_answer)]
         
         places = dict(sorted(places.items(), key=lambda x: x[1][3], reverse=True)[:5])
 

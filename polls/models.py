@@ -29,6 +29,7 @@ class Question(models.Model):
     question_text15 = models.IntegerField('Do you usually travel with your family and look for family-friendly places?')
     question_text16 = models.IntegerField('Are you travelling with a romantic partner and want to find a special place to take them to?')
     description = models.CharField('Building Description', max_length=1000)
+    link = models.CharField('Link to the place', max_length=1000)
     
     def __str__(self):
         return self.building
@@ -64,6 +65,7 @@ class Customer(models.Model):
     question_text15 = models.IntegerField('Do you usually travel with your family and look for family-friendly places?')
     question_text16 = models.IntegerField('Are you travelling with a romantic partner and want to find a special place to take them to?')
     building = models.ForeignKey(Question,unique=False, to_field='building', on_delete=models.CASCADE, default=None)
+    click_on_link = models.IntegerField("If the user clicked on the link or not", default=0)
     dot_product = models.FloatField("Validation_Dot_Product",default=0)
     valuation = models.FloatField("Validation",default=0)
     opinion = models.CharField('Opinion', max_length=1000,default='No Opinion')

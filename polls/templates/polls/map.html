@@ -34,6 +34,13 @@
 			  opacity:1 animation: transitionIn 0.75s;
 			  transform: translateY(0) animation: transitionIn 0.75s;
 			}
+      .mapboxgl-popup-content {
+        max-width:500px !important;
+      }
+
+      .mapboxgl-popup-content-wrapper {
+        max-width:500px !important;
+      }
 			
 		  }
 
@@ -241,7 +248,7 @@
     {% endfor %}
     </ol>
     </fieldset>
-        <div id='map' width="100%" style='height:520px; width:500px; padding:10px; left:30px; border-width: 5px;border-style: solid;border-color:navy;'></div>
+        <div id='map' width="100%" style='height:800px !important; width:750px !important; padding:9px; left:20px !important; border-width: 5px;border-style: solid;border-color:navy;'></div>
         <h5 id="evaluation"><h4 style = "position:relative; left:80px; top:2px; color: navy; max-width: 1400px;">Reached this point, we would like to rate <u><b>how accurate</b></u> our <u><b>recommendation</b></u> and also the <u><b>order of preference</b></u> was and if you missed crucial information:</h5>
             <div style = "position:relative; left:80px; top:2px" >Rate from 1 to 5, where 1 is <i>Really Bad</i> and 5 is <i>Extremely Good</i>:</div>
             <form action = "{% url 'polls:rating' q1.0 q1.1 q1.2 q1.3 q1.4%}" method="post">
@@ -406,7 +413,7 @@
     {% csrf_token %}
     <legend><h4 style = "position:relative; left:50px; top:2px" >Leave a comment:</h4></legend>
     <div style = "position:relative; left:50px; top:2px">
-        <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:.6em; font-size: 18px;" placeholder="Leave us a comment!"></textarea>
+        <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:.6em; font-size: 18px;" placeholder="Leave us a commen!"></textarea>
     </div>
 
     <input id="submit" type="submit" value="Rate" style = "position:relative; left:80px; top:2px;margin-top:10px;" class="slide-hover-left-1">
@@ -417,14 +424,18 @@
 
         mapboxgl.accessToken = "{{mapbox_access_token}}"
         const start = {{ coordinates_start|safe }};
+        const description = {{ descriptions|safe }}
+        const places = {{ q1|safe }}
+        const links_places = {{ links|safe }}
+
+        
         const locations = {
             'features': [
               {
                 'type': 'Feature',
                 'properties': {
-                  'title': 'Lincoln Park',
-                  'description':
-                    'A northside park that is home to the Lincoln Park Zoo'
+                  'title':  `<a href= "${links_places[0]}" target="_blank" title="Click for more info about ${places[0]}" style="color:blue !important";>1. ${places[0]}</a>`,
+                  'description':`<h6>${description[0]}</h6>`
                 },
                 'geometry': {
                   'coordinates':[start[0], start[1]],
@@ -434,8 +445,8 @@
               {
                 'type': 'Feature',
                 'properties': {
-                  'title': 'Burnham Park',
-                  'description': "A lakefront park on Chicago's south side"
+                  'title': `<a href= "${links_places[1]}" target="_blank" title="Click for more info about ${places[1]}" style="color:blue !important";>2. ${places[1]}</a>`,
+                  'description': `<h6>${description[1]}</h6>`
                 },
                 'geometry': {
                   'coordinates': [start[2], start[3]],
@@ -445,9 +456,8 @@
               {
                 'type': 'Feature',
                 'properties': {
-                  'title': 'Grant Park',
-                  'description':
-                    "A downtown park that is the site of many of Chicago's favorite festivals and events"
+                  'title':  `<a href= "${links_places[2]}" target="_blank" title="Click for more info about ${places[2]}" style="color:blue !important";>3. ${places[2]}</a>`,
+                  'description': `<h6>${description[2]}</h6>`
                 },
                 'geometry': {
                   'coordinates': [start[4], start[5]],
@@ -457,8 +467,8 @@
               {
                 'type': 'Feature',
                 'properties': {
-                  'title': 'Humboldt Park',
-                  'description': "A large park on Chicago's northwest side"
+                  'title':  `<a href= "${links_places[3]}" target="_blank" title="Click for more info about ${places[3]}" style="color:blue !important";>4. ${places[3]}</a>`,
+                  'description': `<h6>${description[3]}</h6>`
                 },
                 'geometry': {
                   'coordinates': [start[6], start[7]],
@@ -468,9 +478,8 @@
               {
                 'type': 'Feature',
                 'properties': {
-                  'title': 'Douglas Park',
-                  'description':
-                    "A large park near in Chicago's North Lawndale neighborhood"
+                  'title':  `<a href= "${links_places[4]}" target="_blank" title="Click for more info about ${places[4]}" style="color:blue !important";>5. ${places[4]}</a>`,
+                  'description':`<h6>${description[4]}</h6>`
                 },
                 'geometry': {
                   'coordinates': [start[8], start[9]],
@@ -519,7 +528,7 @@
               map.off('sourcedata', onSourceData);
               for (const location of locations.features) {
                 const popup = new mapboxgl.Popup().setHTML(
-                  `<h3>${location.properties.title}</h3><p>${location.properties.description}</p>`
+                  `<h4>${location.properties.title}</h4><p>${location.properties.description}</p>`
                 );
     
                 const marker = new mapboxgl.Marker()
@@ -726,8 +735,6 @@
         }); {% endcomment %}
 
         
-
-        </script>
     </script>
 </div>
 <footer style="position:relative !important; left:40px !important; top:500px !important">
