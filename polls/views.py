@@ -196,11 +196,11 @@ def modelling(request):
 
     if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None)&(answer9 != None)&(answer10 != None)&(answer11 != None)&(answer12 != None)&(answer13 != None)&(answer14 != None)&(answer15 != None)&(answer16 != None):
 
-        conn = psycopg2.connect(user='evbrjgadnpctqo',
-                                password='e81c13f69f19ce7bf43688367e629af876e399cf9546538ee594f6c90e0acef0',
+        conn = psycopg2.connect(user='walepyfjfeczmh',
+                                password='464ffb5fd7698f86e3e0ec7fa119961230b723bf437eaeaf1de2f3441e032625',
                                 host="ec2-52-86-115-245.compute-1.amazonaws.com",
                                 port="5432",
-                                database="d14o2kdcr9slju")
+                                database="d613pk36jf51k0")
 
         cursor = conn.cursor()      
         #conn.commit()
