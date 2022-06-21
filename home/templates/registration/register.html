@@ -125,12 +125,11 @@
 							{{form.password2}}
 						</div>
 
-						<input type = "checkbox" id="checkbox" style="width:20px; height:20px;" name='input' onclick='validateForm()'>Signing up signifies that you agree to the Terms of Service and our Pivacy Policy
+						<input type = "checkbox" id="checkbox" style="width:20px; height:20px;" name='input' onclick='Check(this)'>Signing up signifies that you agree to the Terms of Service and our Pivacy Policy
 
 
 				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn login_btn" type="submit" value="Register Account" oninvalid="this.setCustomValidity('Please Enter valid email')"
-							 oninput="setCustomValidity('')">
+				 			<input class="btn login_btn" type="submit" value="Register Account" id="submit" disabled>
 				   		</div>
 					</form>
 				</div>
@@ -163,18 +162,17 @@
 			form_fields[field].className += ' form-control'
 		}
 
-		function validateForm()                                 
-{ 
-    var name = document.getElementById("checkbox");         
-    if (name.value == ""){ 
-        document.getElementById('checkbox').innerHTML="Accept condition";  
-        name.focus(); 
-        return false; 
-    }else{
-        document.getElementById('checkbox').innerHTML=""; 
-
-    }
-}
+		function Check(el) {
+			var button = document.getElementById("submit");
+		
+			 var nbr_checked_radios = document.querySelectorAll('input[type=checkbox]:checked').length;
+		
+			if (nbr_checked_radios==1) {
+			button.disabled = false;
+			} else {
+			button.disabled = true;
+			}
+		 }
 	</script>
 </body>
 </html>
