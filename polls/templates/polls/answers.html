@@ -1,11 +1,11 @@
 {% load static %}
 <html>
+    <title>TravelBuddy</title>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static '/css/index_style.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'images/core-img/favicon.ico' %}" />
         <style>
             body {
                 background-image: url("/static/images/coverpage.png") !important;
@@ -83,8 +83,9 @@
     <body>
         {%  include 'registration/navbar.html' %}
         {% if feedback %}
-            <h1 style='text-align:center; margin-top:2em'><b>Thank you for you <i>{{ name|safe }}</i> for trying TravelBuddy</b></h1>
-            <h3 style='text-align:center; margin-top:2em;margin-left:0em;nmargin-right:40em;'>Your satisfaction with our service is <i>{{ feedback|safe }}</i> with a evaluation of {{ punctuation|safe }} out of 5</h3>
+            <h1 style='text-align:center; margin-top:2em'><b>Thank you <i>{{ name|safe }}</i> for trying TravelBuddy</b></h1>
+            <h3 style='text-align:center; margin-top:2em;margin-left:0em;nmargin-right:40em;'>Your satisfaction with TravelBuddy was <i>{{ punctuation|safe }}</i>/5. No matter what, we will always try to do better!</h3>
+            <h3 style='text-align:center; margin-top:2em;margin-left:0em;nmargin-right:40em;'>Thank you very much for taking the time to help us! With your travel profile and feedback, we can now get to work and create a version 2 of TravelBuddy!</h3>
         {% else %}
         <h2 style='text-align:center; margin-top:2em'>{{answer_submitted}}</h2>
         {% endif %}

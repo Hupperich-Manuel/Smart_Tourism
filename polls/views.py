@@ -462,7 +462,7 @@ def rating(request, building1, building2, building3, building4, building5):
             feedback = "Very Good"
 
 
-        return render(request, 'polls/answers.html', {"feedback":feedback, "punctuation":evaluation, "name":name[0]})
+        return render(request, 'polls/answers.html', {"feedback":feedback, "punctuation":round(evaluation,1), "name":name[0]})
     
     else:
         answer_submitted = f"You already submitted your answer, thanks ;)"
