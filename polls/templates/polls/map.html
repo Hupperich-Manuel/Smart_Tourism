@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html>
+  <title>TravelBuddy</title>
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
@@ -230,7 +231,16 @@
                 font-weight: bold;
             }
 
-
+            .wrapper h1{
+              color: white;
+              max-width: 1000px;
+              margin-right:1e;
+              position:center !important;
+              margin-left:13em;
+              margin-top:1em;
+              margin-bottom:-2em;
+            
+            }
 
     </style>
 </head>
@@ -238,6 +248,9 @@
     {%  include 'registration/navbar.html' %}
 
     <div class="wrapper">
+      <h1>
+        <p>TravelBuddy’s top 5 recommendations for your perfect day (in a ranked order) in Madrid are:</p>
+      </h1>
     <div class="container">
     <fieldset>
     <ol class='move-me'>

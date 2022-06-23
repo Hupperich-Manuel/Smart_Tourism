@@ -2,14 +2,17 @@
 
 <!DOCTYPE html>
 <html>
+	<title>TravelBuddy</title>
 <head>
 	<title>Welcome</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static '/css/index_style.css' %}">
-	<link rel="icon" type="image/x-icon" href="{% static 'images/core-img/favicon.ico' %}" />
 	<style>
+		html{
+			zoom: 80%;
+		}
 		body {
 			background-image: url("/static/images/coverpage.png") !important;
 			background-repeat: no-repeat;
@@ -81,27 +84,40 @@
 </head>
 <body>
 	{%  include 'registration/navbar.html' %}
-	<h1 style="text-align:center; margin-top:2em; width=100%"><b>Welcome to TravelBuddy</b></h1>
+	<h1 style="text-align:center; margin-top:1em"><b>Welcome to TravelBuddy 1.0!</b></h1>
 	<div ><b>
-		<p style='text-align:center; margin-top:2em;font-size:20px; width=100%'>Hola</p>
+		<p style='text-align:center; margin-top:1em;font-size:25px;'>Hola</p>
 		
-		<p style='position:relative; margin-left:40em; margin-right:37em; margin-top:1em; width=100%'>For our capstone project we are developing a smart tourism web app that recommends the best one day tour based on your interests! </p>
+		<p style='position:relative; margin-left:28em; margin-right:28m; margin-top:1em; font-size:22px;'>TravelBuddy is a smart tourism app that can enhance your tourism experience by giving you the perfect day.</p>
+
+		<p style='position:relative; margin-left:28em; margin-right:28em; margin-top:1em; font-size:22px;'>How? By selecting the best places (museums, landmarks, etc.) at your travel destination based on your personal preferences.</p>
 		
-		<p style='position:relative; margin-left:40em; margin-right:37em; margin-top:1em; width=100%'>We need your help to gather data (big data!) to improve our ML model. 
+		<p style='position:relative; margin-left:28em; margin-right:28em; margin-top:1em; font-size:22px;'>We need your help to improve TravelBuddy. It will only take 5 short minutes out of your busy schedule, promised!
 		</p>
 	</b>
-	<ol style='position:relative; margin-left:40em; margin-right:37em; margin-top:4em; width=100%'>
+	<ol style='position:relative; margin-left:28em; margin-right:28em; margin-top:2em; font-size:22px;'>
 		<b>
 		<li> Sign up</li><a href="{% url 'register' %}"  class="slide-hover-left-1">Sign up</a>
 		<li> Login</li><a href="{% url 'login' %}"  class="slide-hover-left-1">Login</a>
-		<li> Answer all the questions</li>
-		<li> Check out the places recommended</li>
-		<li> Rate each place based how much you enjoyed your visit</li>
-		<li> Submit your results!</li>
+		<li> Tell us about yourself</li>
+		<li> Check out the places TravelBuddy recommended</li>
+		<li> Rate each place based on how much you would like to visit it</li>
+		<li> Submit!</li>
 		</b>
-	</ol>
+	</ol>		
+		{% comment %} <p style='position:relative; margin-left:40em; margin-right:35em; margin-top:1.5em;'>Thank you for being here and helping us to become better at providing you with the best travel experience!</p>
+
+		<ul style='position:relative; margin-left:40em; margin-right:35em; margin-top:.8em; list-style-type:none; font-size:15px;'>
+			<b>
+			<li>- Manuel Hupperich</li>
+			<li>- Ignacio González</li>
+			<li>- Thomas August Maria Stenger</li>
+			<li>- Tamara Samaha</li>
+			<li>- Daniel Chacón<li>
+			<li>- Alexander Humpert</li>
+			</b> {% endcomment %}
+	</b>
 	</div>
-	
 </body>
 
 </html>
