@@ -538,7 +538,7 @@ input[class="happy"]:focus + svg {
         
         <div class="container">
     <fieldset>
-    <form action = "{% url 'polls:modelling' %}" method="post" class="rating-form-2" style='margin:40px' name="myForm">
+    <form action = "{% url 'polls:modelling' %}" method="post" class="rating-form-2" style='margin:40px' name="myForm" style='font-size:18px;'>
     <div class="move-me">
     {% csrf_token %}
     <legend ><h4 style="margin: 2px; padding: 2px;">Do you prefer popular places with a lot of foot traffic over quiet places?</h4></legend>
