@@ -1,6 +1,11 @@
 # Smart_Tourism
 Recommendation System for Experiences in a city
 
+Reset Data
+```command
+
+```
+
 To insert csv in posgresql heroku
 ```command
 DATABASE=> \copy polls_question from places_tab.csv with(format csv, delimiter '      ',  header true, encoding 'UTF-8');
