@@ -249,7 +249,7 @@
 
     <div class="wrapper">
       <h1>
-        <p>TravelBuddy’s top 5 recommendations for your perfect day (in a ranked order) in Madrid are:</p>
+        <p style="color:navy">TravelBuddy’s top 5 recommendations for your perfect day (in a ranked order) in Madrid are:</p>
       </h1>
     <div class="container">
     <fieldset>
@@ -262,9 +262,15 @@
     {% endfor %}
     </ol>
     </fieldset>
+        <h5 style="margin-bottom:1.5em;max-width:860px;color:rgb(23, 155, 199);border-radius: 25px;border: 3px solid navy; padding: 20px; background:white;">
+          <p style="margin-right:10em;">By clicking on the locations on the interactive map below you can read a short description of the recommendation and get to know it a bit better.</p>
+
+          <p style="margin-right:10em;">If you’re really curious, just click on the name and you will be redirected to a website with more detailed information about the location.</p>
+            
+        </h5>
         <div id='map' width="100%" style='height:800px !important; width:750px !important; padding:9px; left:20px !important; border-width: 5px;border-style: solid;border-color:navy;'></div>
-        <h5 id="evaluation"><h4 style = "position:relative; left:80px; top:2px; color: navy; max-width: 1400px;">Reached this point, we would like to rate <u><b>how accurate</b></u> our <u><b>recommendation</b></u> and also the <u><b>order of preference</b></u> was and if you missed crucial information:</h5>
-            <div style = "position:relative; left:80px; top:2px" >Rate from 1 to 5, where 1 is <i>Really Bad</i> and 5 is <i>Extremely Good</i>:</div>
+        <h5 id="evaluation"><h4 style = "position:relative; left:80px; top:2px; color: navy; max-width: 1400px;">So, how did we do? Do you think you would enjoy the places <b>TravelBuddy</b> wants to take you to?</h5>
+            <div style = "position:relative; left:80px; top:2px" >Please rate from 1 - 5, where 1 is <i>I don’t want to go there!</i> and 5 is <i>I would love to check this place out!</i>:</div>
             <form action = "{% url 'polls:rating' q1.0 q1.1 q1.2 q1.3 q1.4%}" method="post">
             {% csrf_token %}
             <label style = "position:relative; left:80px; top:2px; margin-top:40px;"><b>{{ q1.0 }}</b>:</label>
