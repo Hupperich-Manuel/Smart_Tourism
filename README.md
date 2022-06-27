@@ -1,6 +1,11 @@
 # Smart_Tourism
 Recommendation System for Experiences in a city
 
+Static files
+```
+python manage.py collectstatic --noinput
+```
+
 Reset Data
 ```command
 
