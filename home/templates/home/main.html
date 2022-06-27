@@ -12,6 +12,26 @@
 	<script src="less.js" type="text/javascript"></script>
 	<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	<style>
+		@media screen and (max-width: 800px) and (max-height: 900px) {
+			body,
+			html {
+			  font-size: 0.7rem;
+			  animation:transitionIn 0.75s;
+			  position:center; 
+			  margin-top:2em;
+			  background-repeat: no-repeat !important;
+			  background-size: cover;
+			  background-position: center 50px;
+			  width:auto;
+			  height:100%;
+			}
+			header h1 {
+			  font-size: 4em;
+			}
+			footer p {
+			  font-size: 2em;
+			}
+		  }
 		@media screen and (max-width: 650px) and (max-height: 700px) {
 			body,
 			html {
@@ -59,12 +79,12 @@
 			html {
 			  font-size: 0.7rem;
 			  animation:transitionIn 0.75s;
+			  position:center;
 			  margin-top:2em;
-			  position:center; 
 			  background-repeat: no-repeat;
 			  background-size: cover;
 			  background-position: center 50px;
-			  width:100%;
+			  width:auto%;
 			  height:100%;
 			}
 			header h1 {
@@ -81,7 +101,6 @@
 			  font-size: 0.6rem;
 			  animation:transitionIn 0.75s;
 			  position:center; 
-			  margin-top:2em;
 			  background-repeat: no-repeat;
 			  background-size: cover;
 			  background-position: center 70px;
@@ -123,7 +142,6 @@
 			  font-size: 0.6rem;
 			  position:center;
 			  animation:transitionIn 0.75s;
-			  margin-top:2em;
 			  background-repeat: no-repeat;
 			  background-size: cover;
 			  background-position: center 1000px;
