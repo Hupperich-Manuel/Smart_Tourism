@@ -274,7 +274,7 @@
             <div style = "position:relative; left:80px; top:2px" >Please rate from 1 - 5, where 1 is <i>I don’t want to go there!</i> and 5 is <i>I would love to check this place out!</i>:</div>
             <form action = "{% url 'polls:rating' q1.0 q1.1 q1.2 q1.3 q1.4%}" method="post">
             {% csrf_token %}
-            <label style = "position:relative; left:80px; top:2px; margin-top:40px; font-size: 13px;"><b>{{ q1.0 }}</b>:</label>
+            <h5><label style = "position:relative; left:80px; top:2px; margin-top:40px; font-size: 13px;"><b>{{ q1.0 }}</b>:</label></h5>
     <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
         
         <input id="demo-1" type="radio" name="demo" value="1"> 
@@ -306,7 +306,7 @@
     
     {% csrf_token %}
 
-        <label style = "position:relative; left:80px; top:3px; margin-top:10px;font-size: 13px;"><b>{{ q1.1 }}</b>:</label>
+    <h5><label style = "position:relative; left:80px; top:3px; margin-top:10px;font-size: 13px;"><b>{{ q1.1 }}</b>:</label></h5>
     <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
     
         <input id="demo-11" type="radio" name="demo1" value="1"> 
@@ -337,7 +337,7 @@
     </script>
 
     {% csrf_token %}
-        <label style = "position:relative; left:80px; top:3px; margin-top:10px;font-size: 13px;"><b>{{ q1.2 }}</b>:</label>
+    <h5><label style = "position:relative; left:80px; top:3px; margin-top:10px;font-size: 13px;"><b>{{ q1.2 }}</b>:</label></h5>
     <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
     
         <input id="demo-21" type="radio" name="demo2" value="1"> 
@@ -369,7 +369,7 @@
 
     {% csrf_token %}
 
-        <label style = "position:relative; left:80px; top:2px; margin-top:10px;font-size: 13px;"><b>{{ q1.3 }}</b>:</label>
+    <h5><label style = "position:relative; left:80px; top:2px; margin-top:10px;font-size: 13px;"><b>{{ q1.3 }}</b>:</label></h5>
     <fieldset class="rating" style = "position:relative; left:80px; top:3px;margin-top:-5px;">
     
         <input id="demo-31" type="radio" name="demo3" value="1"> 
@@ -401,7 +401,7 @@
 
     {% csrf_token %}
 
-        <label style = "position:relative; left:80px; top:2px; margin-top:10px;font-size: 13px;"><b>{{ q1.4 }}</b>:</label>
+        <h5><label style = "position:relative; left:80px; top:2px; margin-top:10px;"><b>{{ q1.4 }}</b>:</label></h5>
     <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
     
         <input id="demo-41" type="radio" name="demo4" value="1"> 
