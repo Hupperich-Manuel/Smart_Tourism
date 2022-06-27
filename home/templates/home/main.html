@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static '/css/index_style.css' %}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	<script>
 		$( document ).ready(function() {      
 			var is_mobile = false;
@@ -26,9 +27,27 @@
 		 });
 	</script>
 	<style>
-		@media only screen and (max-width: 50px) {
-			#some-element { display: none; }
-		  }
+		/* Smartphones (portrait and landscape) ----------- */
+		@media only screen 
+		and (min-device-width : 320px) 
+		and (max-device-width : 480px) {
+		/* Here you should set what size you want your div to be 
+		when viewed on smartphone */
+		/* Styles */
+		}
+
+		/* iPads (portrait and landscape) ----------- */
+		@media only screen 
+		and (min-device-width : 768px) 
+		and (max-device-width : 1024px) {
+		/* Styles */
+		}
+
+		/* Desktops and laptops ----------- */
+		@media only screen 
+		and (min-width : 1224px) {
+		/* Styles */
+		}
 		html{
 			zoom: 80%;
 		}
