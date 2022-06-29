@@ -153,7 +153,9 @@ Get back to your default branch
 $git checkout master
 ```
 
+## Quick insight into the Web:
 
+<img src=''>
 
 
 
