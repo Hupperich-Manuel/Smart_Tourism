@@ -155,7 +155,23 @@ $git checkout master
 
 ## Quick insight into the Web:
 
-<img src=''>
+### Home Page
+
+<img src='static/images/readme/Screenshot_1.png'>
+
+### Question Site
+
+<img src='static/images/readme/Screenshot_2.png'>
+
+
+### Get the recommendations according to your profile
+
+<img src='static/images/readme/Screenshot_3.png'>
+
+### Dive into the recommendations and rate them
+
+
+<img src='static/images/readme/bandicam 2022-06-29 11-33-15-725_Trim.gif'>
 
 
 
