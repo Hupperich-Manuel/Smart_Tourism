@@ -34,6 +34,11 @@ After doing this you can move your _dump_ file to your local Postgre database wi
 pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d new latest.dump
 ```
 
+**All in one** (for windows only):
+```command
+heroku pg:backups:capture --app t-buddy-placerecommender && heroku pg:backups:download --app t-buddy-placerecommender && pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d new latest.dump
+```
+
 command to interact with psql
 ```command
 heroku pg:psql postgresql-fluffy-09392 --app t-buddy-placerecommender
