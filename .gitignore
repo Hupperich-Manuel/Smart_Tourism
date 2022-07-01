@@ -140,3 +140,4 @@ dmypy.json
 *.pyc
 
 *.guide_heroku.txt
+data/
