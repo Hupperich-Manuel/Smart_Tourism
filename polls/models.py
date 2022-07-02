@@ -4,6 +4,7 @@ import datetime
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
+#from pyrsistent import v
 
 
 
@@ -70,3 +71,44 @@ class Customer(models.Model):
     valuation = models.FloatField("Validation",default=0)
     opinion = models.CharField('Opinion', max_length=1000,default='No Opinion')
 
+
+
+class SecondUse(models.Model):
+    username = models.ForeignKey(User,unique=False, to_field='username', on_delete=models.CASCADE)
+    email = models.CharField("Email", max_length=200)
+    pub_date = models.DateTimeField('date published')
+    name = models.CharField('Name', max_length=200)
+    surname = models.CharField('Surame', max_length=200)
+    building = models.ForeignKey(Question,unique=False, to_field='building', on_delete=models.CASCADE, default=None)
+    click_on_link = models.IntegerField("If the user clicked on the link or not", default=0)
+    dot_product = models.FloatField("Validation_Dot_Product",default=0)
+    valuation = models.FloatField("Validation",default=0)
+    opinion = models.CharField('Opinion', max_length=1000,default='No Opinion')
+
+
+
+class XMatrix(models.Model):
+    bulding_1 = models.IntegerField(default=0)
+    bulding_2 = models.IntegerField(default=0)
+    bulding_3 = models.IntegerField(default=0)
+    bulding_4 = models.IntegerField(default=0)
+    bulding_5 = models.IntegerField(default=0)
+    bulding_6 = models.IntegerField(default=0)
+    bulding_7 = models.IntegerField(default=0)
+    bulding_8 = models.IntegerField(default=0)
+    bulding_9 = models.IntegerField(default=0)
+    bulding_10 = models.IntegerField(default=0)
+    bulding_11 = models.IntegerField(default=0)
+    bulding_12 = models.IntegerField(default=0)
+    bulding_13 = models.IntegerField(default=0)
+    bulding_14 = models.IntegerField(default=0)
+    bulding_15 = models.IntegerField(default=0)
+    bulding_16 = models.IntegerField(default=0)
+    bulding_17 = models.IntegerField(default=0)
+    bulding_18 = models.IntegerField(default=0)
+    bulding_19 = models.IntegerField(default=0)
+    bulding_20 = models.IntegerField(default=0)
+    bulding_21 = models.IntegerField(default=0)
+    bulding_22 = models.IntegerField(default=0)
+    bulding_23 = models.IntegerField(default=0)
+    bulding_24 = models.IntegerField(default=0)
