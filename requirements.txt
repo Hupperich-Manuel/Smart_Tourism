@@ -17,3 +17,5 @@ tokenize-rt==4.2.1
 tzdata==2022.1
 whitenoise==6.1.0
 implicit==0.5.2
+pandas==1.4.2
+scipy==1.8.1
