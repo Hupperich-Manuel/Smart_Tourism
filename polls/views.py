@@ -122,11 +122,11 @@ def default_map(request):
 @login_required(login_url='login')
 def SecondUser(request):
 
-    conn = psycopg2.connect(user='postgres',
-                                    password='shandy123',
-                                    host="127.0.0.1",
+    conn = psycopg2.connect(user='walepyfjfeczmh',
+                                    password='464ffb5fd7698f86e3e0ec7fa119961230b723bf437eaeaf1de2f3441e032625',
+                                    host="ec2-52-86-115-245.compute-1.amazonaws.com",
                                     port="5432",
-                                    database="tbuddy_new_6")
+                                    database="d613pk36jf51k0")
 
     cursor = conn.cursor()      
     #conn.commit()
