@@ -73,6 +73,7 @@ class Customer(models.Model):
 
 
 
+
 class SecondUse(models.Model):
     username = models.ForeignKey(User,unique=False, to_field='username', on_delete=models.CASCADE)
     email = models.CharField("Email", max_length=200)
@@ -88,6 +89,7 @@ class SecondUse(models.Model):
 
 
 class XMatrix(models.Model):
+    username = models.CharField('username',  max_length=200,unique=False, primary_key=True)
     bulding_1 = models.IntegerField(default=0)
     bulding_2 = models.IntegerField(default=0)
     bulding_3 = models.IntegerField(default=0)
@@ -112,3 +114,4 @@ class XMatrix(models.Model):
     bulding_22 = models.IntegerField(default=0)
     bulding_23 = models.IntegerField(default=0)
     bulding_24 = models.IntegerField(default=0)
+    bulding_25 = models.IntegerField(default=0)

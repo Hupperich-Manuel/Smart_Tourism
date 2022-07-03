@@ -79,6 +79,14 @@ def registerPage(request):
 def login_user(request):
 
     if request.user.is_authenticated:
+
+        user_in_date = Customer.objects.filter(username=request.user)
+        print(f"User {request.user}")
+        if user_in_date is not None:
+        
+            return HttpResponseRedirect(reverse('polls:second_user', args=()))
+
+
         q1 = [1, 0]
         q2 = ["Yes", "No"]
         zip_list = zip(q1, q2)
@@ -185,7 +193,6 @@ def login_user(request):
         else:
             # Return an 'invalid login' error message.
             return render(request, 'registration/login.html', {})
-
 
 
 def logout_user(request):

@@ -1,0 +1,921 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <title>TravelBuddy</title>
+  <head>
+    <meta content='width=800px, height=800px,initial-scale=1' name='viewport'/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/mainstyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/index_style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/core-img/favicon.ico' %}" />
+
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link
+    href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+    rel="stylesheet"
+    />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NL3KWNXF6L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NL3KWNXF6L');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QPPG9HL8Z9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QPPG9HL8Z9');
+    </script>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+        @prim: #53e3a6;
+
+        @media screen and (max-width: 650px) and (max-height: 700px) {
+          body,
+          html {
+            font-size: 14px;
+            animation:transitionIn 0.75s;
+            position:center; 
+            margin-top:2em;
+          }
+          header h1 {
+            font-size: 4em;
+          }
+          footer p {
+            font-size: 2em;
+          }
+          }
+          
+          @media screen and (max-height: 700px) {
+          body,
+          html {
+            font-size: 14px;
+            animation:transitionIn 0.75s;
+            position:center; 
+            margin-top:2em;
+          }
+          header h1 {
+            font-size: 4em;
+          }
+          footer p {
+            font-size: 2em;
+          }
+          }
+          
+          @media screen and (max-width: 650px) {
+          body,
+          html {
+            font-size: 14px;
+            animation:transitionIn 0.75s;
+            position:center; 
+            margin-top:2em;
+          }
+          header h1 {
+            font-size: 4em;
+          }
+          footer p {
+            font-size: 2em;
+          }
+          }
+          
+          @media screen and (max-width: 450px) and (max-height: 550px) {
+          body,
+          html {
+            font-size: 14px;
+            animation:transitionIn 0.75s;
+            position:center; 
+            margin-top:2em;
+          }
+          header h1 {
+            font-size: 4.6em;
+          }
+          footer p {
+            font-size: 3em;
+          }
+          }
+          
+          @media screen and (max-height: 550px) {
+          body,
+          html {
+            font-size: 14px;
+            animation:transitionIn 0.75s;
+            position:center; 
+            margin-top:2em;
+          }
+          header h1 {
+            font-size: 4.6em;
+          }
+          footer p {
+            font-size: 3em;
+          }
+          }
+          
+          @media screen and (max-width: 450px) {
+          body,
+          html {
+            font-size: 14px;
+            position:center; 
+            margin-top:2em;
+          }
+          header h1 {
+            font-size: 4.6em;
+          }
+          footer p {
+            font-size: 3em;
+          }
+          }
+          
+          @media screen and (max-width: 400px) and (max-height: 500px) {
+          body,
+          html {
+            height: 500px;
+            width: 100%;
+            position:center; 
+            margin-top:2em;
+          }
+          }
+          
+          @media screen and (max-height: 500px) {
+          body,
+          html {
+            height: 500px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center 100px;
+          }
+          }
+          
+          @media screen and (max-width: 400px) {
+          body,
+          html {
+            width: 800px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center 200px;
+          }
+          }
+          @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+  
+          @prim: #53e3a6;
+          
+          *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            
+            font-weight: 300;
+          }
+        
+        body, html {
+            animation: transitionIn 0.75s !important;
+        }
+        @keyframes transitionIn {
+			from {
+			  opacity:0 animation: transitionIn 0.75s;
+			  transform: translateY(-10px) animation: transitionIn 0.75s;
+			}
+			to {
+			  opacity:1 animation: transitionIn 0.75s;
+			  transform: translateY(0) animation: transitionIn 0.75s;
+			}
+      .mapboxgl-popup-content {
+        max-width:500px !important;
+      }
+
+      .mapboxgl-popup-content-wrapper {
+        max-width:500px !important;
+      }
+			
+		  }
+
+          input[type="submit"] {
+            border: 1px solid #0A3D5B;
+            background-color: transparent;
+            color: #0A3D5B;
+            padding: 20px 60px;
+            font-size: 15px;
+            font-weight: 100;
+            background: transparent;
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 75px;
+            margin-bottom: 0px;
+            border-radius: 10px;
+            text-transform: capitalize !important;
+        }
+        
+        input:focus {
+            outline: none;
+        }
+        
+        /* slide hover left -1 css */
+        
+        input.slide-hover-left-1 {
+            background-image: linear-gradient(0, #0A3D5B, #0A3D5B);
+            background-size: 0;
+            transition: .8s;
+            background-repeat: no-repeat;
+            text-align: center !important;
+        }
+        
+        input.slide-hover-left-1:hover {
+            background-size: 100%;
+            color: #fff;
+            text-align: center !important;
+        }
+        
+          
+          @keyframes moveInBottom {
+              0% {
+                  opacity: 0;
+                  transform: translateY(30px);
+              }
+          
+              100% {
+                  opacity: 1;
+                  transform: translateY(0px);
+              }
+          }
+
+          .wrapper{
+            animation: transitionIn 0.75s !important;
+            background: #50a3a2 !important;
+            
+          background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%) !important;
+          background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%) !important;
+          background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%) !important;
+          background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%) !important;
+            
+            position: absolute animation: transitionIn 0.75s !important;
+            top: 50%;
+            left: 0;
+            height: 350% !important;
+            margin-top: -5px !important;
+            overflow: hidden !important;
+            
+            &.form-success{
+              .container{
+                h1{
+                  transform: translateY(85px) !important;
+                }
+              }
+            }
+          }
+          
+          .container{
+            max-width: 1500px !important;
+            margin: 0 auto !important;
+            padding: 80px 0 !important;
+            height: 400px !important;
+            
+            h1{
+              font-size: 40px;
+              transition-duration: 1s;
+              transition-timing-function: ease-in-put;
+              font-weight: 200;
+            }
+          }
+          
+
+            .move-me {
+                display: inline-block;
+                padding: 20px;
+                color: white;
+                position: relative;
+                margin: 0 0 10px 0;
+                background:transparent;
+              }
+            .move-me li:nth-child(1){
+                animation: 5s ease-out 0s 1 move-in-steps;
+              }
+              .move-me li:nth-child(2){
+                animation: 4s ease-out 0s 1 move-in-steps;
+              }
+              .move-me li:nth-child(3){
+                animation: 3s ease-out 0s 1 move-in-steps;
+              }
+              .move-me li:nth-child(4){
+                animation: 2s ease-out 0s 1 move-in-steps;
+              }
+              .move-me li:nth-child(5){
+                animation: 1s ease-out 0s 1 move-in-steps;
+              }
+
+              .stars label {
+                color: rgb(153, 152, 152) !important;
+            }
+            
+            .stars label:nth-child(1) {
+                color: rgb(153, 152, 152) !important;
+                animation: 1s ease-out 0s 1 move-in-steps-top !important;
+            }
+            .stars label:nth-child(2) {
+                color: rgb(153, 152, 152) !important;
+                animation: 1.2s ease-out 0s 1 move-in-steps-top !important;
+            }
+            .stars label:nth-child(3) {
+                color: rgb(153, 152, 152) !important;
+                animation: 1.4s ease-out 0s 1 move-in-steps-top !important;
+            }
+            .stars label:nth-child(4) {
+                color: rgb(153, 152, 152) !important;
+                animation: 1.6s ease-out 0s 1 move-in-steps-top !important;
+            }
+            .stars label:nth-child(5) {
+                color: rgb(153, 152, 152) !important;
+                animation: 1.8s ease-out 0s 1 move-in-steps-top !important;
+            }
+            
+            .stars label:hover {
+                text-shadow: 0 0 2px #000 !important;
+            }
+
+              @keyframes move-in-steps-top {
+                0% {
+                    transform: translateY(-300%);
+                }
+                100% {
+                    transform: translateY(0);
+               }
+            }
+
+              @keyframes move-in-steps {
+                0% {
+                    transform: translateX(-100%);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+              }
+              .move-me li:nth-child(1) {
+                color: white;
+                font-size:40px;
+                font-weight: bold;
+            }
+            .move-me li:nth-child(2) {
+                color: white;
+                font-size:35px;
+                font-weight: bold;
+            }
+            .move-me li:nth-child(3) {
+                color: white;
+                font-size:30px;
+                font-weight: bold;
+            }
+            .move-me li:nth-child(4) {
+                color: white;
+                font-size:25px;
+                font-weight: bold;
+            }
+            .move-me li:nth-child(5) {
+                color: white;
+                font-size:20px;
+                font-weight: bold;
+            }
+
+            .wrapper h1{
+              color: white;
+              max-width: 1000px;
+              margin-right:1e;
+              position:center !important;
+              margin-left:13em;
+              margin-top:1em;
+              margin-bottom:-2em;
+            
+            }
+
+    </style>
+</head>
+    <body>
+    {%  include 'registration/navbar.html' %}
+
+    <div class="wrapper">
+      <h1>
+        <p style="color:navy">TravelBuddy’s top 5 recommendations for your perfect day (in a ranked order) in Madrid are:</p>
+      </h1>
+    <div class="container">
+    <fieldset>
+    <ol class='move-me'>
+    {% for experience in descript_places %}
+        <li style = "position:relative; left:20px; top:2px" class='move-me-1'>
+            <p>{{experience.1}}</p> 
+            {% comment %} <p style= "position:relative; left:40px; top:2px; font-size: 17px; color:rgb(65, 65, 65)">{{experience.0}}</p> {% endcomment %}
+        </li>
+    {% endfor %}
+    </ol>
+    </fieldset>
+        <h5 style="margin-bottom:1.5em;max-width:860px;color:rgb(23, 155, 199);border-radius: 25px;border: 3px solid navy; padding: 20px; background:white;">
+          <p style="margin-right:10em;">By clicking on the locations on the interactive map below you can read a short description of the recommendation and get to know it a bit better.</p>
+
+          <p style="margin-right:10em;">If you’re really curious, just click on the name and you will be redirected to a website with more detailed information about the location.</p>
+            
+        </h5>
+        <div id='map' style='height:800px; width:750px; padding:9px; left:20px !important; border-width: 5px;border-style: solid;border-color:navy;'></div>
+        <h5 id="evaluation"><h4 style = "position:relative; left:80px; top:2px; color: navy; max-width: 1400px; margin-top:2em;">So, how did we do? Do you think you would enjoy the places <b>TravelBuddy</b> wants to take you to?</h5>
+            <div style = "position:relative; left:80px; top:2px" >Please rate from 1 - 5, where 1 is <i>I don’t want to go there!</i> and 5 is <i>I would love to check this place out!</i>:</div>
+            <form action = "{% url 'polls:rating_second' q1.0 q1.1 q1.2 q1.3 q1.4%}" method="post">
+            {% csrf_token %}
+            <h5><label style = "position:relative; left:80px; top:2px; margin-top:40px;"><b>{{ q1.0 }}</b>:</label></h5>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
+        
+        <input id="demo-1" type="radio" name="demo" value="1"> 
+        <label for="demo-1">1 star</label>
+        <input id="demo-2" type="radio" name="demo" value="2">
+        <label for="demo-2">2 stars</label>
+        <input id="demo-3" type="radio" name="demo" value="3">
+        <label for="demo-3">3 stars</label>
+        <input id="demo-4" type="radio" name="demo" value="4">
+        <label for="demo-4">4 stars</label>
+        <input id="demo-5" type="radio" name="demo" value="5">
+        <label for="demo-5">5 stars</label>
+        
+        <div class="stars">
+            <label for="demo-1" aria-label="1 star" title="1 star"></label>
+            <label for="demo-2" aria-label="2 stars" title="2 stars"></label>
+            <label for="demo-3" aria-label="3 stars" title="3 stars"></label>
+            <label for="demo-4" aria-label="4 stars" title="4 stars"></label>
+            <label for="demo-5" aria-label="5 stars" title="5 stars"></label>   
+        </div>
+        
+    </fieldset>
+    <script>
+        (function(){
+            var rating = document.querySelector('.rating');
+            
+        }());
+    </script>
+    
+    {% csrf_token %}
+
+    <h5><label style = "position:relative; left:80px; top:3px; margin-top:10px;"><b>{{ q1.1 }}</b>:</label></h5>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
+    
+        <input id="demo-11" type="radio" name="demo1" value="1"> 
+        <label for="demo-11">1 star</label>
+        <input id="demo-12" type="radio" name="demo1" value="2">
+        <label for="demo-12">2 stars</label>
+        <input id="demo-13" type="radio" name="demo1" value="3">
+        <label for="demo-13">3 stars</label>
+        <input id="demo-14" type="radio" name="demo1" value="4">
+        <label for="demo-14">4 stars</label>
+        <input id="demo-15" type="radio" name="demo1" value="5">
+        <label for="demo-15">5 stars</label>
+        
+        <div class="stars">
+            <label for="demo-11" aria-label="1 star" title="1 star"></label>
+            <label for="demo-12" aria-label="2 stars" title="2 stars"></label>
+            <label for="demo-13" aria-label="3 stars" title="3 stars"></label>
+            <label for="demo-14" aria-label="4 stars" title="4 stars"></label>
+            <label for="demo-15" aria-label="5 stars" title="5 stars"></label>   
+        </div>
+        
+    </fieldset>
+    <script>
+        (function(){
+            var rating = document.querySelector('.rating');
+            }();
+        );
+    </script>
+
+    {% csrf_token %}
+    <h5><label style = "position:relative; left:80px; top:3px; margin-top:10px;"><b>{{ q1.2 }}</b>:</label></h5>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
+    
+        <input id="demo-21" type="radio" name="demo2" value="1"> 
+        <label for="demo-21">1 star</label>
+        <input id="demo-22" type="radio" name="demo2" value="2">
+        <label for="demo-22">2 stars</label>
+        <input id="demo-23" type="radio" name="demo2" value="3">
+        <label for="demo-23">3 stars</label>
+        <input id="demo-24" type="radio" name="demo2" value="4">
+        <label for="demo-24">4 stars</label>
+        <input id="demo-25" type="radio" name="demo2" value="5">
+        <label for="demo-25">5 stars</label>
+        
+        <div class="stars">
+            <label for="demo-21" aria-label="1 star" title="1 star"></label>
+            <label for="demo-22" aria-label="2 stars" title="2 stars"></label>
+            <label for="demo-23" aria-label="3 stars" title="3 stars"></label>
+            <label for="demo-24" aria-label="4 stars" title="4 stars"></label>
+            <label for="demo-25" aria-label="5 stars" title="5 stars"></label>   
+        </div>
+            
+    </fieldset>
+    <script>
+        (function(){
+            var rating = document.querySelector('.rating');
+            
+        }());
+    </script>
+
+    {% csrf_token %}
+
+    <h5><label style = "position:relative; left:80px; top:2px; margin-top:10px;"><b>{{ q1.3 }}</b>:</label></h5>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px;margin-top:-5px;">
+    
+        <input id="demo-31" type="radio" name="demo3" value="1"> 
+        <label for="demo-31">1 star</label>
+        <input id="demo-32" type="radio" name="demo3" value="2">
+        <label for="demo-32">2 stars</label>
+        <input id="demo-33" type="radio" name="demo3" value="3">
+        <label for="demo-33">3 stars</label>
+        <input id="demo-34" type="radio" name="demo3" value="4">
+        <label for="demo-34">4 stars</label>
+        <input id="demo-35" type="radio" name="demo3" value="5">
+        <label for="demo-35">5 stars</label>
+        
+        <div class="stars">
+            <label for="demo-31" aria-label="1 star" title="1 star"></label>
+            <label for="demo-32" aria-label="2 stars" title="2 stars"></label>
+            <label for="demo-33" aria-label="3 stars" title="3 stars"></label>
+            <label for="demo-34" aria-label="4 stars" title="4 stars"></label>
+            <label for="demo-35" aria-label="5 stars" title="5 stars"></label>   
+        </div>
+        
+    </fieldset>
+    <script>
+        (function(){
+            var rating = document.querySelector('.rating');
+            }();
+        );
+    </script>
+
+    {% csrf_token %}
+
+        <h5><label style = "position:relative; left:80px; top:2px; margin-top:10px;"><b>{{ q1.4 }}</b>:</label></h5>
+    <fieldset class="rating" style = "position:relative; left:80px; top:3px; margin-top:-5px;">
+    
+        <input id="demo-41" type="radio" name="demo4" value="1"> 
+        <label for="demo-41">1 star</label>
+        <input id="demo-42" type="radio" name="demo4" value="2">
+        <label for="demo-42">2 stars</label>
+        <input id="demo-43" type="radio" name="demo4" value="3">
+        <label for="demo-43">3 stars</label>
+        <input id="demo-44" type="radio" name="demo4" value="4">
+        <label for="demo-44">4 stars</label>
+        <input id="demo-45" type="radio" name="demo4" value="5">
+        <label for="demo-45">5 stars</label>
+        
+        <div class="stars">
+            <label for="demo-41" aria-label="1 star" title="1 star"></label>
+            <label for="demo-42" aria-label="2 stars" title="2 stars"></label>
+            <label for="demo-43" aria-label="3 stars" title="3 stars"></label>
+            <label for="demo-44" aria-label="4 stars" title="4 stars"></label>
+            <label for="demo-45" aria-label="5 stars" title="5 stars"></label>   
+        </div>
+        
+    </fieldset>
+    <script>
+        (function(){
+            var rating = document.querySelector('.rating');
+            }();
+        );
+    </script>
+
+    {% csrf_token %}
+    <legend><h4 style = "position:relative; left:50px; top:2px" >Leave a comment!:</h4></legend>
+    <div style = "position:relative; left:50px; top:2px">
+        <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:.6em; font-size: 18px;" placeholder="Write here..."></textarea>
+    </div>
+
+    <input id="submit" type="submit" value="Rate" style = "position:relative; left:80px; top:2px;margin-top:10px;" class="slide-hover-left-1">
+    </form>
+    
+</div>
+    <script>
+
+        mapboxgl.accessToken = "{{mapbox_access_token}}"
+        const start = {{ coordinates_start|safe }};
+        const description = {{ descriptions|safe }}
+        const places = {{ q1|safe }}
+        const links_places = {{ links|safe }}
+
+        
+        const locations = {
+            'features': [
+              {
+                'type': 'Feature',
+                'properties': {
+                  'title':  `<a href= "${links_places[0]}" target="_blank" title="Click for more info about ${places[0]}" style="color:blue !important";>1. ${places[0]}</a>`,
+                  'description':`<h6>${description[0]}</h6>`
+                },
+                'geometry': {
+                  'coordinates':[start[0], start[1]],
+                  'type': 'Point'
+                }
+              },
+              {
+                'type': 'Feature',
+                'properties': {
+                  'title': `<a href= "${links_places[1]}" target="_blank" title="Click for more info about ${places[1]}" style="color:blue !important";>2. ${places[1]}</a>`,
+                  'description': `<h6>${description[1]}</h6>`
+                },
+                'geometry': {
+                  'coordinates': [start[2], start[3]],
+                  'type': 'Point'
+                }
+              },
+              {
+                'type': 'Feature',
+                'properties': {
+                  'title':  `<a href= "${links_places[2]}" target="_blank" title="Click for more info about ${places[2]}" style="color:blue !important";>3. ${places[2]}</a>`,
+                  'description': `<h6>${description[2]}</h6>`
+                },
+                'geometry': {
+                  'coordinates': [start[4], start[5]],
+                  'type': 'Point',
+                }
+              },
+              {
+                'type': 'Feature',
+                'properties': {
+                  'title':  `<a href= "${links_places[3]}" target="_blank" title="Click for more info about ${places[3]}" style="color:blue !important";>4. ${places[3]}</a>`,
+                  'description': `<h6>${description[3]}</h6>`
+                },
+                'geometry': {
+                  'coordinates': [start[6], start[7]],
+                  'type': 'Point'
+                }
+              },
+              {
+                'type': 'Feature',
+                'properties': {
+                  'title':  `<a href= "${links_places[4]}" target="_blank" title="Click for more info about ${places[4]}" style="color:blue !important";>5. ${places[4]}</a>`,
+                  'description':`<h6>${description[4]}</h6>`
+                },
+                'geometry': {
+                  'coordinates': [start[8], start[9]],
+                  'type': 'Point'
+                }
+              }
+            ],
+            'type': 'FeatureCollection'
+          };
+    
+          
+
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: [-3.7033387,40.4167278], // starting position
+            zoom: 11.3
+        });
+
+        map.on('load', () => {
+            map.addSource('streets', {
+              type: 'geojson',
+              data: './parks-outline.geojson',
+              generateId: true
+            });
+            map.addLayer(
+              {
+                id: 'highlighted-park',
+                type: 'fill',
+                source: 'streets',
+                paint: {
+                  'fill-color': [
+                    'case',
+                    ['boolean', ['feature-state', 'highlight'], true],
+                    'RGBA(117, 198, 132, 1.00)',
+                    'RGBA(117, 198, 132, 0)'
+                  ]
+                }
+              },
+              'water-shadow'
+            );
+    
+            const onSourceData = (event) => {
+              if (event.isSourceLoaded) return;
+              map.off('sourcedata', onSourceData);
+              for (const location of locations.features) {
+                const popup = new mapboxgl.Popup().setHTML(
+                  `<h4>${location.properties.title}</h4><p>${location.properties.description}</p>`
+                );
+    
+                const marker = new mapboxgl.Marker()
+                  .setLngLat(location.geometry.coordinates)
+                  .setPopup(popup)
+                  .addTo(map);
+    
+                let parks = [];
+    
+                marker.getElement().addEventListener('click', () => {
+                  map.flyTo({
+                    pitch: 45,
+                    center: location.geometry.coordinates,
+                    zoom: 16.3
+                  });
+                  parks = map.queryRenderedFeatures(
+                    map.project(location.geometry.coordinates),
+                    {
+                      layers: ['highlighted-park']
+                    }
+                  );
+                  map.setFeatureState(
+                    {
+                      id: parks[0].id,
+                      source: 'streets'
+                    },
+                    {
+                      highlight: false
+                    }
+                  );
+                });
+    
+                popup.on('close', () => {
+                  map.flyTo({
+                    pitch: 0,
+                    center: [-3.7033387,40.4167278],
+                    zoom: 11.3
+                  });
+                  map.setFeatureState(
+                    {
+                      id: parks[0].id,
+                      source: 'streets'
+                    },
+                    {
+                      highlight: false
+                    }
+                  );
+                });
+              }
+            };
+            map.on('sourcedata', onSourceData);
+          });
+
+        
+        // set the bounds of the map
+        {% comment %} const bounds = [
+        [-123.069003, 45.395273],
+        [-122.303707, 45.612333]
+        ];
+        map.setMaxBounds(bounds); {% endcomment %}
+        
+        // an arbitrary start will always be the same
+        // only the end or destination will change
+        {% comment %} const start = {{ coordinates_start|safe }};
+        
+        // this is where the code for the next step will go
+        // create a function to make a directions request
+        async function getRoute(end) {
+            // make a directions request using cycling profile
+            // an arbitrary start will always be the same
+            // only the end or destination will change
+            const query = await fetch(
+            `https://api.mapbox.com/directions/v5/mapbox/walking/${start[0]},${start[1]};${start[2]},${start[3]};${start[4]},${start[5]};${start[6]},${start[7]};${start[8]},${start[9]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`,
+            { method: 'GET' }
+            );
+            const json = await query.json();
+            const data = json.routes[0];
+            const route = data.geometry.coordinates;
+            const geojson = {
+            type: 'Feature',
+            properties: {},
+            geometry: {
+                type: 'LineString',
+                coordinates: route
+            }
+            };
+            // if the route already exists on the map, we'll reset it using setData
+            if (map.getSource('route')) {
+            map.getSource('route').setData(geojson);
+            }
+            // otherwise, we'll make a new request
+            /* This is he code for the route between nodes
+            else {
+            map.addLayer({
+                id: 'route',
+                type: 'line',
+                source: {
+                type: 'geojson',
+                data: geojson
+                },
+                layout: {
+                'line-join': 'round',
+                'line-cap': 'round'
+                },
+                paint: {
+                'line-color': '#3887be',
+                'line-width': 4,
+                'line-opacity': 0.75
+                }
+            });
+            }
+            */
+            // add turn instructions here at the end
+        }
+        
+        map.on('load', () => {
+            // make an initial directions request that
+            // starts and ends at the same location
+            map.loadImage('tag.png', (error, image) => {
+                if (error) throw error;
+                // add image to the active style and make it SDF-enabled
+                map.addImage('your-image-id', image, { sdf: true });
+            });
+
+            getRoute(start);
+        
+            // Add starting point to the map
+            map.addLayer({
+            id: 'point',
+            type: 'circle',
+            source: {
+                type: 'geojson',
+                data: {
+                type: 'FeatureCollection',
+                features: [
+                    {
+                    type: 'Feature',
+                    layout:{
+                        'icon-image':'your-image-id',
+                        'icon-size':.5
+                    },
+                    properties: {},
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [start[0], start[1]]
+                    }
+                    },
+                    {
+                    type: 'Feature',
+                    layout:{
+                        'icon-image':'your-image-id',
+                        'icon-size':.5
+                    },
+                    properties: {},
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [start[2], start[3]]
+                    }
+                    },
+                    {
+                    type: 'Feature',
+                    layout:{
+                        'icon-image':'your-image-id',
+                        'icon-size':.5
+                    },
+                    properties: {},
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [start[4], start[5]]
+                    }
+                    },
+                    {
+                        type: 'Feature',
+                        layout:{
+                            'icon-image':'your-image-id',
+                            'icon-size':.5
+                        },
+                        properties: {},
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [start[6], start[7]]
+                    }
+                    },
+                    {
+                        type: 'Feature',
+                        layout:{
+                            'icon-image':'your-image-id',
+                            'icon-size':.5
+                        },
+                        properties: {},
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [start[8], start[9]]
+                    }
+                    }
+                ]
+                }
+            },
+            paint: {
+                'circle-radius': 7,
+                'circle-color': 'rgb(255, 0, 0)'
+            }
+            });
+        }); {% endcomment %}
+
+        
+    </script>
+</div>
+{% comment %} <footer style="position:relative !important; left:40px !important; top:400px !important">
+    <div id="bottom">Hope you liked the resuls
+    <p><a id="bottom" href="{% url 'polls:index' %}" style="color:#000080">Vote again?</a></p>
+  </div>
+  </div>
+  </footer> {% endcomment %}
+  </body>
+</html>
