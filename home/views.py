@@ -6,6 +6,8 @@ from django.views import generic
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from polls.models import Customer
 
 
