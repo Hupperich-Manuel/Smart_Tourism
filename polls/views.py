@@ -150,8 +150,14 @@ def SecondUser(request):
     # Fit the model
     model.fit(X)
 
-
-    building_index, evaluation = model.rank_items(userid = 1, user_items = X.T.tocsr(),selected_items = range(0, 25))
+    name_in_matrix = XMatrix.objects.filter(username=request.user).values('id')
+    if name_in_matrix is not None:
+        defined_user_id = name_in_matrix
+    else:
+        defined_user_id = 1
+    
+    
+    building_index, evaluation = model.rank_items(userid = defined_user_id, user_items = X.T.tocsr(),selected_items = range(0, 25))
     print(evaluation)
     result = []
     coordinates_start = []

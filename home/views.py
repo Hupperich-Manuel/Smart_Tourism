@@ -19,7 +19,7 @@ def registerPage(request):
 
     if request.user.is_authenticated:
 
-        user_in_date = Customer.objects.filter(username=request.user)
+        user_in_date = Customer.objects.filter(username_id=request.user)
         print(f"User {request.user}")
         if user_in_date is not None:
         
@@ -91,7 +91,7 @@ def login_user(request):
 
     if request.user.is_authenticated:
 
-        user_in_date = Customer.objects.filter(username=request.user)
+        user_in_date = Customer.objects.filter(username_id=request.user)
         print(f"User {request.user}")
         if user_in_date is not None:
         
