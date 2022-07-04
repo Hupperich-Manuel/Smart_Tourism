@@ -350,7 +350,7 @@ def modelling(request):
                 if index not in [3, 7, 11, 15, 19, 23]:
                     selected_experience_withoutdot_product.append(building)
 
-    
+
 
             Customer.objects.bulk_create(select_place)
 
