@@ -133,9 +133,9 @@ def SecondUser(request):
 
     print('\nColumns in Customer table')
     cursor.execute('''SELECT * FROM polls_xmatrix''')
-    X = pd.DataFrame(XMatrix.objects.values())
+    X_matrix = pd.DataFrame(XMatrix.objects.values())
 
-    X = X.set_index('username', 1)
+    X = X_matrix.set_index('username', 1)
     X = X.reset_index(drop=True)
     print(X.dtypes)
     X = csc_matrix(X)
@@ -150,9 +150,9 @@ def SecondUser(request):
     # Fit the model
     model.fit(X)
 
-    name_in_matrix = XMatrix.objects.get(username=request.user)
+    name_in_matrix = XMatrix.objects.filter(username=request.user)
     if name_in_matrix.pk is not None:
-        defined_user_id = name_in_matrix.pk
+        defined_user_id = X_matrix.loc[X_matrix['username']==request.user].index
     else:
         defined_user_id = 1
     
