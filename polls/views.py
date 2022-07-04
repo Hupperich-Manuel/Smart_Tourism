@@ -192,199 +192,192 @@ def modelling(request):
     """
     Returns the answers of the votes
     """
-    user_in_date = 1
 
-    if user_in_date == 1:
+    try:
+
+        answer1=request.POST['answer1']
+        answer2 = request.POST['answer2']
+        answer3 = request.POST['answer3']
+        answer4=request.POST['answer4']
+        answer5 = request.POST['answer5']
+        answer6 = request.POST['answer6']
+        answer7=request.POST['answer7']
+        answer8 = request.POST['answer8']
+        answer9 = request.POST['answer9']
+        answer10=request.POST['answer10']
+        answer11 = request.POST['answer11']
+        answer12 = request.POST['answer12']
+        answer13=request.POST['answer13']
+        answer14 = request.POST['answer14']
+        answer15 = request.POST['answer15']
+        answer16 = request.POST['answer16']
+        # answer17 = request.POST['answer17']
+        # answer18 = request.POST['answer18']
+        # answer19 = request.POST['answer19']
+        # answer20 = request.POST['answer20']
+
+        print(answer3)
+
+    except (KeyError, Customer.DoesNotExist):
+        q1 = [1, 0]
+        q2 = ["Yes", "No"]
+        zip_list = zip(q1, q2)
+        zip_list2 = zip(q1, q2)
+        zip_list3 = zip(q1, q2)
+        zip_list4 = zip(q1, q2)
+        zip_list5 = zip(q1, q2)
+        zip_list6 = zip(q1, q2)
+        zip_list7 = zip(q1, q2)
+        zip_list8 = zip(q1, q2)
+        zip_list9 = zip(q1, q2)
+        zip_list10 = zip(q1, q2)
+        zip_list11 = zip(q1, q2)
+        zip_list12 = zip(q1, q2)
+        zip_list13 = zip(q1, q2)
+        zip_list14 = zip(q1, q2)
+        zip_list15 = zip(q1, q2)
+        zip_list16 = zip(q1, q2)
+        zip_list17 = zip(q1, q2)
+        zip_list18 = zip(q1, q2)
+        zip_list19 = zip(q1, q2)
+        zip_list20 = zip(q1, q2)
+        return render(request, 'polls/index.html',{"liste": zip_list, 
+                                                "liste2": zip_list2, 
+                                                "liste3": zip_list3,
+                                                "liste4": zip_list4,
+                                                "liste5": zip_list5,
+                                                "liste6": zip_list6,
+                                                "liste7": zip_list7,
+                                                "liste8": zip_list8,
+                                                "liste9": zip_list9,
+                                                "liste10": zip_list10,
+                                                "liste11": zip_list11,
+                                                "liste12": zip_list12,
+                                                "liste13": zip_list13,
+                                                "liste14": zip_list14,
+                                                "liste15": zip_list15,
+                                                "liste16": zip_list16,
+                                                # "liste17": zip_list17,
+                                                # "liste18": zip_list18,
+                                                # "liste19": zip_list19,
+                                                # "liste20": zip_list20,
+                                                'error_message':'You did not select a choice'})
+
+
+    if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None)&(answer9 != None)&(answer10 != None)&(answer11 != None)&(answer12 != None)&(answer13 != None)&(answer14 != None)&(answer15 != None)&(answer16 != None):
+
+        conn = psycopg2.connect(user='walepyfjfeczmh',
+                                password='464ffb5fd7698f86e3e0ec7fa119961230b723bf437eaeaf1de2f3441e032625',
+                                host="ec2-52-86-115-245.compute-1.amazonaws.com",
+                                port="5432",
+                                database="d613pk36jf51k0")
+
+        cursor = conn.cursor()      
+        #conn.commit()
+
+        print('\nColumns in Customer table')
+        cursor.execute('''SELECT * FROM polls_question''')
+        data = cursor.fetchall()
+
+
+        print(data)
+        places = {}
+        dot_product_answer = [int(answer1), int(answer2), int(answer3), int(answer4), int(answer5), int(answer6), int(answer7),
+                            int(answer8), int(answer9), int(answer10), int(answer11), int(answer12), int(answer13), int(answer14),
+                            int(answer15), int(answer16)]
         
-        return HttpResponseRedirect(reverse('polls:second_user', args=()))
+        for index, column in enumerate(data):
+
+            print(index)
+            
+            places[index] = [column[0], column[1],column[2], np.dot(list(column[3:-2]), dot_product_answer)]
+        
+        places = dict(sorted(places.items(), key=lambda x: x[1][3], reverse=True)[:5])
+
+
+        selected_experience = []
+        for key in places.keys():
+            selected_experience.append(str(Question.objects.get(pk=places[key][0])))
+            selected_experience.append(str(places[key][1]))
+            selected_experience.append(str(places[key][2]))
+            selected_experience.append(str(places[key][3]))
+
+
+        select_place = []
+        selected_experience_withoutdot_product = []
+        for index, building in enumerate(selected_experience):
+
+            if index%4 == 0:
+
+                selected_choice = Customer(username_id=User.objects.get(username=request.user),
+                                    email= request.user.email,
+                                    pub_date=timezone.now(),
+                                    name=request.user.first_name,
+                                    surname=request.user.last_name, 
+                                    question_text1=answer1, 
+                                    question_text2 = answer2,
+                                    question_text3 = answer3,
+                                    question_text4 = answer4,
+                                    question_text5 = answer5,
+                                    question_text6 = answer6,
+                                    question_text7 = answer7,
+                                    question_text8 = answer8,
+                                    question_text9 = answer9,
+                                    question_text10 = answer10,
+                                    question_text11 = answer11,
+                                    question_text12 = answer12,
+                                    question_text13 = answer13,
+                                    question_text14 = answer14,
+                                    question_text15 = answer15,
+                                    question_text16 = answer16,
+                                    # question_text17 = answer17,
+                                    # question_text18 = answer18,
+                                    # question_text19 = answer19,
+                                    # question_text20 = answer20,
+                                    building_id = Question.objects.get(building=selected_experience[index]),
+                                    dot_product = selected_experience[index+3],
+                                    opinion = "No Opinion"
+                                    )
+                select_place.append(selected_choice)
+
+            if index not in [3, 7, 11, 15, 19, 23]:
+                selected_experience_withoutdot_product.append(building)
+
+
+
+        Customer.objects.bulk_create(select_place)
+
+        print(select_place)
+        return HttpResponseRedirect(reverse('polls:results', args=(selected_experience_withoutdot_product)))
 
 
     else:
-        try:
 
-            answer1=request.POST['answer1']
-            answer2 = request.POST['answer2']
-            answer3 = request.POST['answer3']
-            answer4=request.POST['answer4']
-            answer5 = request.POST['answer5']
-            answer6 = request.POST['answer6']
-            answer7=request.POST['answer7']
-            answer8 = request.POST['answer8']
-            answer9 = request.POST['answer9']
-            answer10=request.POST['answer10']
-            answer11 = request.POST['answer11']
-            answer12 = request.POST['answer12']
-            answer13=request.POST['answer13']
-            answer14 = request.POST['answer14']
-            answer15 = request.POST['answer15']
-            answer16 = request.POST['answer16']
-            # answer17 = request.POST['answer17']
-            # answer18 = request.POST['answer18']
-            # answer19 = request.POST['answer19']
-            # answer20 = request.POST['answer20']
+        messages.success(request, ("There was a Error submitting your responses (You must answer all questions), Try again"))
 
-            print(answer3)
-
-        except (KeyError, Customer.DoesNotExist):
-            q1 = [1, 0]
-            q2 = ["Yes", "No"]
-            zip_list = zip(q1, q2)
-            zip_list2 = zip(q1, q2)
-            zip_list3 = zip(q1, q2)
-            zip_list4 = zip(q1, q2)
-            zip_list5 = zip(q1, q2)
-            zip_list6 = zip(q1, q2)
-            zip_list7 = zip(q1, q2)
-            zip_list8 = zip(q1, q2)
-            zip_list9 = zip(q1, q2)
-            zip_list10 = zip(q1, q2)
-            zip_list11 = zip(q1, q2)
-            zip_list12 = zip(q1, q2)
-            zip_list13 = zip(q1, q2)
-            zip_list14 = zip(q1, q2)
-            zip_list15 = zip(q1, q2)
-            zip_list16 = zip(q1, q2)
-            zip_list17 = zip(q1, q2)
-            zip_list18 = zip(q1, q2)
-            zip_list19 = zip(q1, q2)
-            zip_list20 = zip(q1, q2)
-            return render(request, 'polls/index.html',{"liste": zip_list, 
-                                                    "liste2": zip_list2, 
-                                                    "liste3": zip_list3,
-                                                    "liste4": zip_list4,
-                                                    "liste5": zip_list5,
-                                                    "liste6": zip_list6,
-                                                    "liste7": zip_list7,
-                                                    "liste8": zip_list8,
-                                                    "liste9": zip_list9,
-                                                    "liste10": zip_list10,
-                                                    "liste11": zip_list11,
-                                                    "liste12": zip_list12,
-                                                    "liste13": zip_list13,
-                                                    "liste14": zip_list14,
-                                                    "liste15": zip_list15,
-                                                    "liste16": zip_list16,
-                                                    # "liste17": zip_list17,
-                                                    # "liste18": zip_list18,
-                                                    # "liste19": zip_list19,
-                                                    # "liste20": zip_list20,
-                                                    'error_message':'You did not select a choice'})
-
-
-        if (answer1 != None)&(answer2 != None)&(answer3 != None)&(answer4 != None)&(answer5 != None)&(answer6 != None)&(answer7 != None)&(answer8 != None)&(answer9 != None)&(answer10 != None)&(answer11 != None)&(answer12 != None)&(answer13 != None)&(answer14 != None)&(answer15 != None)&(answer16 != None):
-
-            conn = psycopg2.connect(user='walepyfjfeczmh',
-                                    password='464ffb5fd7698f86e3e0ec7fa119961230b723bf437eaeaf1de2f3441e032625',
-                                    host="ec2-52-86-115-245.compute-1.amazonaws.com",
-                                    port="5432",
-                                    database="d613pk36jf51k0")
-
-            cursor = conn.cursor()      
-            #conn.commit()
-
-            print('\nColumns in Customer table')
-            cursor.execute('''SELECT * FROM polls_question''')
-            data = cursor.fetchall()
-
-
-            print(data)
-            places = {}
-            dot_product_answer = [int(answer1), int(answer2), int(answer3), int(answer4), int(answer5), int(answer6), int(answer7),
-                                int(answer8), int(answer9), int(answer10), int(answer11), int(answer12), int(answer13), int(answer14),
-                                int(answer15), int(answer16)]
-            
-            for index, column in enumerate(data):
-
-                print(index)
-                
-                places[index] = [column[0], column[1],column[2], np.dot(list(column[3:-2]), dot_product_answer)]
-            
-            places = dict(sorted(places.items(), key=lambda x: x[1][3], reverse=True)[:5])
-
-
-            selected_experience = []
-            for key in places.keys():
-                selected_experience.append(str(Question.objects.get(pk=places[key][0])))
-                selected_experience.append(str(places[key][1]))
-                selected_experience.append(str(places[key][2]))
-                selected_experience.append(str(places[key][3]))
-
-
-            select_place = []
-            selected_experience_withoutdot_product = []
-            for index, building in enumerate(selected_experience):
-
-                if index%4 == 0:
-
-                    selected_choice = Customer(username_id=User.objects.get(username=request.user),
-                                        email= request.user.email,
-                                        pub_date=timezone.now(),
-                                        name=request.user.first_name,
-                                        surname=request.user.last_name, 
-                                        question_text1=answer1, 
-                                        question_text2 = answer2,
-                                        question_text3 = answer3,
-                                        question_text4 = answer4,
-                                        question_text5 = answer5,
-                                        question_text6 = answer6,
-                                        question_text7 = answer7,
-                                        question_text8 = answer8,
-                                        question_text9 = answer9,
-                                        question_text10 = answer10,
-                                        question_text11 = answer11,
-                                        question_text12 = answer12,
-                                        question_text13 = answer13,
-                                        question_text14 = answer14,
-                                        question_text15 = answer15,
-                                        question_text16 = answer16,
-                                        # question_text17 = answer17,
-                                        # question_text18 = answer18,
-                                        # question_text19 = answer19,
-                                        # question_text20 = answer20,
-                                        building_id = Question.objects.get(building=selected_experience[index]),
-                                        dot_product = selected_experience[index+3],
-                                        opinion = "No Opinion"
-                                        )
-                    select_place.append(selected_choice)
-
-                if index not in [3, 7, 11, 15, 19, 23]:
-                    selected_experience_withoutdot_product.append(building)
-
-
-
-            Customer.objects.bulk_create(select_place)
-
-            print(select_place)
-            return HttpResponseRedirect(reverse('polls:results', args=(selected_experience_withoutdot_product)))
-
-
-        else:
-
-            messages.success(request, ("There was a Error submitting your responses (You must answer all questions), Try again"))
-
-            q1 = [1, 0]
-            q2 = ["Yes", "No"]
-            zip_list = zip(q1, q2)
-            zip_list2 = zip(q1, q2)
-            zip_list3 = zip(q1, q2)
-            zip_list4 = zip(q1, q2)
-            zip_list5 = zip(q1, q2)
-            zip_list6 = zip(q1, q2)
-            zip_list7 = zip(q1, q2)
-            zip_list8 = zip(q1, q2)
-            zip_list9 = zip(q1, q2)
-            zip_list10 = zip(q1, q2)
-            zip_list11 = zip(q1, q2)
-            zip_list12 = zip(q1, q2)
-            zip_list13 = zip(q1, q2)
-            zip_list14 = zip(q1, q2)
-            zip_list15 = zip(q1, q2)
-            zip_list16 = zip(q1, q2)
-            # zip_list17 = zip(q1, q2)
-            # zip_list18 = zip(q1, q2)
-            # zip_list19 = zip(q1, q2)
-            # zip_list20 = zip(q1, q2)
-            return HttpResponseRedirect(reverse('polls:index'))
+        q1 = [1, 0]
+        q2 = ["Yes", "No"]
+        zip_list = zip(q1, q2)
+        zip_list2 = zip(q1, q2)
+        zip_list3 = zip(q1, q2)
+        zip_list4 = zip(q1, q2)
+        zip_list5 = zip(q1, q2)
+        zip_list6 = zip(q1, q2)
+        zip_list7 = zip(q1, q2)
+        zip_list8 = zip(q1, q2)
+        zip_list9 = zip(q1, q2)
+        zip_list10 = zip(q1, q2)
+        zip_list11 = zip(q1, q2)
+        zip_list12 = zip(q1, q2)
+        zip_list13 = zip(q1, q2)
+        zip_list14 = zip(q1, q2)
+        zip_list15 = zip(q1, q2)
+        zip_list16 = zip(q1, q2)
+        # zip_list17 = zip(q1, q2)
+        # zip_list18 = zip(q1, q2)
+        # zip_list19 = zip(q1, q2)
+        # zip_list20 = zip(q1, q2)
+        return HttpResponseRedirect(reverse('polls:index'))
 
 
 
