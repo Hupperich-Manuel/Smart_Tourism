@@ -150,9 +150,9 @@ def SecondUser(request):
     # Fit the model
     model.fit(X)
 
-    name_in_matrix = XMatrix.objects.filter(username=request.user).values('id')
-    if name_in_matrix is not None:
-        defined_user_id = name_in_matrix
+    name_in_matrix = XMatrix.objects.get(username=request.user)
+    if name_in_matrix.pk is not None:
+        defined_user_id = name_in_matrix.pk
     else:
         defined_user_id = 1
     
