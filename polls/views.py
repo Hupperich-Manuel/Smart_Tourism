@@ -152,7 +152,7 @@ def SecondUser(request):
 
     name_in_matrix = XMatrix.objects.filter(username=request.user)
     if name_in_matrix is not None:
-        defined_user_id = int(round(X_matrix.loc[X_matrix['username']==request.user].index, 0))
+        defined_user_id = int(X_matrix.loc[X_matrix['username']==request.user].index)
     else:
         defined_user_id = 1
     
