@@ -122,17 +122,7 @@ def default_map(request):
 @login_required(login_url='login')
 def SecondUser(request):
 
-    conn = psycopg2.connect(user='walepyfjfeczmh',
-                                    password='464ffb5fd7698f86e3e0ec7fa119961230b723bf437eaeaf1de2f3441e032625',
-                                    host="ec2-52-86-115-245.compute-1.amazonaws.com",
-                                    port="5432",
-                                    database="d613pk36jf51k0")
 
-    cursor = conn.cursor()      
-    #conn.commit()
-
-    print('\nColumns in Customer table')
-    cursor.execute('''SELECT * FROM polls_xmatrix''')
     X_matrix = pd.DataFrame(XMatrix.objects.values())
 
     X = X_matrix.set_index('username', 1)
@@ -152,7 +142,7 @@ def SecondUser(request):
 
     name_in_matrix = XMatrix.objects.filter(username=request.user)
     if name_in_matrix is not None:
-        defined_user_id = X_matrix.loc[X_matrix['username']==request.user].index.values[0]
+        defined_user_id = X_matrix.loc[X_matrix.index==request.user].index[0]
     else:
         defined_user_id = 1
     
