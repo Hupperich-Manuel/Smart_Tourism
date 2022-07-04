@@ -142,3 +142,5 @@ dmypy.json
 *.guide_heroku.txt
 data/
 /data
+
+latest.dump

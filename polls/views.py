@@ -192,9 +192,9 @@ def modelling(request):
     """
     Returns the answers of the votes
     """
-    user_in_date = Customer.objects.filter(username=request.user)
+    user_in_date = 1
 
-    if user_in_date is not None:
+    if user_in_date == 1:
         
         return HttpResponseRedirect(reverse('polls:second_user', args=()))
 
